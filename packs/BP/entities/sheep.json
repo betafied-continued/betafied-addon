@@ -242,34 +242,12 @@
                 "trigger": "spawn_adult"
               }
             ]
-          },
-          {
-            "first_valid": [
-              {
-                "filters": {
-                  "test": "has_biome_tag",
-                  "value": "spawns_cold_variant_farm_animals"
-                },
-                "trigger": "minecraft:cold_color"
-              },
-              {
-                "filters": {
-                  "test": "has_biome_tag",
-                  "value": "spawns_warm_variant_farm_animals"
-                },
-                "trigger": "minecraft:warm_color"
-              },
-              {
-                "trigger": "minecraft:temperate_color"
-              }
-            ]
           }
         ]
       },
       "spawn_adult": {
         "add": {
           "component_groups": [
-            "minecraft:sheep_adult",
             "minecraft:sheep_dyeable",
             "minecraft:rideable_wooly",
             "minecraft:loot_wooly"

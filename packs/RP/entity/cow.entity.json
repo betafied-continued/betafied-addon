@@ -14,7 +14,7 @@
       "animations": {
         "setup": "animation.cow.setup",
         "walk": "animation.quadruped.walk",
-        "look_at_target": "animation.common.look_at_target",
+        "look_at_target": "animation.common.look_at_target"
       },
       "scripts": {
         "animate": [
