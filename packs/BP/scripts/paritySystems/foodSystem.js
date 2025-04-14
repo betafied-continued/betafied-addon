@@ -1,3 +1,5 @@
+// This script emulates beta 1.7.3's food system!
+
 import { world, system, ItemStack } from "@minecraft/server";
 
 // Constants for food items and their health restoration values

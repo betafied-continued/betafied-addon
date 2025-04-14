@@ -1,3 +1,6 @@
+// Most items are uncraftable if they were not in the game before 1.7.3, so this script will remove them from players' inventories just in case.
+// This script is designed to run in the background and remove any items that are not in the allowed list.
+
 import { world, system } from "@minecraft/server";
 
 // Configuration for allowed items and settings

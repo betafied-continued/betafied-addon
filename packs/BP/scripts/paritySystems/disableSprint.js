@@ -1,3 +1,5 @@
+// This entire script serves as a backup in the event that the player.json hunger system is not working as intended.
+
 import { world, system } from "@minecraft/server";
 
 const SPEED = 0.1;

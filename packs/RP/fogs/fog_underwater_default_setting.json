@@ -1,0 +1,16 @@
+{
+  "format_version": "1.16.100",
+  "minecraft:fog_settings": {
+    "description": {
+      "identifier": "fox_is_cute:fog_underwater_default"
+    },
+    "distance": {
+      "water": {
+        "fog_start": 0.0,
+        "fog_end": 48.0,
+        "fog_color": "#0B1136",
+        "render_distance_type": "fixed"
+      }
+    }
+  }
+}

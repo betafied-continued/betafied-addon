@@ -1,3 +1,6 @@
+// This entire script serves as a backup in the event that the entity spawn rules are not working as intended.
+// It is designed to remove any entities that are not in the allowed list.
+
 import { world } from "@minecraft/server";
 
 // Set of allowed mob type IDs for O(1) lookup efficiency
