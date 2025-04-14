@@ -3366,8 +3366,7 @@
    },
    "oak_double_slab": {
       "isotropic": false,
-      "sound": "wood",
-      "textures": "oak_planks"
+      "sound": "wood"
    },
    "oak_fence": {
       "isotropic": false,
