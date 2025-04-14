@@ -7,6 +7,8 @@ import { world, system } from "@minecraft/server";
 const CONFIG = Object.freeze({
     ALLOWED_ITEMS: new Set([
         "minecraft:iron_shovel",
+        "minecraft:birch_log",
+        "minecraft:spruce_log",
         "minecraft:iron_pickaxe",
         "minecraft:iron_axe",
         "minecraft:flint_and_steel",
