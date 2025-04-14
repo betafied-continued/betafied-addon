@@ -8,87 +8,12 @@
       "is_summonable": true
     },
     "component_groups": {
-      "in_powder_snow": {
-        "minecraft:is_shaking": {},
-        "minecraft:timer": {
-          "looping": false,
-          "time": 20,
-          "time_down_event": {
-            "event": "become_stray_event"
-          }
-        },
-        "minecraft:environment_sensor": {
-          "triggers": [
-            {
-              "filters": {
-                "test": "in_block",
-                "subject": "self",
-                "operator": "!=",
-                "value": "minecraft:powder_snow"
-              },
-              "event": "got_out_of_powder_snow"
-            }
-          ]
-        }
-      },
-      "got_out_of_powder_snow_environment_sensor": {
-        "minecraft:environment_sensor": {
-          "triggers": [
-            {
-              "filters": {
-                "test": "is_underwater",
-                "subject": "self",
-                "operator": "==",
-                "value": true
-              },
-              "event": "minecraft:melee_mode"
-            },
-            {
-              "filters": {
-                "test": "has_ranged_weapon",
-                "subject": "self",
-                "operator": "==",
-                "value": false
-              },
-              "event": "minecraft:melee_mode"
-            },
-            {
-              "filters": {
-                "all_of": [
-                  {
-                    "test": "in_water",
-                    "subject": "self",
-                    "operator": "==",
-                    "value": false
-                  },
-                  {
-                    "test": "has_ranged_weapon",
-                    "subject": "self",
-                    "operator": "==",
-                    "value": true
-                  }
-                ]
-              },
-              "event": "minecraft:ranged_mode"
-            }
-          ]
-        }
-      },
       "minecraft:lightning_immune": {
         "minecraft:damage_sensor": {
           "triggers": {
             "on_damage": { "filters": { "other_with_families": "lightning" } },
             "deals_damage": false
           }
-        }
-      },
-      "become_stray": {
-        "minecraft:transformation": {
-          "into": "minecraft:stray",
-          "transformation_sound" : "convert_to_stray",
-          "keep_level": true,
-          "drop_inventory": true,
-          "preserve_equipment": true
         }
       },
       "minecraft:ranged_attack": {
@@ -575,14 +500,6 @@
             "sprint_speed_multiplier": 1.2
           }
         ]
-      },
-      "minecraft:behavior.pickup_items": {
-        "priority": 5,
-        "max_dist": 3,
-        "goal_radius": 2,
-        "speed_multiplier": 1.0,
-        "pickup_based_on_chance": true,
-        "can_pickup_any_item": true
       },
       "minecraft:behavior.random_stroll": {
         "priority": 6,
