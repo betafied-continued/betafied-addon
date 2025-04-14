@@ -1,12 +1,12 @@
 {
-  "format_version": "1.20.10",
+  "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "minecraft:gold_block"
+    "identifier": "bh:gold_block"
     },
 
     
-    "tags": [ "crafting_table" ],
+    "tags": [ "beta_crafting" ],
     "pattern": [
       "###",
       "###",
@@ -17,11 +17,6 @@
         "item": "minecraft:gold_ingot"
       }
     },
-	"unlock": [
-        {
-            "item": "minecraft:gold_ingot"
-        }
-    ],
     "result": {
       "item": "minecraft:gold_block"
     }

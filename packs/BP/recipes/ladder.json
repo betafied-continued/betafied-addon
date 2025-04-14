@@ -1,12 +1,12 @@
 {
-  "format_version": "1.20.10",
+  "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "minecraft:ladder"
+    "identifier": "bh:ladder"
     },
 
     
-    "tags": [ "crafting_table" ],
+    "tags": [ "beta_crafting" ],
     "pattern": [
       "# #",
       "###",
@@ -17,14 +17,9 @@
         "item": "minecraft:stick"
       }
     },
-    "unlock": [
-      {
-        "item": "minecraft:stick"
-      }
-    ],
     "result": {
       "item": "minecraft:ladder",
-      "count": 3
+      "count": 2
     }
   }
 }

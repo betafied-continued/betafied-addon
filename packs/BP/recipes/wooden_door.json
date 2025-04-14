@@ -2,11 +2,11 @@
   "format_version": "1.20.10",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "minecraft:wooden_door"
+    "identifier": "bh:wooden_door"
     },
 
     
-    "tags": [ "crafting_table" ],
+    "tags": [ "beta_crafting" ],
     "group": "wooden_door",
     "pattern": [
       "##",
@@ -25,7 +25,7 @@
     ],
     "result": {
       "item": "minecraft:wooden_door",
-      "count": 3
+      "count": 1
     }
   }
 }

@@ -2,7 +2,7 @@
   "format_version": "1.20.10",
   "minecraft:recipe_shaped": {
     "description": {
-      "identifier": "minecraft:stone_pickaxe"
+      "identifier": "bh:stone_pickaxe"
     },   
     "tags": [ "crafting_table" ],
     "pattern": [

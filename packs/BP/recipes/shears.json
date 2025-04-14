@@ -2,11 +2,11 @@
   "format_version": "1.20.10",
   "minecraft:recipe_shaped": {
     "description": {
-    "identifier": "minecraft:shears"
+    "identifier": "bh:shears"
     },
 
     
-    "tags": [ "crafting_table" ],
+    "tags": [ "beta_crafting" ],
     "pattern": [
       " #",
       "# "

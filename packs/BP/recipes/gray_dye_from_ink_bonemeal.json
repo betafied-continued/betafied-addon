@@ -2,11 +2,11 @@
   "format_version": "1.20.10",
   "minecraft:recipe_shapeless": {
     "description": {
-    "identifier": "minecraft:gray_dye_from_ink_bonemeal"
+    "identifier": "bh:gray_dye_from_ink_bonemeal"
     },
 
     
-    "tags": [ "crafting_table" ],
+    "tags": [ "beta_crafting" ],
     "priority": 3,
     "ingredients": [
       {

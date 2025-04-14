@@ -1286,6 +1286,18 @@
       "sound": "stone",
       "textures": "cracked_polished_blackstone_bricks"
    },
+   "bh:crafting_table": {
+      "isotropic": false,
+      "sound": "wood",
+      "textures": {
+         "down": "crafting_table_bottom",
+         "east": "crafting_table_side",
+         "north": "crafting_table_front",
+         "south": "crafting_table_front",
+         "up": "crafting_table_top",
+         "west": "crafting_table_side"
+      }
+   },
    "crafting_table": {
       "isotropic": false,
       "sound": "wood",
@@ -3359,8 +3371,7 @@
    },
    "oak_fence": {
       "isotropic": false,
-      "sound": "wood",
-      "textures": "oak_planks"
+      "sound": "wood"
    },
    "oak_hanging_sign": {
       "isotropic": false,

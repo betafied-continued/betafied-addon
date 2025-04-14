@@ -1,0 +1,32 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "bh:bed"
+    },
+
+    
+    "tags": [ "beta_crafting" ],
+    "pattern": [
+      "###",
+      "PPP"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:wool"
+      },
+      "P": {
+        "item": "minecraft:planks"
+      }
+    },
+	"unlock": [
+      {
+        "item": "minecraft:wheat"
+      }
+    ],
+    "result": {
+      "item": "minecraft:bed",
+      "data": 14
+    }
+  }
+}

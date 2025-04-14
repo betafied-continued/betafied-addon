@@ -1,28 +1,23 @@
 {
-    "format_version":  "1.20.10",
-    "minecraft:recipe_shaped":  {
-                                    "description":  {
-                                                        "identifier":  "minecraft:brick_block"
-                                                    },
-                                    "tags":  [
-                                                 ""
-                                             ],
-                                    "pattern":  [
-                                                    "##",
-                                                    "##"
-                                                ],
-                                    "key":  {
-                                                "#":  {
-                                                          "item":  "minecraft:brick"
-                                                      }
-                                            },
-                                    "unlock":  [
-                                                   {
-                                                       "item":  "minecraft:barrier"
-                                                   }
-                                               ],
-                                    "result":  {
-                                                   "item":  "minecraft:brick_block"
-                                               }
-                                }
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "bh:brick_block"
+    },
+
+    
+    "tags": [ "beta_crafting" ],
+    "pattern": [
+      "##",
+      "##"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:brick"
+      }
+    },
+    "result": {
+      "item": "minecraft:brick_block"
+    }
+  }
 }
