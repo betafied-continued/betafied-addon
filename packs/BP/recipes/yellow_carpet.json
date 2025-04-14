@@ -1,0 +1,29 @@
+{
+    "format_version":  "1.20.10",
+    "minecraft:recipe_shaped":  {
+                                    "description":  {
+                                                        "identifier":  "minecraft:yellow_carpet"
+                                                    },
+                                    "tags":  [
+                                                 ""
+                                             ],
+                                    "group":  "carpet",
+                                    "pattern":  [
+                                                    "##"
+                                                ],
+                                    "key":  {
+                                                "#":  {
+                                                          "item":  "minecraft:yellow_wool"
+                                                      }
+                                            },
+                                    "unlock":  [
+                                                   {
+                                                       "item":  "minecraft:barrier"
+                                                   }
+                                               ],
+                                    "result":  {
+                                                   "item":  "minecraft:yellow_carpet",
+                                                   "count":  3
+                                               }
+                                }
+}

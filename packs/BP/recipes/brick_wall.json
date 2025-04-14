@@ -1,0 +1,29 @@
+{
+    "format_version":  "1.20.10",
+    "minecraft:recipe_shaped":  {
+                                    "description":  {
+                                                        "identifier":  "minecraft:brick_wall"
+                                                    },
+                                    "tags":  [
+                                                 ""
+                                             ],
+                                    "pattern":  [
+                                                    "###",
+                                                    "###"
+                                                ],
+                                    "key":  {
+                                                "#":  {
+                                                          "item":  "minecraft:brick_block"
+                                                      }
+                                            },
+                                    "unlock":  [
+                                                   {
+                                                       "item":  "minecraft:barrier"
+                                                   }
+                                               ],
+                                    "result":  {
+                                                   "item":  "minecraft:brick_wall",
+                                                   "count":  6
+                                               }
+                                }
+}

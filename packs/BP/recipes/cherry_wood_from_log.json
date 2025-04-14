@@ -1,0 +1,30 @@
+{
+    "format_version":  "1.20.10",
+    "minecraft:recipe_shaped":  {
+                                    "description":  {
+                                                        "identifier":  "minecraft:cherry_wood_from_log"
+                                                    },
+                                    "tags":  [
+                                                 ""
+                                             ],
+                                    "group":  "wood",
+                                    "pattern":  [
+                                                    "##",
+                                                    "##"
+                                                ],
+                                    "key":  {
+                                                "#":  {
+                                                          "item":  "minecraft:cherry_log"
+                                                      }
+                                            },
+                                    "unlock":  [
+                                                   {
+                                                       "item":  "minecraft:barrier"
+                                                   }
+                                               ],
+                                    "result":  {
+                                                   "item":  "minecraft:cherry_wood",
+                                                   "count":  3
+                                               }
+                                }
+}

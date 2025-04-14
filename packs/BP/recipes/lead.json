@@ -1,0 +1,33 @@
+{
+    "format_version":  "1.20.10",
+    "minecraft:recipe_shaped":  {
+                                    "description":  {
+                                                        "identifier":  "minecraft:lead"
+                                                    },
+                                    "tags":  [
+                                                 ""
+                                             ],
+                                    "pattern":  [
+                                                    "~~ ",
+                                                    "~O ",
+                                                    "  ~"
+                                                ],
+                                    "key":  {
+                                                "~":  {
+                                                          "item":  "minecraft:string"
+                                                      },
+                                                "O":  {
+                                                          "item":  "minecraft:slime_ball"
+                                                      }
+                                            },
+                                    "unlock":  [
+                                                   {
+                                                       "item":  "minecraft:barrier"
+                                                   }
+                                               ],
+                                    "result":  {
+                                                   "item":  "minecraft:lead",
+                                                   "count":  2
+                                               }
+                                }
+}

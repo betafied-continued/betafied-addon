@@ -1,0 +1,32 @@
+{
+    "format_version":  "1.20.10",
+    "minecraft:recipe_shaped":  {
+                                    "description":  {
+                                                        "identifier":  "minecraft:loom"
+                                                    },
+                                    "tags":  [
+                                                 ""
+                                             ],
+                                    "pattern":  [
+                                                    "AA",
+                                                    "BB"
+                                                ],
+                                    "key":  {
+                                                "A":  {
+                                                          "item":  "minecraft:string"
+                                                      },
+                                                "B":  {
+                                                          "tag":  "minecraft:planks"
+                                                      }
+                                            },
+                                    "unlock":  [
+                                                   {
+                                                       "item":  "minecraft:barrier"
+                                                   }
+                                               ],
+                                    "result":  {
+                                                   "item":  "loom"
+                                               },
+                                    "priority":  -1
+                                }
+}

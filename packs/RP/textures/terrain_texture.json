@@ -1,0 +1,119 @@
+{
+  "resource_pack_name": "vanilla",
+  "texture_name": "atlas.terrain",
+  "padding": 8,
+  "num_mip_levels": 0,
+  "texture_data": {
+    "oak_leaves": {
+      "textures": [
+        "textures/blocks/leaves_oak",
+        "textures/blocks/leaves_oak_opaque"
+      ]
+    },
+    "oak_leaves_carried": {
+      "textures": [
+        "textures/blocks/leaves_oak_carried",
+        "textures/blocks/leaves_oak_carried"
+      ]
+    },
+    "birch_leaves": {
+      "textures": [
+        "textures/blocks/leaves_birch",
+        "textures/blocks/leaves_birch_opaque"
+      ]
+    },
+    "birch_leaves_carried": {
+      "textures": [
+        "textures/blocks/leaves_birch_carried",
+        "textures/blocks/leaves_birch_carried"
+      ]
+    },
+    "jungle_leaves": {
+      "textures": [
+        "textures/blocks/leaves_jungle",
+        "textures/blocks/leaves_jungle_opaque"
+      ]
+    },
+    "jungle_leaves_carried": {
+      "textures": [
+        "textures/blocks/leaves_jungle_carried",
+        "textures/blocks/leaves_jungle_carried"
+      ]
+    },
+    "spruce_leaves": {
+      "textures": [
+        "textures/blocks/leaves_spruce",
+        "textures/blocks/leaves_spruce_opaque"
+      ]
+    },
+    "spruce_leaves_carried": {
+      "textures": [
+        "textures/blocks/leaves_spruce_carried",
+        "textures/blocks/leaves_spruce_carried"
+      ]
+    },
+    "acacia_leaves": {
+      "textures": [
+        "textures/blocks/leaves_acacia",
+        "textures/blocks/leaves_acacia_opaque"
+      ]
+    },
+    "acacia_leaves_carried": {
+      "textures": [
+        "textures/blocks/leaves_acacia_carried",
+        "textures/blocks/leaves_acacia_carried"
+      ]
+    },
+    "big_oak_leaves": {
+      "textures": [
+        "textures/blocks/leaves_big_oak",
+        "textures/blocks/leaves_big_oak_opaque"
+      ]
+    },
+    "big_oak_leaves_carried": {
+      "textures": [
+        "textures/blocks/leaves_big_oak_carried",
+        "textures/blocks/leaves_big_oak_carried"
+      ]
+    },
+    "oak_wood": {
+      "textures": "textures/blocks/log_oak"
+    },
+    "spruce_wood": {
+      "textures": "textures/blocks/log_spruce"
+    },
+    "birch_wood": {
+      "textures": "textures/blocks/log_birch"
+    },
+    "jungle_wood": {
+      "textures": "textures/blocks/log_jungle"
+    },
+    "acacia_wood": {
+      "textures": "textures/blocks/log_acacia"
+    },
+    "dark_oak_wood": {
+      "textures": "textures/blocks/log_big_oak"
+    },
+    "stripped_oak_wood": {
+      "textures": "textures/blocks/stripped_oak_log"
+    },
+    "stripped_spruce_wood": {
+      "textures": "textures/blocks/stripped_spruce_log"
+    },
+    "stripped_birch_wood": {
+      "textures": "textures/blocks/stripped_birch_log"
+    },
+    "stripped_jungle_wood": {
+      "textures": "textures/blocks/stripped_jungle_log"
+    },
+    "stripped_acacia_wood": {
+      "textures": "textures/blocks/stripped_acacia_log"
+    },
+    "stripped_dark_oak_wood": {
+      "textures": "textures/blocks/stripped_dark_oak_log"
+    },
+    "glass_blue": {
+      "textures": "textures/blocks/glass_blue"
+    }
+  }
+}

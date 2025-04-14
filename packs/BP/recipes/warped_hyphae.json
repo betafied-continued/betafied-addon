@@ -1,0 +1,30 @@
+{
+    "format_version":  "1.20.10",
+    "minecraft:recipe_shaped":  {
+                                    "description":  {
+                                                        "identifier":  "minecraft:warped_hyphae"
+                                                    },
+                                    "tags":  [
+                                                 ""
+                                             ],
+                                    "group":  "wood",
+                                    "pattern":  [
+                                                    "##",
+                                                    "##"
+                                                ],
+                                    "key":  {
+                                                "#":  {
+                                                          "item":  "minecraft:warped_stem"
+                                                      }
+                                            },
+                                    "unlock":  [
+                                                   {
+                                                       "item":  "minecraft:barrier"
+                                                   }
+                                               ],
+                                    "result":  {
+                                                   "item":  "minecraft:warped_hyphae",
+                                                   "count":  3
+                                               }
+                                }
+}

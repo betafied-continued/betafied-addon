@@ -1,0 +1,29 @@
+{
+    "format_version":  "1.20.10",
+    "minecraft:recipe_shaped":  {
+                                    "description":  {
+                                                        "identifier":  "minecraft:cobblestone_wall"
+                                                    },
+                                    "tags":  [
+                                                 ""
+                                             ],
+                                    "pattern":  [
+                                                    "###",
+                                                    "###"
+                                                ],
+                                    "key":  {
+                                                "#":  {
+                                                          "item":  "minecraft:cobblestone"
+                                                      }
+                                            },
+                                    "unlock":  [
+                                                   {
+                                                       "item":  "minecraft:barrier"
+                                                   }
+                                               ],
+                                    "result":  {
+                                                   "item":  "minecraft:cobblestone_wall",
+                                                   "count":  6
+                                               }
+                                }
+}

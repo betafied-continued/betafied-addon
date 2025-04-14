@@ -1,0 +1,29 @@
+{
+    "format_version":  "1.20.10",
+    "minecraft:recipe_shaped":  {
+                                    "pattern":  [
+                                                    "#"
+                                                ],
+                                    "description":  {
+                                                        "identifier":  "minecraft:spruce_planks_from_stripped_spruce_log"
+                                                    },
+                                    "tags":  [
+                                                 ""
+                                             ],
+                                    "result":  {
+                                                   "count":  4,
+                                                   "item":  "minecraft:spruce_planks"
+                                               },
+                                    "key":  {
+                                                "#":  {
+                                                          "item":  "minecraft:stripped_spruce_log"
+                                                      }
+                                            },
+                                    "unlock":  [
+                                                   {
+                                                       "item":  "minecraft:barrier"
+                                                   }
+                                               ],
+                                    "group":  "planks"
+                                }
+}

@@ -1,0 +1,29 @@
+{
+    "format_version":  "1.20.10",
+    "minecraft:recipe_shaped":  {
+                                    "description":  {
+                                                        "identifier":  "minecraft:emerald_block"
+                                                    },
+                                    "tags":  [
+                                                 ""
+                                             ],
+                                    "pattern":  [
+                                                    "###",
+                                                    "###",
+                                                    "###"
+                                                ],
+                                    "key":  {
+                                                "#":  {
+                                                          "item":  "minecraft:emerald"
+                                                      }
+                                            },
+                                    "unlock":  [
+                                                   {
+                                                       "item":  "minecraft:barrier"
+                                                   }
+                                               ],
+                                    "result":  {
+                                                   "item":  "minecraft:emerald_block"
+                                               }
+                                }
+}

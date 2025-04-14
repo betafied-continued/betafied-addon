@@ -1,0 +1,59 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"authors": [
+			"cen0b"
+		],
+		"generated_with": {
+			"bridge": [
+				"2.7.45"
+			],
+			"dash": [
+				"0.11.7"
+			]
+		}
+	},
+	"header": {
+		"name": "Betahub",
+		"description": "Betahub",
+		"min_engine_version": [
+			1,
+			21,
+			70
+		],
+		"uuid": "7b622e16-7cf4-4bfe-9462-5d1ef55ade84",
+		"version": [
+			1,
+			0,
+			0
+		]
+	},
+	"modules": [
+		{
+			"type": "data",
+			"uuid": "83499dcc-7993-4562-ac4a-5b7f2b314f02",
+			"version": [
+				1,
+				0,
+				0
+			]
+		},
+		{
+			"type": "script",
+			"language": "javascript",
+			"uuid": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+			"entry": "scripts/main.js",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"module_name": "@minecraft/server",
+			"version": "2.0.0-beta"
+		}
+	]
+}

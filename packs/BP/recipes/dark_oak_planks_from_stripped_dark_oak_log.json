@@ -1,0 +1,29 @@
+{
+    "format_version":  "1.20.10",
+    "minecraft:recipe_shaped":  {
+                                    "pattern":  [
+                                                    "#"
+                                                ],
+                                    "description":  {
+                                                        "identifier":  "minecraft:dark_oak_planks_from_stripped_dark_oak_log"
+                                                    },
+                                    "tags":  [
+                                                 ""
+                                             ],
+                                    "result":  {
+                                                   "count":  4,
+                                                   "item":  "minecraft:dark_oak_planks"
+                                               },
+                                    "key":  {
+                                                "#":  {
+                                                          "item":  "minecraft:stripped_dark_oak_log"
+                                                      }
+                                            },
+                                    "unlock":  [
+                                                   {
+                                                       "item":  "minecraft:barrier"
+                                                   }
+                                               ],
+                                    "group":  "planks"
+                                }
+}

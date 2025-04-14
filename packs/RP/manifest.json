@@ -1,0 +1,30 @@
+{
+    "format_version": 2,
+    "header": {
+        "description": "Welcome to 2011!",
+        "name": "Modern Beta Resources",
+        "uuid": "e24e7a57-2a36-4e95-a3b6-2e445125b4ab",
+        "version": [
+            0,
+            0,
+            1
+        ],
+        "min_engine_version": [
+            1,
+            21,
+            70
+        ]
+    },
+    "modules": [
+        {
+            "description": "Welcome to 2011!",
+            "type": "resources",
+            "uuid": "39583796-cf91-44cd-a687-721a025fdd90",
+            "version": [
+                0,
+                0,
+                1
+            ]
+        }
+    ]
+}

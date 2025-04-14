@@ -1,0 +1,30 @@
+{
+    "format_version":  "1.20.10",
+    "minecraft:recipe_shaped":  {
+                                    "group":  "planks",
+                                    "tags":  [
+                                                 "crafting_table"
+                                             ],
+                                    "unlock":  [
+                                                   {
+                                                       "item":  "minecraft:cherry_log"
+                                                   }
+                                               ],
+                                    "description":  {
+                                                        "identifier":  "custom:cherry_log_to_oak_planks"
+                                                    },
+                                    "priority":  0,
+                                    "result":  {
+                                                   "count":  4,
+                                                   "item":  "minecraft:oak_planks"
+                                               },
+                                    "pattern":  [
+                                                    "#"
+                                                ],
+                                    "key":  {
+                                                "#":  {
+                                                          "item":  "minecraft:cherry_log"
+                                                      }
+                                            }
+                                }
+}

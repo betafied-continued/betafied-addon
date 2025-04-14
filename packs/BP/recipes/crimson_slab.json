@@ -1,0 +1,29 @@
+{
+    "format_version":  "1.20.10",
+    "minecraft:recipe_shaped":  {
+                                    "description":  {
+                                                        "identifier":  "minecraft:crimson_slab"
+                                                    },
+                                    "tags":  [
+                                                 ""
+                                             ],
+                                    "group":  "wooden_slab",
+                                    "pattern":  [
+                                                    "###"
+                                                ],
+                                    "key":  {
+                                                "#":  {
+                                                          "item":  "minecraft:crimson_planks"
+                                                      }
+                                            },
+                                    "unlock":  [
+                                                   {
+                                                       "item":  "minecraft:barrier"
+                                                   }
+                                               ],
+                                    "result":  {
+                                                   "item":  "minecraft:crimson_slab",
+                                                   "count":  6
+                                               }
+                                }
+}

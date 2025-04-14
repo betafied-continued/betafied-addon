@@ -1,0 +1,29 @@
+{
+    "format_version":  "1.20.10",
+    "minecraft:recipe_shapeless":  {
+                                       "description":  {
+                                                           "identifier":  "minecraft:black_candle_from_ink_sac"
+                                                       },
+                                       "tags":  [
+                                                    ""
+                                                ],
+                                       "group":  "candle",
+                                       "ingredients":  [
+                                                           {
+                                                               "item":  "minecraft:candle"
+                                                           },
+                                                           {
+                                                               "item":  "minecraft:dye",
+                                                               "data":  0
+                                                           }
+                                                       ],
+                                       "unlock":  [
+                                                      {
+                                                          "item":  "minecraft:barrier"
+                                                      }
+                                                  ],
+                                       "result":  {
+                                                      "item":  "minecraft:black_candle"
+                                                  }
+                                   }
+}

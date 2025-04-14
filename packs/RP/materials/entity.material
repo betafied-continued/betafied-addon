@@ -1,0 +1,26 @@
+{
+  "materials": {
+    "version": "1.0.0",
+
+    "entity_static": {
+      "vertexShader": "shaders/entity.vertex",
+      "vrGeometryShader": "shaders/entity.geometry",
+      "fragmentShader": "shaders/entity.fragment",
+      "vertexFields": [
+        { "field": "Position" },
+        { "field": "Normal" },
+        { "field": "UV0" }
+      ],
+      "msaaSupport": "MSAA",
+      "+defines": [ "USE_ALPHA", "ALPHA_TEST"], // Enable transparency globally
+
+      "+samplerStates": [
+        {
+          "samplerIndex": 0,
+          "textureFilter": "Point",
+          "textureWrap": "Clamp"
+        }
+      ]
+    }
+  }
+}

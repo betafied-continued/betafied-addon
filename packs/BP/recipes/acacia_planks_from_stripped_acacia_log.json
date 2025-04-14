@@ -1,0 +1,29 @@
+{
+    "format_version":  "1.20.10",
+    "minecraft:recipe_shaped":  {
+                                    "pattern":  [
+                                                    "#"
+                                                ],
+                                    "description":  {
+                                                        "identifier":  "minecraft:acacia_planks_from_stripped_acacia_log"
+                                                    },
+                                    "tags":  [
+                                                 ""
+                                             ],
+                                    "result":  {
+                                                   "count":  4,
+                                                   "item":  "minecraft:acacia_planks"
+                                               },
+                                    "key":  {
+                                                "#":  {
+                                                          "item":  "minecraft:stripped_acacia_log"
+                                                      }
+                                            },
+                                    "unlock":  [
+                                                   {
+                                                       "item":  "minecraft:barrier"
+                                                   }
+                                               ],
+                                    "group":  "planks"
+                                }
+}

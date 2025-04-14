@@ -1,0 +1,32 @@
+{
+    "format_version":  "1.20.10",
+    "minecraft:recipe_shaped":  {
+                                    "description":  {
+                                                        "identifier":  "minecraft:jungle_fence"
+                                                    },
+                                    "tags":  [
+                                                 ""
+                                             ],
+                                    "pattern":  [
+                                                    "W#W",
+                                                    "W#W"
+                                                ],
+                                    "key":  {
+                                                "#":  {
+                                                          "item":  "minecraft:stick"
+                                                      },
+                                                "W":  {
+                                                          "item":  "minecraft:jungle_planks"
+                                                      }
+                                            },
+                                    "unlock":  [
+                                                   {
+                                                       "item":  "minecraft:barrier"
+                                                   }
+                                               ],
+                                    "result":  {
+                                                   "item":  "minecraft:jungle_fence",
+                                                   "count":  3
+                                               }
+                                }
+}

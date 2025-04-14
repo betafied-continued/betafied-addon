@@ -1,0 +1,29 @@
+{
+    "format_version":  "1.20.10",
+    "minecraft:recipe_shaped":  {
+                                    "pattern":  [
+                                                    "#"
+                                                ],
+                                    "description":  {
+                                                        "identifier":  "minecraft:jungle_planks_from_stripped_jungle_wood"
+                                                    },
+                                    "tags":  [
+                                                 ""
+                                             ],
+                                    "result":  {
+                                                   "count":  4,
+                                                   "item":  "minecraft:jungle_planks"
+                                               },
+                                    "key":  {
+                                                "#":  {
+                                                          "item":  "minecraft:stripped_jungle_wood"
+                                                      }
+                                            },
+                                    "unlock":  [
+                                                   {
+                                                       "item":  "minecraft:barrier"
+                                                   }
+                                               ],
+                                    "group":  "planks"
+                                }
+}

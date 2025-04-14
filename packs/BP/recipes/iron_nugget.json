@@ -1,0 +1,28 @@
+{
+    "format_version":  "1.20.10",
+    "minecraft:recipe_shaped":  {
+                                    "description":  {
+                                                        "identifier":  "minecraft:iron_nugget"
+                                                    },
+                                    "tags":  [
+                                                 ""
+                                             ],
+                                    "pattern":  [
+                                                    "#"
+                                                ],
+                                    "key":  {
+                                                "#":  {
+                                                          "item":  "minecraft:iron_ingot"
+                                                      }
+                                            },
+                                    "unlock":  [
+                                                   {
+                                                       "item":  "minecraft:barrier"
+                                                   }
+                                               ],
+                                    "result":  {
+                                                   "item":  "minecraft:iron_nugget",
+                                                   "count":  9
+                                               }
+                                }
+}

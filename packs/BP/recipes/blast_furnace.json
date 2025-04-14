@@ -1,0 +1,35 @@
+{
+    "format_version":  "1.20.10",
+    "minecraft:recipe_shaped":  {
+                                    "description":  {
+                                                        "identifier":  "minecraft:blast_furnace"
+                                                    },
+                                    "tags":  [
+                                                 ""
+                                             ],
+                                    "pattern":  [
+                                                    "III",
+                                                    "IFI",
+                                                    "###"
+                                                ],
+                                    "key":  {
+                                                "#":  {
+                                                          "item":  "minecraft:smooth_stone"
+                                                      },
+                                                "I":  {
+                                                          "item":  "minecraft:iron_ingot"
+                                                      },
+                                                "F":  {
+                                                          "item":  "minecraft:furnace"
+                                                      }
+                                            },
+                                    "unlock":  [
+                                                   {
+                                                       "item":  "minecraft:barrier"
+                                                   }
+                                               ],
+                                    "result":  {
+                                                   "item":  "minecraft:blast_furnace"
+                                               }
+                                }
+}

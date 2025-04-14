@@ -1,0 +1,29 @@
+{
+    "format_version":  "1.20.10",
+    "minecraft:recipe_shaped":  {
+                                    "description":  {
+                                                        "identifier":  "minecraft:polished_diorite"
+                                                    },
+                                    "tags":  [
+                                                 ""
+                                             ],
+                                    "pattern":  [
+                                                    "SS",
+                                                    "SS"
+                                                ],
+                                    "key":  {
+                                                "S":  {
+                                                          "item":  "minecraft:diorite"
+                                                      }
+                                            },
+                                    "unlock":  [
+                                                   {
+                                                       "item":  "minecraft:barrier"
+                                                   }
+                                               ],
+                                    "result":  {
+                                                   "item":  "minecraft:polished_diorite",
+                                                   "count":  4
+                                               }
+                                }
+}

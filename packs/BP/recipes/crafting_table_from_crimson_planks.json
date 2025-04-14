@@ -1,0 +1,30 @@
+{
+    "format_version":  "1.16",
+    "minecraft:recipe_shaped":  {
+                                    "description":  {
+                                                        "identifier":  "minecraft:crafting_table_from_crimson_planks"
+                                                    },
+                                    "tags":  [
+                                                 ""
+                                             ],
+                                    "pattern":  [
+                                                    "AA",
+                                                    "AA"
+                                                ],
+                                    "key":  {
+                                                "A":  {
+                                                          "item":  "crimson_planks"
+                                                      }
+                                            },
+                                    "result":  {
+                                                   "item":  "crafting_table",
+                                                   "count":  1
+                                               },
+                                    "priority":  2,
+                                    "unlock":  [
+                                                   {
+                                                       "item":  "minecraft:barrier"
+                                                   }
+                                               ]
+                                }
+}

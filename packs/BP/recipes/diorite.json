@@ -1,0 +1,32 @@
+{
+    "format_version":  "1.20.10",
+    "minecraft:recipe_shaped":  {
+                                    "description":  {
+                                                        "identifier":  "minecraft:diorite"
+                                                    },
+                                    "tags":  [
+                                                 ""
+                                             ],
+                                    "pattern":  [
+                                                    "CQ",
+                                                    "QC"
+                                                ],
+                                    "key":  {
+                                                "Q":  {
+                                                          "item":  "minecraft:quartz"
+                                                      },
+                                                "C":  {
+                                                          "item":  "minecraft:cobblestone"
+                                                      }
+                                            },
+                                    "unlock":  [
+                                                   {
+                                                       "item":  "minecraft:barrier"
+                                                   }
+                                               ],
+                                    "result":  {
+                                                   "item":  "minecraft:diorite",
+                                                   "count":  2
+                                               }
+                                }
+}

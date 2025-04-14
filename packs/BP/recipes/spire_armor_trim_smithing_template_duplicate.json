@@ -1,0 +1,36 @@
+{
+    "format_version":  "1.20.10",
+    "minecraft:recipe_shaped":  {
+                                    "description":  {
+                                                        "identifier":  "minecraft:spire_armor_trim_smithing_template_duplicate"
+                                                    },
+                                    "tags":  [
+                                                 ""
+                                             ],
+                                    "pattern":  [
+                                                    "#S#",
+                                                    "#C#",
+                                                    "###"
+                                                ],
+                                    "key":  {
+                                                "S":  {
+                                                          "item":  "minecraft:spire_armor_trim_smithing_template"
+                                                      },
+                                                "#":  {
+                                                          "item":  "minecraft:diamond"
+                                                      },
+                                                "C":  {
+                                                          "item":  "minecraft:purpur_block"
+                                                      }
+                                            },
+                                    "unlock":  [
+                                                   {
+                                                       "item":  "minecraft:barrier"
+                                                   }
+                                               ],
+                                    "result":  {
+                                                   "item":  "minecraft:spire_armor_trim_smithing_template",
+                                                   "count":  2
+                                               }
+                                }
+}

@@ -1,0 +1,17 @@
+{
+	"format_version" : "1.8.0",
+	"animations" : {
+		"animation.shulker.facing.v1.0" : {
+			"anim_time_update" : "query.modified_distance_moved",
+			"loop" : false,
+			"bones" : {
+			}
+		},
+		"animation.shulker.move.v1.0" : {
+			"anim_time_update" : "query.modified_distance_moved",
+			"loop" : false,
+			"bones" : {
+			}
+		}
+	}
+}

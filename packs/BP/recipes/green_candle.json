@@ -1,0 +1,29 @@
+{
+    "format_version":  "1.20.10",
+    "minecraft:recipe_shapeless":  {
+                                       "description":  {
+                                                           "identifier":  "minecraft:green_candle"
+                                                       },
+                                       "tags":  [
+                                                    ""
+                                                ],
+                                       "group":  "candle",
+                                       "ingredients":  [
+                                                           {
+                                                               "item":  "minecraft:candle"
+                                                           },
+                                                           {
+                                                               "item":  "minecraft:dye",
+                                                               "data":  2
+                                                           }
+                                                       ],
+                                       "unlock":  [
+                                                      {
+                                                          "item":  "minecraft:barrier"
+                                                      }
+                                                  ],
+                                       "result":  {
+                                                      "item":  "minecraft:green_candle"
+                                                  }
+                                   }
+}

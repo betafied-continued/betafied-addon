@@ -1,0 +1,32 @@
+{
+    "format_version":  "1.20.10",
+    "minecraft:recipe_shaped":  {
+                                    "description":  {
+                                                        "identifier":  "minecraft:target"
+                                                    },
+                                    "tags":  [
+                                                 ""
+                                             ],
+                                    "pattern":  [
+                                                    " . ",
+                                                    ".#.",
+                                                    " . "
+                                                ],
+                                    "key":  {
+                                                "#":  {
+                                                          "item":  "minecraft:hay_block"
+                                                      },
+                                                ".":  {
+                                                          "item":  "minecraft:redstone"
+                                                      }
+                                            },
+                                    "unlock":  [
+                                                   {
+                                                       "item":  "minecraft:barrier"
+                                                   }
+                                               ],
+                                    "result":  {
+                                                   "item":  "minecraft:target"
+                                               }
+                                }
+}
