@@ -1840,18 +1840,6 @@
    "flower_pot" : {
       "textures" : "flower_pot"
    },
-   "flowering_azalea" : {
-      "sound" : "azalea",
-      "textures" : {
-         "down" : "potted_flowering_azalea_bush_top",
-         "east" : "azalea_plant",
-         "north" : "flowering_azalea_side",
-         "side" : "flowering_azalea_side",
-         "south" : "potted_flowering_azalea_bush_side",
-         "up" : "flowering_azalea_top",
-         "west" : "potted_flowering_azalea_bush_plant"
-      }
-   },
    "flowing_lava" : {
       "textures" : {
          "down" : "still_lava",

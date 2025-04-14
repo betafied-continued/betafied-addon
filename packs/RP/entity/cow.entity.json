@@ -15,7 +15,6 @@
         "setup": "animation.cow.setup",
         "walk": "animation.quadruped.walk",
         "look_at_target": "animation.common.look_at_target",
-        "baby_transform": "animation.cow.baby_transform"
       },
       "scripts": {
         "animate": [
