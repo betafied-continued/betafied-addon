@@ -4,7 +4,7 @@
     "description": {
       "identifier": "bh:stone_pickaxe"
     },   
-    "tags": [ "crafting_table" ],
+    "tags": [ "beta_crafting" ],
     "pattern": [
       "XXX",
       " # ",
