@@ -2,7 +2,7 @@
     "format_version": 2,
     "header": {
         "description": "Welcome to 2011!",
-        "name": "Modern Beta Resources",
+        "name": "Betafied Resources",
         "uuid": "e24e7a57-2a36-4e95-a3b6-2e445125b4ab",
         "version": [
             0,
@@ -24,6 +24,16 @@
                 0,
                 0,
                 1
+            ]
+        }
+    ],
+    "dependencies": [
+        {
+            "uuid": "7b622e16-7cf4-4bfe-9462-5d1ef55ade84",
+            "version": [
+                1,
+                0,
+                0
             ]
         }
     ]
