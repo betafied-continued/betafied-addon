@@ -1,24 +1,45 @@
 {
 	"$schema": "https://raw.githubusercontent.com/Bedrock-OSS/regolith-schemas/main/config/v1.4.json",
-	"author": "Your name",
-	"name": "Project name",
+	"author": "Betafied Contributors",
+	"name": "Betafied",
 	"packs": {
-		"behaviorPack": "./packs/BP",
-		"resourcePack": "./packs/RP"
+	  "behaviorPack": "./packs/BP",
+	  "resourcePack": "./packs/RP"
 	},
 	"regolith": {
-		"dataPath": "./packs/data",
-		"filterDefinitions": {},
-		"formatVersion": "1.4.0",
-		"profiles": {
-			"default": {
-				"export": {
-					"build": "standard",
-					"readOnly": false,
-					"target": "development"
-				},
-				"filters": []
-			}
+	  "dataPath": "./packs/data",
+	  "filterDefinitions": {
+		"pack_anything": {
+		  "url": "github.com/Nusiq/regolith-filters",
+		  "version": "1.1.0"
+		},
+		"packer": {
+		  "url": "github.com/MCDevKit/regolith-library",
+		  "version": "1.0.3"
 		}
+	  },
+	  "formatVersion": "1.4.0",
+	  "profiles": {
+		"default": {
+		  "filters": [
+			{
+			  "filter": "pack_anything",
+			  "settings": {
+				"output": "release.mcworld",
+				"pathmap": {
+				  "BP": "behavior_packs/0",
+				  "RP": "resource_packs/0",
+				  "PROJECT:worlds/release-world": "."
+				}
+			  }
+			}
+		  ],
+		  "export": {
+			"readOnly": false,
+			"target": "development",
+			"build": "standard"
+		  }
+		}
+	  }
 	}
-}
+  }
