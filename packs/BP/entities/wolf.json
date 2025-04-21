@@ -66,32 +66,6 @@
         },
         "minecraft:loot": {
           "table": "loot_tables/entities/wolf.json"
-        },
-        "minecraft:breedable": {
-          "require_tame": true,
-          "require_full_health": true,
-          "combine_parent_colors": true,
-          "breeds_with": {
-            "mate_type": "minecraft:wolf",
-            "baby_type": "minecraft:wolf",
-            "breed_event": {
-              "event": "minecraft:entity_born",
-              "target": "baby"
-            }
-          },
-          "breed_items": [
-            "chicken",
-            "cooked_chicken",
-            "beef",
-            "cooked_beef",
-            "muttonRaw",
-            "muttonCooked",
-            "porkchop",
-            "cooked_porkchop",
-            "rabbit",
-            "cooked_rabbit",
-            "rotten_flesh"
-          ]
         }
       },
 
@@ -143,76 +117,6 @@
             "event": "minecraft:on_tame",
             "target": "self"
           }
-        },
-        "minecraft:behavior.nearest_attackable_target": {
-          "priority": 4,
-          "reselect_targets": true,
-          "must_see": true,
-          "entity_types": [
-            {
-              "filters": {
-                "any_of": [
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "skeleton"
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "sheep"
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "rabbit"
-                  },
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "fox"
-                  }
-                ]
-              },
-              "max_dist": 16
-            },
-            {
-              "filters": {
-                "all_of": [
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "baby_turtle"
-                  },
-                  {
-                    "test": "in_water",
-                    "subject": "other",
-                    "operator": "!=",
-                    "value": true
-                  }
-                ]
-              },
-              "max_dist": 16
-            },
-            {
-              "filters": {
-                "all_of": [
-                  {
-                    "test": "is_family",
-                    "subject": "other",
-                    "value": "skeleton"
-                  },
-                  {
-                    "test": "is_underwater",
-                    "subject": "other",
-                    "operator": "!=",
-                    "value": true
-                  }
-                ]
-              },
-              "max_dist": 16
-            }
-          ]
         },
         "minecraft:on_target_acquired": {
           "event": "minecraft:become_angry",
