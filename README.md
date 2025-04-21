@@ -51,8 +51,8 @@ Here's where we're at on the mission to revive Beta 1.7.3:
 
 ### 📥 Step 1: Download
 
-👉 [Download the Latest Release](link_to_releases)  
-(*Includes the .mcworld template and the addon bundled together*)
+👉 [Download the Latest Release](https://github.com/betafied/betafied-addon/releases)  
+(*Includes the .mctemplate and the addon bundled together*)
 
 ---
 
@@ -128,8 +128,8 @@ This keeps Betafied free and open for everyone, forever.
 
 > Come for the nostalgia, stay for the chaos.
 
-- 💬 **Discord:** [Join Our Server](link_to_discord) *(Highly Recommended!)*
-- 🐛 **Report Issues / Suggest Features:** [GitHub Issues](link_to_issues)
+- 💬 **Discord:** [Join Our Server](https://discord.gg/GwXvWeMWzU) *(Highly Recommended!)*
+- 🐛 **Report Issues / Suggest Features:** [GitHub Issues](https://github.com/betafied/betafied-addon/issues)
 
 Got a vision for your own Beta-inspired project? Fork us and run with it. That’s the spirit of Betafied.
 

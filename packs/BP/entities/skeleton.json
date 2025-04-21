@@ -164,6 +164,9 @@
       },
       "minecraft:nameable": {
       },
+      "minecraft:behavior.float": {
+        "priority": 0
+      },
       "minecraft:equipment": {
         "table": "loot_tables/entities/skeleton_gear.json"
       },
