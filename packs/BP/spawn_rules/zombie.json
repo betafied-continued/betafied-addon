@@ -25,15 +25,6 @@
           "min_size": 2,
           "max_size": 4
         },
-        "minecraft:permute_type": [
-          {
-            "weight": 95
-          },
-          {
-            "weight": 5,
-            "entity_type": "minecraft:zombie_villager_v2"
-          }
-        ],
         "minecraft:biome_filter": {
           "test": "has_biome_tag", "operator": "==", "value": "monster"
         }

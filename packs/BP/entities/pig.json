@@ -10,34 +10,7 @@
       }
     },
     "component_groups": {
-      "minecraft:pig_baby": {
-        "minecraft:is_baby": {
-        },
-        "minecraft:scale": {
-          "value": 0.5
-        },
-        "minecraft:ageable": {
-          "duration": 1200,
-          "feed_items": [ "carrot", "beetroot", "potato" ],
-          "grow_up": {
-            "event": "minecraft:ageable_grow_up",
-            "target": "self"
-          }
-        },
 
-        "minecraft:behavior.follow_parent": {
-          "priority": 6,
-          "speed_multiplier": 1.1
-        }
-      },
-
-      "minecraft:pig_transform": {
-        "minecraft:transformation": {
-          "into": "minecraft:pig_zombie",
-          "transformation_sound": "mob.pig.death",
-          "delay": 0.5
-        }
-      },
 
       "minecraft:pig_adult": {
         "minecraft:experience_reward": {
@@ -50,18 +23,6 @@
         "minecraft:behavior.breed": {
           "priority": 4,
           "speed_multiplier": 1.0
-        },
-        "minecraft:breedable": {
-          "require_tame": false,
-          "breeds_with": {
-            "mate_type": "minecraft:pig",
-            "baby_type": "minecraft:pig",
-            "breed_event": {
-              "event": "minecraft:entity_born",
-              "target": "baby"
-            }
-          },
-          "breed_items": [ "carrot", "beetroot", "potato" ]
         }
       },
 
@@ -264,40 +225,10 @@
               {
                 "weight": 95,
                 "trigger": "minecraft:spawn_adult"
-              },
-              {
-                "weight": 5,
-                "add": {
-                  "component_groups": [
-                    "minecraft:pig_baby"
-                  ]
-                }
               }
             ]
           }
         ]
-      },
-      "minecraft:entity_born": {
-        "remove": {
-        },
-        "add": {
-          "component_groups": [
-            "minecraft:pig_baby"
-          ]
-        }
-      },
-      "minecraft:ageable_grow_up": {
-        "remove": {
-          "component_groups": [
-            "minecraft:pig_baby"
-          ]
-        },
-        "add": {
-          "component_groups": [
-            "minecraft:pig_adult",
-            "minecraft:pig_unsaddled"
-          ]
-        }
       },
       "minecraft:on_saddled": {
         "remove": {
