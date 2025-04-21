@@ -1,0 +1,47 @@
+{
+  // ## Remove toolbar.
+  "toolbar_panel": {
+    "ignored": true
+  },
+  // ## Remove recipe toggle
+  "recipe_inventory_screen_content/content_stack_panel/recipe_book": {
+    "ignored": true
+  },
+  // ## Remove that center background.
+  "recipe_inventory_screen_content/content_stack_panel/center_fold": {
+    "ignored": true
+  },
+  // ## Remove Shield slot.
+  // WARN: Controller's "Y" button or Ctrl + L-click may still
+  // insert the stuff into shield slot.
+  // there's probably a fix for it but not now lol.
+  "player_armor_panel/offhand_grid": {
+    "ignored": true
+  },
+  // ## Adds some padding because apparently they're not dynamically centered.
+  //    Thanks mojang, very cool!
+  "recipe_inventory_screen_content/content_stack_panel": {
+    "modifications": [
+      { "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          { "recipe_book@crafting.recipe_book": {
+              "size": [ "fill", "100%" ],
+              "bindings": [
+                { "binding_type": "global",
+                  "binding_name": "(#is_creative_layout)",
+                  "binding_name_override": "#visible"
+              }]
+          }},
+          { "survival_padding_no_recipe": {
+              "type": "panel",
+              "size": [ 75, "100%" ],
+              "bindings": [
+                { "binding_type": "global",
+                  "binding_name": "(not #is_survival_layout)",
+                  "binding_name_override": "#visible"
+              }]
+          }}
+      ]}
+  ]}
+}
