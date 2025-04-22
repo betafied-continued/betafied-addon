@@ -2,6 +2,34 @@
   "resource_pack_name": "vanilla",
   "texture_name": "atlas.items",
   "texture_data": {
+    "apple": {
+      "textures": "textures/items/apple"
+    },
+    "golden_apple": {
+      "textures": "textures/items/golden_apple"
+    },
+    "bread": {
+      "textures": "textures/items/bread"
+    },
+    "cooked_porkchop": {
+      "textures": "textures/items/cooked_porkchop"
+    },
+    "porkchop": {
+      "textures": "textures/items/porkchop"
+    },
+    "cookie": {
+      "textures": "textures/items/cookie"
+    },
+    "fish_raw":{
+      "textures": [
+        "textures/items/fish_raw"
+      ]
+    },
+    "fish_cooked": {
+      "textures": [
+        "textures/items/fish_cooked"
+      ]
+    },
     "pitcher_pod": {
       "textures": "textures/items/pitcher_pod"
     },

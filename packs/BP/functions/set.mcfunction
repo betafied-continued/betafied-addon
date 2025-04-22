@@ -1,0 +1,2 @@
+gamerule recipesunlock false
+gamerule doinsomnia false

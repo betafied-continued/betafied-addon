@@ -10,7 +10,9 @@ const FOOD_ITEMS = Object.freeze({
     "minecraft:bread": { health: 5 },
     "minecraft:cooked_porkchop": { health: 8 },
     "minecraft:mushroom_stew": { health: 10 },
-    "minecraft:golden_apple": { health: 42 }
+    "minecraft:golden_apple": { health: 42 },
+    "minecraft:apple": { health: 4 },
+    "minecraft:fish": { health: 2 }
 });
 
 const CAKE_BLOCK_ID = "minecraft:cake";

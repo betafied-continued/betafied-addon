@@ -12,10 +12,6 @@
 		"pack_anything": {
 		  "url": "github.com/Nusiq/regolith-filters/pack_anything",
 		  "version": "latest"
-		},
-		"bump_manifest": {
-		  "url": "github.com/Bedrock-OSS/regolith-filters",
-		  "version": "latest"
 		}
 	  },
 	  "formatVersion": "1.4.0",
@@ -30,12 +26,6 @@
 		},
 		"world": {
 		  "filters": [
-			{
-			  "filter": "bump_manifest",
-			  "settings": {
-				"version": "patch"
-			  }
-			},
 			{
 			  "filter": "pack_anything",
 			  "settings": {
@@ -56,12 +46,6 @@
 		},
 		"pack": {
 		  "filters": [
-			{
-			  "filter": "bump_manifest",
-			  "settings": {
-				"version": "patch"
-			  }
-			},
 			{
 			  "filter": "pack_anything",
 			  "settings": {

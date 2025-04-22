@@ -6,8 +6,9 @@ import { world } from "@minecraft/server";
 // Set of allowed mob type IDs for O(1) lookup efficiency
 const ALLOWED_MOBS = new Set([
     "minecraft:item",
+    "minecraft:falling_block",
     "minecraft:arrow",
-"minecraft:chicken",
+    "minecraft:chicken",
     "minecraft:cow",
     "minecraft:creeper",
     "minecraft:ghast",
