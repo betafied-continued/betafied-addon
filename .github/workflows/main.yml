@@ -1,23 +1,49 @@
-name: Notify Discord on Release
-on:
-  release:
-    types: [published]
-jobs:
-  github-releases-to-discord:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Github Releases To Discord
-        uses: SethCohen/github-releases-to-discord@master
-        with:
-          webhook_url: ${{ secrets.WEBHOOK_URL }}
-          color: "2105893"
-          username: "Release Changelog"
-          avatar_url: "https://cdn.discordapp.com/avatars/487431320314576937/bd64361e4ba6313d561d54e78c9e7171.png"
-          content: "||@everyone||"
-          footer_title: "Changelog"
-          footer_icon_url: "https://cdn.discordapp.com/avatars/487431320314576937/bd64361e4ba6313d561d54e78c9e7171.png"
-          footer_timestamp: true
-          max_description: "4096"  # Ensure string, not number
-          reduce_headings: true
+name: Announce Release to Discord
+        on:
+          release:
+            types: [published]
+        jobs:
+          notify:
+            runs-on: ubuntu-latest
+            steps:
+              - name: Checkout
+                uses: actions/checkout@v3
+              - name: Get Artifact URLs
+                id: artifacts
+                run: |
+                  # Fetch release assets and extract URLs for specific artifacts
+                  assets=$(curl -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+                    "https://api.github.com/repos/${{ github.repository }}/releases/${{ github.event.release.id }}/assets")
+                  addon_url=$(echo "$assets" | jq -r '.[] | select(.name == "Betafied.Addon.mcaddon") | .browser_download_url')
+                  world_url=$(echo "$assets" | jq -r '.[] | select(.name == "Betafied.World.mcworld") | .browser_download_url')
+                  echo "addon_url=$addon_url" >> $GITHUB_OUTPUT
+                  echo "world_url=$world_url" >> $GITHUB_OUTPUT
+              - name: Send Discord Notification
+                uses: Ilshidur/action-discord@0.3.2
+                with:
+                  webhook: ${{ secrets.DISCORD_WEBHOOK }}
+                  args: '||@everyone|| New release!'
+                  embeds: |
+                    [{
+                      "title": "${{ github.event.release.name }}",
+                      "description": "${{ github.event.release.body || 'No notes provided' }}",
+                      "url": "${{ github.event.release.html_url }}",
+                      "color": 2105893,
+                      "fields": [
+                        {
+                          "name": "Download Addon",
+                          "value": "[Betafied.Addon.mcaddon](${{ steps.artifacts.outputs.addon_url }})",
+                          "inline": true
+                        },
+                        {
+                          "name": "Download World",
+                          "value": "[Betafied.World.mcworld](${{ steps.artifacts.outputs.world_url }})",
+                          "inline": true
+                        }
+                      ],
+                      "footer": {
+                        "text": "Changelog",
+                        "icon_url": "https://cdn.discordapp.com/avatars/487431320314576937/bd64361e4ba6313d561d54e78c9e7171.png"
+                      },
+                      "timestamp": "${{ github.event.release.published_at }}"
+                    }]
