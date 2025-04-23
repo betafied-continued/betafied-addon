@@ -1,8 +1,8 @@
 name: Announce Release to Discord
-        on:
+on:
           release:
             types: [published]
-        jobs:
+jobs:
           notify:
             runs-on: ubuntu-latest
             steps:
