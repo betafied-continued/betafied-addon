@@ -128,7 +128,7 @@ This keeps Betafied free and open for everyone, forever.
 
 > Come for the nostalgia, stay for the chaos.
 
-- 💬 **Discord:** [Join Our Server](https://discord.gg/GwXvWeMWzU) *(Highly Recommended!)*
+- 💬 **Discord:** [Join Our Server](https://discord.gg/fEWrZvBF2S) *(Highly Recommended!)*
 - 🐛 **Report Issues / Suggest Features:** [GitHub Issues](https://github.com/betafied/betafied-addon/issues)
 
 Got a vision for your own Beta-inspired project? Fork us and run with it. That’s the spirit of Betafied.
