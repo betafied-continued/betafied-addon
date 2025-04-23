@@ -22,7 +22,7 @@ name: Announce Release to Discord
                 uses: Ilshidur/action-discord@0.3.2
                 with:
                   webhook: ${{ secrets.DISCORD_WEBHOOK }}
-                  args: '||@everyone|| New release!'
+                  args: 'New release!'
                   embeds: |
                     [{
                       "title": "${{ github.event.release.name }}",
