@@ -20,7 +20,7 @@ const BLOCK_CONFIGS = {
         'minecraft:golden_shovel',
         'minecraft:diamond_shovel'
     ]),
-    PATHABLE_BLOCKS: new Set(['minecraft:dirt', 'minecraft:grass_block']) // Corrected 'minecraft:grass' to 'minecraft:grass_block'
+    PATHABLE_BLOCKS: new Set(['minecraft:dirt', 'minecraft:grass_block'])
 };
 
 function preventCeilingPlacement(event) {
@@ -37,16 +37,14 @@ function preventLogStripping(event) {
 
 function preventPathCreation(event) {
     const { itemStack, block, player } = event;
-    // Check if the item is a shovel and the block is dirt or grass_block
     if (
         itemStack &&
         BLOCK_CONFIGS.SHOVELS.has(itemStack.typeId) &&
         BLOCK_CONFIGS.PATHABLE_BLOCKS.has(block.typeId)
     ) {
-        // Optionally, add a check for block above to ensure path creation is possible
         const blockAbove = block.above();
         if (!blockAbove || blockAbove.isAir) {
-            event.cancel = true; // Cancel the path creation action
+            event.cancel = true;
         }
     }
 }
@@ -56,13 +54,25 @@ function calculateFacingDirection(viewVector) {
     return viewVector.z > 0 ? 2 : 3;
 }
 
+function preventWaterlogging(event) {
+    try {
+        if (event.block.isWaterlogged) {
+            event.block.setWaterlogged(false);
+        }
+    } catch {}
+}
+
 function handleBlockPlacement(event) {
     const { block, player } = event;
 
+    // First handle waterlogging prevention
+    preventWaterlogging(event);
+
+    // Then handle other placement restrictions
     if (BLOCK_CONFIGS.BOTTOM_ONLY_SLABS.has(block.typeId)) {
         try {
             block.setPermutation(BlockPermutation.resolve(block.typeId, { 'minecraft:vertical_half': 'bottom' }));
-        } catch { }
+        } catch {}
     }
 
     if (BLOCK_CONFIGS.BOTTOM_ONLY_STAIRS.has(block.typeId)) {
@@ -75,15 +85,15 @@ function handleBlockPlacement(event) {
                         'upside_down_bit': false,
                         'weirdo_direction': newDirection
                     }));
-                } catch { }
+                } catch {}
             }, 1);
-        } catch { }
+        } catch {}
     }
 
     if (BLOCK_CONFIGS.VERTICAL_ONLY_LOGS.has(block.typeId)) {
         try {
             block.setPermutation(BlockPermutation.resolve(block.typeId, { 'pillar_axis': 'y' }));
-        } catch { }
+        } catch {}
     }
 }
 

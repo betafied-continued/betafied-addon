@@ -117,22 +117,27 @@ world.afterEvents.entityHurt.subscribe((event) => {
     const durabilityDamage = Math.max(1, Math.floor(damage * config.durabilityDamageMultiplier));
     for (const slot of armorSlots) {
         const armorItem = equippable.getEquipment(slot);
-        // Check if the item exists and has durability before attempting to damage it
-         if (armorItem && armorProtectionValues[armorItem.typeId]) {
-             const durability = armorItem.getComponent('minecraft:durability');
-             if (durability) {
-                 // Create a new item stack to modify its components (Bedrock scripting requirement)
-                 const newItem = new ItemStack(armorItem.typeId, armorItem.amount);
-                 const newDurability = newItem.getComponent('minecraft:durability');
-
-                 if (newDurability) {
-                     newDurability.damage = durability.damage + durabilityDamage;
-
-                     // Replace the equipment slot. If new damage >= max durability, set to null (breaks).
-                     equippable.setEquipment(slot, newDurability.damage >= newDurability.maxDurability ? null : newItem);
-                 }
-             }
-         }
+        if (armorItem && armorProtectionValues[armorItem.typeId]) {
+            const durabilityComponent = armorItem.getComponent('minecraft:durability');
+            if (durabilityComponent) {
+                const maxDurability = durabilityComponent.maxDurability;
+                const currentDamage = durabilityComponent.damage;
+                const newDamage = currentDamage + 1;
+    
+                if (newDamage >= maxDurability) {
+                    equippable.setEquipment(slot, null); // Break armor
+                    console.log(`[DEBUG] Slot ${slot}: ${armorItem.typeId} broken`);
+                } else {
+                    const newItem = new ItemStack(armorItem.typeId, armorItem.amount);
+                    const newDurability = newItem.getComponent('minecraft:durability');
+                    if (newDurability) {
+                        newDurability.damage = newDamage;
+                        equippable.setEquipment(slot, newItem);
+                        console.log(`[DEBUG] Slot ${slot}: ${armorItem.typeId} durability reduced to ${maxDurability - newDurability.damage}`);
+                    }
+                }
+            }
+        }
     }
 
     // Proper health adjustment:

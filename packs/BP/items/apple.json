@@ -7,6 +7,9 @@
 
     "components": {
       "minecraft:icon": "apple",
+      "minecraft:display_name": {
+        "value": "Apple"
+      },
       "minecraft:max_stack_size": 1,
       "minecraft:use_modifiers": {
         "use_duration": 10000
