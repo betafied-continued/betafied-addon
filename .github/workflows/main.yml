@@ -2,7 +2,6 @@ name: Notify Discord on Release
 on:
   release:
     types: [published]
-
 jobs:
   github-releases-to-discord:
     runs-on: ubuntu-latest
@@ -20,5 +19,5 @@ jobs:
           footer_title: "Changelog"
           footer_icon_url: "https://cdn.discordapp.com/avatars/487431320314576937/bd64361e4ba6313d561d54e78c9e7171.png"
           footer_timestamp: true
-          max_description: '4096'
+          max_description: "4096"  # Ensure string, not number
           reduce_headings: true
