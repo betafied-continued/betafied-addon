@@ -9,7 +9,7 @@
       "minecraft:icon": "apple",
       "minecraft:max_stack_size": 1,
       "minecraft:use_modifiers": {
-        "use_duration": 0
+        "use_duration": 10000
       },
       "minecraft:food": {
         "can_always_eat": true,
