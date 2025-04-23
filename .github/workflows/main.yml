@@ -1,11 +1,11 @@
 name: Announce Release to Discord
-     on:
+on:
        release:
          types: [published]
-     permissions:
+permissions:
        contents: write
        actions: write
-     jobs:
+jobs:
        notify:
          runs-on: ubuntu-latest
          steps:
