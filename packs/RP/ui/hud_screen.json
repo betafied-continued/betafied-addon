@@ -23,6 +23,151 @@
     "hunger_renderer": {
         "ignored": true
     },
+  // ## Import chat panel bottom element.
+  "root_panel": {
+    "modifications": [
+      { "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          { "chat_panel_bottom@hud.chat_panel_bottom": {}}
+      ]}
+  ]},
+  // ## Make sure that touch chat panel is active.
+  "chat_panel": {
+    "bindings": [
+      { "binding_name": "#hud_visible_centered_touch",
+        "binding_type": "global",
+        "binding_name_override": "#visible"
+      }
+  ]},
+  // ## literally a fork of chat panel as bottom element.
+  //    As well make sure that Controller/K&M chat panel is active.
+  "chat_panel_bottom": {
+    "type": "panel",
+    "anchor_from": "bottom_left",
+    "anchor_to": "bottom_left",
+    "size": [ "40%", "100%c" ],
+    "max_size": [ "40%", 200 ],
+    "offset": [ 0, -45 ],
+    "bindings": [
+      { "binding_name": "#hud_visible_centered_touch",
+        "binding_type": "global"
+      },
+      { "binding_type": "view",
+        "source_property_name": "(not #hud_visible_centered_touch)",
+        "target_property_name": "#visible"
+    }],
+    "controls": [
+      { "stack_panel": {
+          "type": "stack_panel",
+          "anchor_from": "bottom_left",
+          "anchor_to": "bottom_left",
+          "size": [ "100%", "100%c" ],
+          "factory": {
+            "name": "chat_item_factory",
+            "max_children_size": 15,
+            "control_ids": {
+              "chat_item": "chat_item@hud.chat_grid_item_bottom"
+          }}
+      }}
+  ]},
+  // ## Minimized the CGI bottom element.
+  "chat_grid_item_bottom": {
+    "type": "image",
+    "texture": "textures/ui/Black",
+    "alpha": 0.7,
+    "size": [ "100%", "100%c" ],
+    "anims": [
+      "@hud.anim_chat_bg_wait_bottom"
+    ],
+    "bindings": [
+      { "binding_name": "(not #on_new_death_screen)",
+        "binding_name_override": "#visible"
+    }],
+    "controls": [
+      { "chat_text_thing@chat_label": {
+          "anchor_from": "top_left",
+          "anchor_to": "top_left",
+          "offset": [ 2, 0 ]
+      }}
+  ]},
+  // ## Anim Text tweaks.
+  "anim_chat_txt_alpha": {
+    "anim_type": "alpha",
+    "easing": "in_quart",
+    "duration": 1,
+    "from": 0,
+    "to": 0
+  },
+  "anim_chat_txt_wait": {
+    "anim_type": "wait",
+    "duration": "($chat_item_lifetime + 1)",
+    "next": "@hud.anim_chat_txt_alpha"
+  },
+  // ## Bottom Anim Text.
+  "anim_chat_bg_alpha_bottom": {
+    "anim_type": "alpha",
+    "easing": "in_quart",
+    "destroy_at_end": "chat_text_thing",
+    "duration": 1,
+    "from": 0.7,
+    "to": 0
+  },
+  "anim_chat_bg_wait_bottom": {
+    "anim_type": "wait",
+    "duration": "$chat_item_lifetime",
+    "next": "@hud.anim_chat_bg_alpha_bottom"
+  },
+  // ## Hotbar Tweaks for Touch only.
+  //    This made "inventory" button invisible and leave only icon.
+  //    Aswell make sure that the hotbar is always centered the same other platform has.
+  //    This probably will make touch hotbar more like PC hotbar.
+  "hotbar_panel": {
+    "controls": [
+      { "left_pudding": {
+          "type": "panel",
+          "size": [ 20, 22 ],
+          "bindings": [
+            { "binding_name": "#hotbar_elipses_right_visible",
+              "binding_name_override": "#visible",
+              "binding_type": "global"
+          }]
+      }},
+      { "hotbar_elipses_panel_left@hud.hotbar_elipses_panel_left_content": {}},
+      { "hotbar_start_cap@hud.hotbar_start_cap": {}},
+      { "hotbar_grid@hud.hotbar_grid": {} },
+      { "hotbar_end_cap@hud.hotbar_end_cap": {}},
+      { "hotbar_elipses_panel_right@hud.hotbar_elipses_panel_right_content": {}},
+      { "right_pudding": {
+          "type": "panel",
+          "size": [ 20, 22 ],
+          "bindings": [
+            { "binding_name": "#hotbar_elipses_left_visible",
+              "binding_name_override": "#visible",
+              "binding_type": "global"
+          }]
+      }}
+  ]},
+  "hotbar_elipses_panel_left_content": {
+    "$hotbar_elipses_button_size": [ 20, 22 ],
+    "controls": [
+      { "button@hud.hotbar_elipses_button": {} }
+  ]},
+  "hotbar_elipses_panel_right_content": {
+    "$hotbar_elipses_button_size": [ 20, 22 ],
+    "controls": [
+      { "button@hud.hotbar_elipses_button": {} }
+  ]},
+  "borderless_button@common.button": {
+    "controls": [
+      { "elipses@elipses_image_rewrite": {}}
+  ]},
+  "elipses_image_rewrite": {
+    "type": "image",
+    "texture": "textures/ui/elipses",
+    "size": [ 16, 16 ],
+    "layer": 4
+  },
     //----------------------------------------------//
     //
     //----------------------------------------------//
@@ -131,12 +276,59 @@
             {
                 "exp_rend@exp_progress_bar_and_hotbar": {}
             }
+        ]
+    },
+    "centered_gui_elements_at_bottom_middle_touch": { // Touch.
+        "type": "panel",
+        "anchor_from": "bottom_middle",
+        "anchor_to": "bottom_middle",
+        "size": [
+            180,
+            50
         ],
-        "bindings": [
+        "offset": [
+            0,
+            2
+        ],
+        "controls": [
             {
-                "binding_name": "#hud_visible_centered",
-                "binding_name_override": "#visible",
-                "binding_type": "global"
+                "heart_rend@heart_renderer": {
+                    "offset": [
+                        -1,
+                        -33
+                    ],
+                    "anchor_from": "bottom_left",
+                    "anchor_to": "bottom_left"
+                }
+            },
+            {
+                "armor_rend@armor_renderer": {
+                    "offset": [
+                        -1,
+                        -33
+                    ],
+                    "anchor_from": "bottom_left",
+                    "anchor_to": "bottom_left"
+                }
+            },
+            {
+                "bubbles_rend_0@bubbles_renderer": {
+                    "offset": [
+                        180,
+                        -33
+                    ],
+                    "anchor_from": "bottom_left",
+                    "anchor_to": "bottom_left",
+                    "bindings": [
+                        {
+                            "binding_name": "#is_not_riding",
+                            "binding_name_override": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "exp_rend@exp_progress_bar_and_hotbar": {}
             }
         ]
     }
