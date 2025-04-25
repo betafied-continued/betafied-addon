@@ -176,10 +176,10 @@ world.afterEvents.entityHurt.subscribe((event) => {
 function generateArmorBar(player) {
     try {
         const equippable = player.getComponent('minecraft:equippable');
-        if (!equippable) return 'x'.repeat(10);
+        if (!equippable) return '_a00'; // No armor, show empty icon
 
         let protection = 0; // Sum of armor defense points
-        let maxDurability = 0; // Sum of armor max durabilities (initialized to 0 now)
+        let maxDurability = 0; // Sum of armor max durabilities
         let currentDamage = 0; // Sum of armor current damage (durability used)
         const slots = [EquipmentSlot.Head, EquipmentSlot.Chest, EquipmentSlot.Legs, EquipmentSlot.Feet];
         let hasArmorWithDurability = false; // Flag to check if any item with durability is worn
@@ -199,37 +199,32 @@ function generateArmorBar(player) {
 
         // If no armor with durability, maxDurability remains 0. Set to 1 for division safety.
         if (!hasArmorWithDurability || maxDurability <= 0) {
-             maxDurability = 1;
-             currentDamage = 0; // Ensure currentDamage is 0 if no durability items
+            maxDurability = 1;
+            currentDamage = 0; // Ensure currentDamage is 0 if no durability items
         }
 
-
         // Scale total protection points by remaining combined durability percentage
-        // Use Math.max(0, ...) to prevent negative durability ratio if currentDamage somehow exceeds maxDurability (shouldn't happen, but safe).
+        // Use Math.max(0, ...) to prevent negative durability ratio
         const durabilityRatio = Math.max(0, (maxDurability - currentDamage) / maxDurability);
         const effectiveProtectionVisual = protection * durabilityRatio;
 
-        // Map the effective visual points to the 10 armor bar icons (20 half-points)
-        const points = Math.min(20, Math.max(0, Math.round(effectiveProtectionVisual))); // Cap at 20 points (10 icons), ensure >= 0
+        // Map the effective visual points to 0-20 range for _a00 to _a20
+        const points = Math.min(20, Math.max(0, Math.round(effectiveProtectionVisual)));
 
-        // Create bar: O=full icon (2 points), 0=half icon (1 point), x=empty icon (0 points)
-        const fullIcons = Math.floor(points / 2);
-        const halfIcons = points % 2;
-        const emptyIcons = 10 - fullIcons - halfIcons; // Total icons is 10
-
-        return 'O'.repeat(fullIcons) + '0'.repeat(halfIcons) + 'x'.repeat(emptyIcons);
+        // Format as _aXX (e.g., _a05 for 5 points, _a20 for 20 points)
+        return `_a${points.toString().padStart(2, '0')}`;
 
     } catch (e) {
         console.error(`[ARMOR] Bar error:`, e);
-        return 'x'.repeat(10); // Show broken bar on error
+        return '_a00'; // Show empty icon on error
     }
 }
 
-// Update armor bars periodically
+// Update armor icons periodically
 system.runInterval(() => {
     for (const player of world.getPlayers()) {
-        // Using player.onScreenDisplay.setActionBar is efficient for updating the bar
-        player.onScreenDisplay.setActionBar({ rawtext: [{ text: generateArmorBar(player) }] });
+        // Use setTitle to display the _aXX string, which the UI will replace with icons
+        player.onScreenDisplay.setTitle({ rawtext: [{ text: generateArmorBar(player) }] });
     }
 }, config.armorUpdateFrequency);
 
