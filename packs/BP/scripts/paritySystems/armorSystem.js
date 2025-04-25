@@ -13,7 +13,6 @@ const config = {
 };
 
 // Store players and their last calculated armor bar string
-const playerArmorBars = new Map();
 const lastDamageEvents = new Map();
 
 // Armor protection values (Beta 1.7.3)
@@ -117,27 +116,22 @@ world.afterEvents.entityHurt.subscribe((event) => {
     const durabilityDamage = Math.max(1, Math.floor(damage * config.durabilityDamageMultiplier));
     for (const slot of armorSlots) {
         const armorItem = equippable.getEquipment(slot);
-        if (armorItem && armorProtectionValues[armorItem.typeId]) {
-            const durabilityComponent = armorItem.getComponent('minecraft:durability');
-            if (durabilityComponent) {
-                const maxDurability = durabilityComponent.maxDurability;
-                const currentDamage = durabilityComponent.damage;
-                const newDamage = currentDamage + 1;
-    
-                if (newDamage >= maxDurability) {
-                    equippable.setEquipment(slot, null); // Break armor
-                    console.log(`[DEBUG] Slot ${slot}: ${armorItem.typeId} broken`);
-                } else {
-                    const newItem = new ItemStack(armorItem.typeId, armorItem.amount);
-                    const newDurability = newItem.getComponent('minecraft:durability');
-                    if (newDurability) {
-                        newDurability.damage = newDamage;
-                        equippable.setEquipment(slot, newItem);
-                        console.log(`[DEBUG] Slot ${slot}: ${armorItem.typeId} durability reduced to ${maxDurability - newDurability.damage}`);
-                    }
-                }
-            }
-        }
+        // Check if the item exists and has durability before attempting to damage it
+         if (armorItem && armorProtectionValues[armorItem.typeId]) {
+             const durability = armorItem.getComponent('minecraft:durability');
+             if (durability) {
+                 // Create a new item stack to modify its components (Bedrock scripting requirement)
+                 const newItem = new ItemStack(armorItem.typeId, armorItem.amount);
+                 const newDurability = newItem.getComponent('minecraft:durability');
+
+                 if (newDurability) {
+                     newDurability.damage = durability.damage + durabilityDamage;
+
+                     // Replace the equipment slot. If new damage >= max durability, set to null (breaks).
+                     equippable.setEquipment(slot, newDurability.damage >= newDurability.maxDurability ? null : newItem);
+                 }
+             }
+         }
     }
 
     // Proper health adjustment:
@@ -173,58 +167,57 @@ world.afterEvents.entityHurt.subscribe((event) => {
 // --- Armor Bar UI ---
 // This section visually represents the armor's *current effectiveness* based on durability.
 // The calculation here is for display purposes and isn't identical to the damage formula's internal score.
-function generateArmorBar(player) {
-    try {
-        const equippable = player.getComponent('minecraft:equippable');
-        if (!equippable) return '_a00'; // No armor, show empty icon
-
-        let protection = 0; // Sum of armor defense points
-        let maxDurability = 0; // Sum of armor max durabilities
-        let currentDamage = 0; // Sum of armor current damage (durability used)
-        const slots = [EquipmentSlot.Head, EquipmentSlot.Chest, EquipmentSlot.Legs, EquipmentSlot.Feet];
-        let hasArmorWithDurability = false; // Flag to check if any item with durability is worn
-
-        for (const slot of slots) {
-            const item = equippable.getEquipment(slot);
-            if (item && armorProtectionValues[item.typeId]) {
-                const durability = item.getComponent('minecraft:durability');
-                protection += armorProtectionValues[item.typeId];
-                if (durability) {
-                    hasArmorWithDurability = true;
-                    maxDurability += durability.maxDurability;
-                    currentDamage += durability.damage;
-                }
-            }
-        }
-
-        // If no armor with durability, maxDurability remains 0. Set to 1 for division safety.
-        if (!hasArmorWithDurability || maxDurability <= 0) {
-            maxDurability = 1;
-            currentDamage = 0; // Ensure currentDamage is 0 if no durability items
-        }
-
-        // Scale total protection points by remaining combined durability percentage
-        // Use Math.max(0, ...) to prevent negative durability ratio
-        const durabilityRatio = Math.max(0, (maxDurability - currentDamage) / maxDurability);
-        const effectiveProtectionVisual = protection * durabilityRatio;
-
-        // Map the effective visual points to 0-20 range for _a00 to _a20
-        const points = Math.min(20, Math.max(0, Math.round(effectiveProtectionVisual)));
-
-        // Format as _aXX (e.g., _a05 for 5 points, _a20 for 20 points)
-        return `_a${points.toString().padStart(2, '0')}`;
-
-    } catch (e) {
-        console.error(`[ARMOR] Bar error:`, e);
-        return '_a00'; // Show empty icon on error
-    }
-}
-
-// Update armor icons periodically
+// Update armor bars periodically
 system.runInterval(() => {
     for (const player of world.getPlayers()) {
-        // Use setTitle to display the _aXX string, which the UI will replace with icons
-        player.onScreenDisplay.setTitle({ rawtext: [{ text: generateArmorBar(player) }] });
+        try {
+            const equippable = player.getComponent('minecraft:equippable');
+            if (!equippable) {
+                player.onScreenDisplay.setTitle('_a00', { fadeInDuration: 0, fadeOutDuration: 0, stayDuration: 20 });
+                continue;
+            }
+
+            let protection = 0;
+            let maxDurability = 0;
+            let currentDamage = 0;
+            const slots = [EquipmentSlot.Head, EquipmentSlot.Chest, EquipmentSlot.Legs, EquipmentSlot.Feet];
+            let hasArmorWithDurability = false;
+
+            // Calculate armor stats
+            for (const slot of slots) {
+                const item = equippable.getEquipment(slot);
+                if (item && armorProtectionValues[item.typeId]) {
+                    const durability = item.getComponent('minecraft:durability');
+                    protection += armorProtectionValues[item.typeId];
+                    if (durability) {
+                        hasArmorWithDurability = true;
+                        maxDurability += durability.maxDurability;
+                        currentDamage += durability.damage;
+                    }
+                }
+            }
+
+            if (!hasArmorWithDurability || maxDurability <= 0) {
+                player.onScreenDisplay.setTitle('_a00', { fadeInDuration: 0, fadeOutDuration: 0, stayDuration: 20 });
+                continue;
+            }
+
+            // Calculate effective protection points (1-20 scale)
+            const durabilityRatio = Math.max(0, (maxDurability - currentDamage) / maxDurability);
+            const effectiveProtectionVisual = Math.round(protection * durabilityRatio);
+            const armorPoints = Math.min(20, Math.max(1, effectiveProtectionVisual)); // Minimum 1 when wearing armor
+
+            // Send the armor display title
+            player.onScreenDisplay.setTitle(`_a${armorPoints.toString().padStart(2, '0')}`, {
+                fadeInDuration: 0,
+                fadeOutDuration: 0,
+                stayDuration: 20
+            });
+
+        } catch (e) {
+            console.error(`[ARMOR] Display error:`, e);
+            player.onScreenDisplay.setTitle('_a00', { fadeInDuration: 0, fadeOutDuration: 0, stayDuration: 20 });
+        }
     }
 }, config.armorUpdateFrequency);
 
