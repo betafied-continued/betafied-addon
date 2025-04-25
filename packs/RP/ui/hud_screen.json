@@ -168,6 +168,95 @@
     "size": [ 16, 16 ],
     "layer": 4
   },
+  // ## Custom Armor Icon.
+  "hud_title_text/title_frame": {
+    "ignored": "('%.2s' * $title_text = '_a')"
+  },
+  // ## Custom Icon Core.
+  //    Handles the custom stuff.
+  "custom_icon_core": {
+    "type": "panel",
+    "size": [ 8, 9 ],
+    "$update_string": "_a",
+    "$icon_value|default": 20,
+    "$icon_value_half": "($icon_value - 1)",
+    "controls": [
+      { "data_control_core": {
+          "type": "panel",
+          "bindings": [
+            { "binding_name": "#hud_title_text_string" },
+            { "binding_name": "#hud_title_text_string",
+              "binding_name_override": "#string_data",
+              "binding_condition": "visibility_changed"
+            },
+            { "binding_type": "view",
+              "source_property_name": "(not (#hud_title_text_string = #string_data) and (not ((#hud_title_text_string - $update_string) = #hud_title_text_string)))",
+              "target_property_name": "#visible"
+          }]
+      }},
+      { "icon_full": {
+          "type": "image",
+          "texture": "textures/ui/armor_full",
+          "layer": 3,
+          "size": [ 9, 9 ],
+          "bindings": [
+            { "binding_type": "view",
+              "source_control_name": "data_control_core",
+              "resolve_sibling_scope": true,
+              "source_property_name": "(#string_data - ('%.2s' * #string_data) * 1)",
+              "target_property_name": "#icon_value"
+            },
+            { "binding_type": "view",
+              "source_property_name": "((#icon_value = $icon_value) or (#icon_value > $icon_value))",
+              "target_property_name": "#visible"
+          }]
+      }},
+      { "icon_half": {
+          "type": "image",
+          "texture": "textures/ui/armor_half",
+          "layer": 2,
+          "size": [ 9, 9 ],
+          "bindings": [
+            { "binding_type": "view",
+              "source_control_name": "data_control_core",
+              "resolve_sibling_scope": true,
+              "source_property_name": "(#string_data - ('%.2s' * #string_data) * 1)",
+              "target_property_name": "#icon_value"
+            },
+            { "binding_type": "view",
+              "source_property_name": "(#icon_value = $icon_value_half)",
+              "target_property_name": "#visible"
+          }]
+      }},
+      { "icon_bg": {
+          "type": "image",
+          "texture": "textures/ui/armor_empty",
+          "layer": 1,
+          "size": [ 9, 9 ]
+      }}
+  ]},
+  // ## Custom Armor icon display.
+  //    Icon Priority are been reversed
+  "armor_icon": {
+    "type": "stack_panel",
+    "orientation": "horizontal",
+    "size": [ "100%c", 9 ],
+    "bindings": [
+      { "binding_name": "#is_armor_visible",
+        "binding_name_override": "#visible"
+    }],
+    "controls": [
+      { "1@hud.custom_icon_core": { "$icon_value": 20 }},
+      { "2@hud.custom_icon_core": { "$icon_value": 18 }},
+      { "3@hud.custom_icon_core": { "$icon_value": 16 }},
+      { "4@hud.custom_icon_core": { "$icon_value": 14 }},
+      { "5@hud.custom_icon_core": { "$icon_value": 12 }},
+      { "6@hud.custom_icon_core": { "$icon_value": 10 }},
+      { "7@hud.custom_icon_core": { "$icon_value": 8 }},
+      { "8@hud.custom_icon_core": { "$icon_value": 6 }},
+      { "9@hud.custom_icon_core": { "$icon_value": 4 }},
+      { "10@hud.custom_icon_core": { "$icon_value": 2 }}
+  ]},
     //----------------------------------------------//
     //
     //----------------------------------------------//
@@ -247,32 +336,42 @@
                     "anchor_to": "bottom_left"
                 }
             },
-            {
-                "armor_rend@armor_renderer": {
+            { "armor_rend@armor_icon": {
                     "offset": [
-                        -1,
-                        -33
+                        101,
+                        -25
                     ],
                     "anchor_from": "bottom_left",
                     "anchor_to": "bottom_left"
                 }
             },
-            {
-                "bubbles_rend_0@bubbles_renderer": {
+            { "bubbles_rend_0@bubbles_renderer": {
                     "offset": [
-                        180,
+                        181,
                         -33
                     ],
                     "anchor_from": "bottom_left",
                     "anchor_to": "bottom_left",
                     "bindings": [
-                        {
-                            "binding_name": "#is_not_riding",
-                            "binding_name_override": "#visible"
-                        }
-                    ]
+                        { "binding_name": "#is_armor_visible" },
+                        { "binding_type": "view",
+                          "source_property_name": "(not #is_armor_visible)",
+                          "target_property_name": "#visible"
+                    }]
                 }
             },
+            { "bubbles_rend_1@bubbles_renderer": {
+                    "offset": [
+                        181,
+                        -43
+                    ],
+                    "anchor_from": "bottom_left",
+                    "anchor_to": "bottom_left",
+                    "bindings": [
+                        { "binding_name": "#is_armor_visible",
+                          "binding_name_override": "#visible"
+                    }]
+            }},
             {
                 "exp_rend@exp_progress_bar_and_hotbar": {}
             }
@@ -301,32 +400,42 @@
                     "anchor_to": "bottom_left"
                 }
             },
-            {
-                "armor_rend@armor_renderer": {
+            { "armor_rend@armor_icon": {
                     "offset": [
-                        -1,
-                        -33
+                        101,
+                        -25
                     ],
                     "anchor_from": "bottom_left",
                     "anchor_to": "bottom_left"
                 }
             },
-            {
-                "bubbles_rend_0@bubbles_renderer": {
+            { "bubbles_rend_0@bubbles_renderer": {
                     "offset": [
-                        180,
+                        181,
                         -33
                     ],
                     "anchor_from": "bottom_left",
                     "anchor_to": "bottom_left",
                     "bindings": [
-                        {
-                            "binding_name": "#is_not_riding",
-                            "binding_name_override": "#visible"
-                        }
-                    ]
+                        { "binding_name": "#is_armor_visible" },
+                        { "binding_type": "view",
+                          "source_property_name": "(not #is_armor_visible)",
+                          "target_property_name": "#visible"
+                    }]
                 }
             },
+            { "bubbles_rend_1@bubbles_renderer": {
+                    "offset": [
+                        181,
+                        -43
+                    ],
+                    "anchor_from": "bottom_left",
+                    "anchor_to": "bottom_left",
+                    "bindings": [
+                        { "binding_name": "#is_armor_visible",
+                          "binding_name_override": "#visible"
+                    }]
+            }},
             {
                 "exp_rend@exp_progress_bar_and_hotbar": {}
             }
