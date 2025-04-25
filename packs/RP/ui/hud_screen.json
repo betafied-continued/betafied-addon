@@ -232,7 +232,18 @@
           "type": "image",
           "texture": "textures/ui/armor_empty",
           "layer": 1,
-          "size": [ 9, 9 ]
+          "size": [ 9, 9 ],
+          "bindings": [
+            { "binding_type": "view",
+              "source_control_name": "data_control_core",
+              "resolve_sibling_scope": true,
+              "source_property_name": "(#string_data - ('%.2s' * #string_data) * 1)",
+              "target_property_name": "#icon_value"
+            },
+            { "binding_type": "view",
+              "source_property_name": "(not (#icon_value = 0))",
+              "target_property_name": "#visible"
+          }]
       }}
   ]},
   // ## Custom Armor icon display.
@@ -347,7 +358,7 @@
             },
             { "bubbles_rend_0@bubbles_renderer": {
                     "offset": [
-                        181,
+                        180.5,
                         -33
                     ],
                     "anchor_from": "bottom_left",
@@ -362,7 +373,7 @@
             },
             { "bubbles_rend_1@bubbles_renderer": {
                     "offset": [
-                        181,
+                        180.5,
                         -43
                     ],
                     "anchor_from": "bottom_left",
@@ -411,7 +422,7 @@
             },
             { "bubbles_rend_0@bubbles_renderer": {
                     "offset": [
-                        181,
+                        180.5,
                         -33
                     ],
                     "anchor_from": "bottom_left",
@@ -426,7 +437,7 @@
             },
             { "bubbles_rend_1@bubbles_renderer": {
                     "offset": [
-                        181,
+                        180.5,
                         -43
                     ],
                     "anchor_from": "bottom_left",
