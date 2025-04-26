@@ -4,6 +4,9 @@
       "sound": "wood",
       "textures": "acacia_planks"
    },
+   "leaf_litter": {
+      "blockshape": "invisible"
+   },
    "acacia_door": {
       "isotropic": false,
       "sound": "wood",

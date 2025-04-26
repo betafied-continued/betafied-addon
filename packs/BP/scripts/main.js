@@ -1,4 +1,4 @@
-import 'paritySystems/disableSprint.js'
+//import 'paritySystems/disableSprint.js' deprecated with hunger removal via player.json
 import 'paritySystems/armorSystem.js'
 import 'paritySystems/mobSpawning.js'
 import 'paritySystems/foodSystem.js'

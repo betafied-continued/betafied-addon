@@ -3,66 +3,66 @@
 	"author": "Betafied Contributors",
 	"name": "Betafied",
 	"packs": {
-	  "behaviorPack": "./packs/BP",
-	  "resourcePack": "./packs/RP"
+		"behaviorPack": "./packs/BP",
+		"resourcePack": "./packs/RP"
 	},
 	"regolith": {
-	  "dataPath": "./packs/data",
-	  "filterDefinitions": {
-		"pack_anything": {
-		  "url": "github.com/Nusiq/regolith-filters/pack_anything",
-		  "version": "latest"
-		}
-	  },
-	  "formatVersion": "1.4.0",
-	  "profiles": {
-		"default": {
-		  "filters": [],
-		  "export": {
-			"readOnly": false,
-			"target": "development",
-			"build": "standard"
-		  }
-		},
-		"world": {
-		  "filters": [
-			{
-			  "filter": "pack_anything",
-			  "settings": {
-				"output": "release.mcworld",
-				"pathmap": {
-				  "BP": "behavior_packs/0",
-				  "RP": "resource_packs/0",
-				  "PROJECT:worlds/release-world": "."
-				}
-			  }
+		"dataPath": "./packs/data",
+		"filterDefinitions": {
+			"pack_anything": {
+				"url": "github.com/Nusiq/regolith-filters",
+				"version": "1.1.0"
 			}
-		  ],
-		  "export": {
-			"readOnly": false,
-			"target": "development",
-			"build": "standard"
-		  }
 		},
-		"pack": {
-		  "filters": [
-			{
-			  "filter": "pack_anything",
-			  "settings": {
-				"output": "`f'Betafied-{git_describe}.mcaddon'`",
-				"pathmap": {
-				  "BP": "behavior_packs/Betafied_BP",
-				  "RP": "resource_packs/Betafied_RP"
-				}
-			  }
+		"formatVersion": "1.4.0",
+		"profiles": {
+			"default": {
+				"export": {
+					"build": "standard",
+					"readOnly": false,
+					"target": "development"
+				},
+				"filters": []
+			},
+			"pack": {
+				"export": {
+					"build": "standard",
+					"readOnly": false,
+					"target": "development"
+				},
+				"filters": [
+					{
+						"filter": "pack_anything",
+						"settings": {
+							"output": "`f'Betafied-{git_describe}.mcaddon'`",
+							"pathmap": {
+								"BP": "behavior_packs/Betafied_BP",
+								"RP": "resource_packs/Betafied_RP"
+							}
+						}
+					}
+				]
+			},
+			"world": {
+				"export": {
+					"build": "standard",
+					"readOnly": false,
+					"target": "development"
+				},
+				"filters": [
+					{
+						"filter": "pack_anything",
+						"settings": {
+							"output": "release.mcworld",
+							"pathmap": {
+								"BP": "behavior_packs/0",
+								"PROJECT:worlds/release-world": ".",
+								"RP": "resource_packs/0"
+							}
+						}
+					}
+				]
 			}
-		  ],
-		  "export": {
-			"readOnly": false,
-			"target": "development",
-			"build": "standard"
-		  }
 		}
-	  }
 	}
-  }
+}

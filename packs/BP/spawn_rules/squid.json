@@ -16,9 +16,14 @@
           "max_size": 6
         },
         "minecraft:biome_filter": {
-          "any_of": [  // Spawn in ALL water biomes (like Beta)
+          "any_of": [ 
             { "test": "has_biome_tag", "value": "ocean" },
             { "test": "has_biome_tag", "value": "river" },
+            { "test": "has_biome_tag", "value": "river" },
+            { "test": "has_biome_tag", "value": "deep_ocean" },
+            { "test": "has_biome_tag", "value": "frozen_ocean" },
+            { "test": "has_biome_tag", "value": "frozen_river" },
+            { "test": "has_biome_tag", "value": "beach" },  // Beta squids spawned here too
             { "test": "has_biome_tag", "value": "swamp" }  // Beta squids spawned here too
           ]
         }
