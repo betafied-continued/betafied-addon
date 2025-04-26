@@ -5,9 +5,7 @@
       "identifier": "minecraft:cow",
       "spawn_category": "creature",
       "is_spawnable": true,
-      "is_summonable": true,
-      "properties": {
-      }
+      "is_summonable": true
     },
 
     "component_groups": {

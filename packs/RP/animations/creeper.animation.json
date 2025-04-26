@@ -21,6 +21,9 @@
 		"animation.creeper.swelling" : {
 			"loop" : false,
 			"bones" : {
+				"creeper" : {
+					"scale" : [ 1.0, 1.0, 1.0 ]
+				}
 			}
 		}
 	}

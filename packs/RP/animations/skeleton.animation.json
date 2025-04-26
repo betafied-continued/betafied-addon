@@ -4,6 +4,9 @@
 		"animation.skeleton.attack" : {
 			"loop" : false,
 			"bones" : {
+				"skeleton" : {
+					"rotation" : [ 0.0, 0.0, 0.0 ]
+				}
 			}
 		}
 	}

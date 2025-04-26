@@ -114,7 +114,6 @@ function initializeOreTransformer() {
   try {
     // Register event handlers
     world.afterEvents.entitySpawn.subscribe(handleOreTransformation);
-    world.afterEvents.playerBreakBlock.subscribe(logOreBlockBreak);
     
     console.info("Ore Transformation System initialized successfully");
   } catch (error) {
@@ -129,6 +128,5 @@ initializeOreTransformer();
 export {
   spawnOreItem,
   handleOreTransformation,
-  logOreBlockBreak,
   ORE_TRANSFORMATIONS
 };
