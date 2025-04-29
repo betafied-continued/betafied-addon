@@ -25,7 +25,10 @@ const ALLOWED_MOBS = new Set([
     "minecraft:squid",
     "minecraft:wolf",
     "minecraft:zombie",
-    "minecraft:zombie_pigman" // Zombified Piglin in Bedrock
+    "minecraft:zombie_pigman",
+    "minecraft:snowball",
+    "minecraft:egg",
+    "minecraft:fishing_hook" // Zombified Piglin in Bedrock
 ]);
 
 /**
