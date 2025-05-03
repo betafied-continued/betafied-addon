@@ -845,7 +845,7 @@
       }
    },
    "camera": {
-      "isotropic": true,
+      "isotropic": false,
       "textures": {
          "down": "camera_top",
          "east": "camera_side",
@@ -1117,7 +1117,7 @@
       "textures": "chorus_plant"
    },
    "clay": {
-      "isotropic": true,
+      "isotropic": false,
       "sound": "gravel",
       "textures": "clay"
    },
@@ -1440,7 +1440,7 @@
    },
    "crying_obsidian": {
       "brightness_gamma": 2.0,
-      "isotropic": true,
+      "isotropic": false,
       "sound": "stone",
       "textures": "crying_obsidian"
    },
@@ -1806,12 +1806,12 @@
       "textures": "diorite"
    },
    "dirt": {
-      "isotropic": true,
+      "isotropic": false,
       "sound": "gravel",
       "textures": "dirt"
    },
    "dirt_with_roots": {
-      "isotropic": true,
+      "isotropic": false,
       "sound": "dirt_with_roots",
       "textures": "dirt_with_roots"
    },
@@ -2159,7 +2159,7 @@
       "textures": "glowing_obsidian"
    },
    "glowstone": {
-      "isotropic": true,
+      "isotropic": false,
       "sound": "glass",
       "textures": "glowstone"
    },
@@ -2374,7 +2374,7 @@
       "textures": "hanging_roots"
    },
    "hardened_clay": {
-      "isotropic": true,
+      "isotropic": false,
       "sound": "stone",
       "textures": "hardened_clay"
    },
@@ -2637,7 +2637,7 @@
       "textures": "large_amethyst_bud"
    },
    "lava": {
-      "isotropic": true,
+      "isotropic": false,
       "textures": {
          "down": "still_lava",
          "side": "flowing_lava",
@@ -3088,7 +3088,7 @@
       "textures": "wool_colored_magenta"
    },
    "magma": {
-      "isotropic": true,
+      "isotropic": false,
       "sound": "stone",
       "textures": "magma"
    },
@@ -3348,7 +3348,7 @@
       "textures": "netherite_block"
    },
    "netherrack": {
-      "isotropic": true,
+      "isotropic": false,
       "sound": "netherrack",
       "textures": "netherrack"
    },
@@ -3423,7 +3423,7 @@
    },
    "obsidian": {
       "brightness_gamma": 2.0,
-      "isotropic": true,
+      "isotropic": false,
       "sound": "stone",
       "textures": "obsidian"
    },
@@ -4189,7 +4189,7 @@
    },
    "sand": {
       "brightness_gamma": 0.550,
-      "isotropic": true,
+      "isotropic": false,
       "sound": "sand",
       "textures": "sand"
    },
@@ -4232,7 +4232,7 @@
       }
    },
    "sculk": {
-      "isotropic": true,
+      "isotropic": false,
       "sound": "sculk",
       "textures": "sculk"
    },
@@ -4399,13 +4399,13 @@
    },
    "snow": {
       "brightness_gamma": 0.450,
-      "isotropic": true,
+      "isotropic": false,
       "sound": "snow",
       "textures": "snow"
    },
    "snow_layer": {
       "brightness_gamma": 0.450,
-      "isotropic": true,
+      "isotropic": false,
       "sound": "snow",
       "textures": "snow"
    },
@@ -4451,7 +4451,7 @@
       "textures": "soul_torch"
    },
    "sponge": {
-      "isotropic": true,
+      "isotropic": false,
       "sound": "grass",
       "textures": "sponge"
    },
@@ -4564,7 +4564,7 @@
       }
    },
    "stained_hardened_clay": {
-      "isotropic": true,
+      "isotropic": false,
       "sound": "stone",
       "textures": "stained_clay"
    },
