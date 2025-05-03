@@ -18,6 +18,35 @@
   "player_armor_panel/offhand_grid": {
     "ignored": true
   },
+  "close_button_default": {
+    "type": "label",
+    "text": "X"
+  },
+  "close_button_pressed": {
+    "type": "label",
+    "text": "§eX"
+  },
+  "close_button@common.button": {
+    "$pressed_button_name": "button.menu_exit",
+    "size": [ 27, 27 ],
+    "focus_enabled": false,
+    "controls": [
+      { "default@close_button_default": {} },
+      { "hover@close_button_pressed": {} },
+      { "pressed@close_button_pressed": {} }
+  ]},
+  "close_button_element": {
+    "type": "image",
+    "texture": "textures/ui/Black",
+    "size": [ 27, 27 ],
+    "anchor_from": "top_right",
+    "anchor_to": "top_right",
+    "offset": [ -4, 4 ],
+    "controls": [
+      { "close_button@close_button": {
+          "layer": 2
+      }}
+  ]},
   // ## Adds some padding because apparently they're not dynamically centered.
   //    Thanks mojang, very cool!
   "recipe_inventory_screen_content/content_stack_panel": {
@@ -42,6 +71,14 @@
                   "binding_name_override": "#visible"
               }]
           }}
+      ]}
+  ]},
+  "recipe_inventory_screen_content": {
+    "modifications": [
+      { "array_name": "controls",
+        "operation": "insert_front",
+        "value": [
+          { "close_button_element@crafting.close_button_element": {}}
       ]}
   ]}
 }
