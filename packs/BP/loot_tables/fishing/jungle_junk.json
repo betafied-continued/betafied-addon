@@ -1,4 +1,3 @@
-// junk.json
 {
   "pools": [
     {
@@ -7,7 +6,12 @@
         {
           "type": "item",
           "name": "minecraft:fish",
-          "weight": 1
+          "weight": 4  // Higher weight = more common
+        },
+        {
+          "type": "item",
+          "name": "minecraft:ink_sac",
+          "weight": 1  // Lower weight = less common
         }
       ]
     }

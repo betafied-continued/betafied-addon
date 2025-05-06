@@ -1,0 +1,28 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "bh:green_wool"
+    },
+    "tags": [
+      "beta_crafting"
+    ],
+    "ingredients": [
+      {
+        "tag": "minecraft:wool"
+      },
+      {
+        "item": "minecraft:green_dye"
+      }
+    ],
+    "unlock": [
+      {
+        "item": "minecraft:green_dye"
+      }
+    ],
+    "result": {
+      "item": "minecraft:green_wool",
+      "count": 1
+    }
+  }
+}

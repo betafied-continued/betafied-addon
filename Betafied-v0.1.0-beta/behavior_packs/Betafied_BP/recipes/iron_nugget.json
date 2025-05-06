@@ -1,0 +1,27 @@
+{
+  "format_version": "1.12",
+  "minecraft:recipe_shaped": {
+    "description": {
+      "identifier": "bh:iron_nugget"
+    },
+    "tags": [
+      "beta_crafting"
+    ],
+    "pattern": [
+      "#B"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:iron_ingot"
+      },
+      "B": {
+        "item": "minecraft:barrier"
+      }
+    },
+    "result": {
+      "item": "minecraft:iron_nugget",
+      "count": 9
+    },
+    "priority": -1
+  }
+}

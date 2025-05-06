@@ -1,0 +1,41 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "bh:piston"
+        },
+        "tags": [
+            "beta_crafting"
+        ],
+        "pattern": [
+            "AAA",
+            "BCB",
+            "BDB"
+        ],
+        "key": {
+            "A": {
+                "tag": "minecraft:planks"
+            },
+            "B": {
+                "item": "cobblestone"
+            },
+            "C": {
+                "item": "iron_ingot"
+            },
+            "D": {
+                "item": "redstone"
+            }
+        },
+        "unlock": [
+          {
+            "item": "minecraft:redstone"
+          }
+        ],
+        "result": {
+            "item": "piston",
+            "count": 1,
+            "data": 1
+        },
+        "priority": 10
+    }
+}

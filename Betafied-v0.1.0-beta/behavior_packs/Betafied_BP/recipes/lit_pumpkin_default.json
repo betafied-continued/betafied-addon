@@ -1,0 +1,29 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "minecraft:lit_pumpkin"
+    },
+    "tags": [
+      "crafting_table"
+    ],
+    "ingredients": [
+      {
+        "item": "minecraft:torch"
+      },
+      {
+        "item": "minecraft:carved_pumpkin"
+      }
+    ],
+    "unlock": [
+      {
+        "item": "minecraft:pumpkin"
+      }
+    ],
+    "result": {
+      "item": "minecraft:lit_pumpkin",
+      "data": 1
+    },
+    "priority": 10
+  }
+}
