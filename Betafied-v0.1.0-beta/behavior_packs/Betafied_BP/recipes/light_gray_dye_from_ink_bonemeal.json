@@ -1,0 +1,42 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+    "identifier": "bh:light_gray_dye_from_ink_bonemeal"
+    },
+
+    
+    "tags": [ "beta_crafting" ],
+    "group": "light_gray_dye",
+    "priority": 8,
+    "ingredients": [
+      {
+        "item": "minecraft:dye",
+        "data": 0
+      },
+      {
+        "item": "minecraft:dye",
+        "data": 15
+      },
+      {
+        "item": "minecraft:dye",
+        "data": 15
+      }
+    ],
+	"unlock": [
+      {
+        "item": "minecraft:dye",
+        "data": 0
+	  },
+	  {
+		"item": "minecraft:dye",
+        "data": 15
+      }
+    ],
+    "result": {
+      "item": "minecraft:dye",
+      "data": 7,
+      "count": 3
+    }
+  }
+}

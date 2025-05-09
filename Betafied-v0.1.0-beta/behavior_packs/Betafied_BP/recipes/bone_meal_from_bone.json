@@ -1,0 +1,27 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+    "identifier": "beta:bone_meal_from_bone"
+    },
+
+    
+    "tags": [ "beta_crafting" ],
+    "group": "bonemeal",
+    "ingredients": [
+      {
+        "item": "minecraft:bone"
+      }
+    ],
+	"unlock": [
+      {
+        "item": "minecraft:bone"
+      }
+    ],
+    "result": {
+      "item": "minecraft:dye",
+      "data": 15,
+      "count": 3
+    }
+  }
+}

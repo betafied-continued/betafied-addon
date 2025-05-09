@@ -1,0 +1,28 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+      "identifier": "bh:pink_wool"
+    },
+    "tags": [
+      "beta_crafting"
+    ],
+    "ingredients": [
+      {
+        "tag": "minecraft:wool"
+      },
+      {
+        "item": "minecraft:pink_dye"
+      }
+    ],
+    "unlock": [
+      {
+        "item": "minecraft:pink_dye"
+      }
+    ],
+    "result": {
+      "item": "minecraft:pink_wool",
+      "count": 1
+    }
+  }
+}

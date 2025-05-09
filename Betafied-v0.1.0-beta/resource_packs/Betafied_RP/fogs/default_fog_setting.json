@@ -1,0 +1,53 @@
+//bridge-file-version: #2
+{
+	"format_version": "1.16.100",
+	"minecraft:fog_settings": {
+		"description": {
+			"identifier": "mgg:fog_default"
+		},
+		"distance": {
+			"air": {
+				"fog_start": 0,
+				"fog_end": 0,
+				"fog_color": "#ABD2FF",
+				"render_distance_type": "render"
+			},
+			"weather": {
+				"fog_start": 0,
+				"fog_end": 0,
+				"fog_color": "#666666",
+				"render_distance_type": "render"
+			},
+			"water": {
+				"fog_start": 0,
+				"fog_end": 60.0,
+				"fog_color": "#0056FF",
+				"render_distance_type": "fixed",
+				"transition_fog": {
+				  "init_fog": {
+					"fog_start": 0.0,
+					"fog_end": 0.01,
+					"fog_color": "#0056FF",
+					"render_distance_type": "fixed"
+				  },
+				  "min_percent": 0.25,
+				  "mid_seconds": 5,
+				  "mid_percent": 0.6,
+				  "max_seconds": 30
+				}
+			  },
+			"lava": {
+				"fog_start": 10,
+				"fog_end": 10.5,
+				"fog_color": "#991A00",
+				"render_distance_type": "fixed"
+			},
+			"lava_resistance": {
+				"fog_start": 14,
+				"fog_end": 14.5,
+				"fog_color": "#991A00",
+				"render_distance_type": "fixed"
+			}
+		}
+	}
+}

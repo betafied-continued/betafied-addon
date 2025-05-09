@@ -1,0 +1,33 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "minecraft:smooth_sandstone"
+    },
+
+    "tags": [ "crafting_table" ],
+    "pattern": [
+      "##",
+      "#A"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:sandstone",
+        "data": 0
+      },
+      "A": {
+        "item": "minecraft:barrier"
+      }
+    },
+    "unlock": [
+      {
+        "item": "minecraft:sandstone",
+        "data": 0
+      }
+    ],
+    "result": {
+      "item": "minecraft:smooth_sandstone"
+    },
+    "priority": -1
+  }
+}
