@@ -40,3 +40,7 @@ execute as @a[scores={FlowerCycle=1}] at @s run fill ~-39 ~-2 ~-39 ~39 ~2 ~39 mi
 execute as @a[scores={FlowerCycle=1}] at @s run fill ~-39 ~-2 ~-39 ~39 ~2 ~39 minecraft:poppy replace minecraft:rose_bush
 execute as @a[scores={FlowerCycle=1}] at @s run fill ~-39 ~-2 ~-39 ~39 ~2 ~39 minecraft:poppy replace minecraft:lilac
 execute as @a[scores={FlowerCycle=1}] at @s run fill ~-39 ~-2 ~-39 ~39 ~2 ~39 minecraft:poppy replace minecraft:leaf_litter
+execute as @a[scores={FlowerCycle=1}] at @s run fill ~-39 ~-2 ~-39 ~39 ~2 ~39 minecraft:poppy replace minecraft:minecraft:lily_of_the_valley
+
+execute as @a at @s run fill ~-39 ~-2 ~-39 ~39 ~2 ~39 minecraft:air replace minecraft:cactus_flower
+execute as @a at @s run fill ~-39 ~-2 ~-39 ~39 ~2 ~39 minecraft:air replace minecraft:vine

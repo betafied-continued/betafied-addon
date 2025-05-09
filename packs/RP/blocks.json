@@ -799,6 +799,11 @@
       "sound": "amethyst_block",
       "textures": "budding_amethyst"
    },
+   "cactus_flower": {
+      "isotropic": false,
+      "blockshape": "invisible",
+      "sound": "cloth"
+   },
    "cactus": {
       "isotropic": false,
       "sound": "cloth",
@@ -5014,8 +5019,8 @@
    },
    "vine": {
       "carried_textures": "vine_carried",
-      "sound": "vines",
-      "textures": "vine"
+      "blockshape": "invisible",
+      "sound": "vines"
    },
    "wall_banner": {
       "isotropic": false,
