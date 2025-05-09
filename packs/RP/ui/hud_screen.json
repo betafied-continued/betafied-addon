@@ -23,13 +23,187 @@
     "hunger_renderer": {
         "ignored": true
     },
+    
+	"cursor_renderer": {
+		"ignored": true
+	},
+    "crosshair_pixel": {
+		"type": "custom",
+		"renderer": "gradient_renderer",
+		"color1": [
+			1,
+			1,
+			1,
+			1
+		],
+		"color2": [
+			1,
+			1,
+			1,
+			1
+		],
+		"size": [
+			1,
+			1
+		]
+	},
+	"crosshair": {
+		"type": "panel",
+		"size": [
+			16,
+			16
+		],
+		"anchor_from": "center",
+		"anchor_to": "center",
+		"controls": [
+			{
+				"center@hud.crosshair_pixel": {
+					"offset": [
+						0,
+						0
+					]
+				}
+			},
+			{
+				"v5@hud.crosshair_pixel": {
+					"offset": [
+						0,
+						-4
+					]
+				}
+			},
+			{
+				"v6@hud.crosshair_pixel": {
+					"offset": [
+						0,
+						-3
+					]
+				}
+			},
+			{
+				"v7@hud.crosshair_pixel": {
+					"offset": [
+						0,
+						-2
+					]
+				}
+			},
+			{
+				"v8@hud.crosshair_pixel": {
+					"offset": [
+						0,
+						-1
+					]
+				}
+			},
+			{
+				"v9@hud.crosshair_pixel": {
+					"offset": [
+						0,
+						1
+					]
+				}
+			},
+			{
+				"v10@hud.crosshair_pixel": {
+					"offset": [
+						0,
+						2
+					]
+				}
+			},
+			{
+				"v11@hud.crosshair_pixel": {
+					"offset": [
+						0,
+						3
+					]
+				}
+			},
+			{
+				"v12@hud.crosshair_pixel": {
+					"offset": [
+						0,
+						4
+					]
+				}
+			},
+			{
+				"h5@hud.crosshair_pixel": {
+					"offset": [
+						-4,
+						0
+					]
+				}
+			},
+			{
+				"h6@hud.crosshair_pixel": {
+					"offset": [
+						-3,
+						0
+					]
+				}
+			},
+			{
+				"h7@hud.crosshair_pixel": {
+					"offset": [
+						-2,
+						0
+					]
+				}
+			},
+			{
+				"h8@hud.crosshair_pixel": {
+					"offset": [
+						-1,
+						0
+					]
+				}
+			},
+			{
+				"h9@hud.crosshair_pixel": {
+					"offset": [
+						1,
+						0
+					]
+				}
+			},
+			{
+				"h10@hud.crosshair_pixel": {
+					"offset": [
+						2,
+						0
+					]
+				}
+			},
+			{
+				"h11@hud.crosshair_pixel": {
+					"offset": [
+						3,
+						0
+					]
+				}
+			},
+			{
+				"h12@hud.crosshair_pixel": {
+					"offset": [
+						4,
+						0
+					]
+				}
+			}
+		]
+	},
   // ## Import chat panel bottom element.
   "root_panel": {
     "modifications": [
       { "array_name": "controls",
         "operation": "insert_front",
         "value": [
-          { "chat_panel_bottom@hud.chat_panel_bottom": {}}
+          { "chat_panel_bottom@hud.chat_panel_bottom": {}},
+            {
+						"crosshair_chyves@hud.crosshair": {}
+					}
       ]}
   ]},
   // ## Make sure that touch chat panel is active.
@@ -158,7 +332,11 @@
     "controls": [
       { "button@hud.hotbar_elipses_button": {} }
   ]},
+  "hotbar_elipses_button": {
+    "prevent_touch_input": true
+  },
   "borderless_button@common.button": {
+    "prevent_touch_input": true,
     "controls": [
       { "elipses@elipses_image_rewrite": {}}
   ]},
