@@ -14,7 +14,7 @@
   // ## Remove Shield slot.
   // WARN: Controller's "Y" button or Ctrl + L-click may still
   // insert the stuff into shield slot.
-  // there's probably a fix for it but not now lol.
+  // There's no fix :(
   "player_armor_panel/offhand_grid": {
     "ignored": true
   },
@@ -37,16 +37,73 @@
   ]},
   "close_button_element": {
     "type": "image",
-    "texture": "textures/ui/Black",
+    "texture": "textures/ui/hud_tip_text_background",
     "size": [ 27, 27 ],
     "anchor_from": "top_right",
     "anchor_to": "top_right",
-    "offset": [ -4, 4 ],
+    "offset": [ -8, 8 ],
+    "alpha": 0.7,
     "controls": [
       { "close_button@close_button": {
           "layer": 2
       }}
   ]},
+  "crafting_panel_2x2": {
+    "type": "panel",
+    "size": [ 88, 83 ],
+    "anchor_from": "top_middle",
+    "anchor_to": "top_left",
+    "offset": [ -6, 9 ],
+    "controls": [
+      {
+        "crafting_arrow@crafting_arrow": {
+          "offset": [ 46, 29 ],
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "crafting_panel",
+              "resolve_sibling_scope": true,
+              "source_property_name": "(not #needs_crafting_table)",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "crafting_table@crafting.item_renderer": {
+          "offset": [ 10, -5 ],
+          "property_bag": {
+            "#item_id_aux": 3801088
+          },
+          "bindings": [
+            {
+              "binding_type": "view",
+              "source_control_name": "crafting_panel",
+              "resolve_sibling_scope": true,
+              "source_property_name": "(#needs_crafting_table)",
+              "target_property_name": "#visible"
+            }
+          ]
+        }
+      },
+      {
+        "crafting_grid_2x2@crafting.crafting_grid_2x2_with_label": {
+          "offset": [ 8, 7 ]
+        }
+      },
+      {
+        "survival_crafting_output_grid@crafting.output_grid_2x2": {
+          "offset": [ 64, 26 ]
+        }
+      }
+    ],
+    "bindings": [
+      {
+        "binding_name": "#needs_crafting_table",
+        "binding_condition": "visible"
+      }
+    ]
+  },
   // ## Adds some padding because apparently they're not dynamically centered.
   //    Thanks mojang, very cool!
   "recipe_inventory_screen_content/content_stack_panel": {
