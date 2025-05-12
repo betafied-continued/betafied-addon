@@ -1,6 +1,6 @@
 {
     "chat_screen": {
-        "$screen_content": "chat.main_screen",
+        "$screen_content": "chat.root_panels",
         "$screen_bg_content": "common.empty_panel",
         "button_mappings": [
             {
@@ -44,52 +44,14 @@
             }
         ]
     },
-    "close_button_default": {
-        "type": "label",
-        "text": "X"
-    },
-    "close_button_pressed": {
-        "type": "label",
-        "text": "§eX"
-    },
-    "close_button@common.button": {
-        "$pressed_button_name": "button.menu_exit",
-        "size": [
-            27,
-            27
-        ],
-        "focus_enabled": false,
+    "root_panels": {
+        "type": "panel",
         "controls": [
             {
-                "default@close_button_default": {}
+                "close_button_element@crafting.close_button_element": {}
             },
             {
-                "hover@close_button_pressed": {}
-            },
-            {
-                "pressed@close_button_pressed": {}
-            }
-        ]
-    },
-    "close_button_element": {
-        "type": "image",
-        "texture": "textures/ui/hud_tip_text_background",
-        "size": [
-            27,
-            27
-        ],
-        "anchor_from": "top_right",
-        "anchor_to": "top_right",
-        "offset": [
-            -8,
-            0
-        ],
-        "alpha": 0.7,
-        "controls": [
-            {
-                "close_button@close_button": {
-                    "layer": 2
-                }
+                "main_screen@chat.main_screen": {}
             }
         ]
     },
@@ -103,31 +65,6 @@
             "100%"
         ],
         "controls": [
-            {
-                "prefiller": {
-                    "type": "panel",
-                    "size": [
-                        1,
-                        8
-                    ]
-                }
-            },
-            {
-                "panel": {
-                    "type": "panel",
-                    "size": [
-                        "100%",
-                        27
-                    ],
-                    "anchor_from": "top_right",
-                    "anchor_to": "top_right",
-                    "controls": [
-                        {
-                            "close_button_element@chat.close_button_element": {}
-                        }
-                    ]
-                }
-            },
             {
                 "filler": {
                     "type": "panel",
@@ -145,7 +82,7 @@
                     "type": "panel",
                     "size": [
                         1,
-                        26
+                        29
                     ]
                 }
             },
@@ -204,8 +141,11 @@
                         {
                             "chat_textbox@chat.chat_textbox": {}
                         },
+                        // FIX: This thing screams orientation errors for some weird reason.
+                        //      Maybe this might be that the parent element is a stack and this button element
+                        //      attempt to be an stack panel.
                         {
-                            "chat_send_btn@common_buttons.light_text_form_fitting_button": {
+                            "chat_send_btn@common_buttons.light_text_button": {
                                 "$pressed_button_name": "button.send",
                                 "$anchor": "bottom_right",
                                 "size": [
@@ -283,15 +223,15 @@
                     ],
                     "$scrolling_pane_offset": [
                         0,
-                        0
+                        -1
                     ],
                     "$scroll_track_offset": [
                         0,
                         0
                     ],
                     "$scroll_track_image_control": "common.empty_panel",
-                    "$scroll_box_mouse_image_control": "$scroll_box_image_control",
-                    "$scroll_box_touch_image_control": "$scroll_box_image_control",
+                    "$scroll_box_mouse_image_control": "common.empty_panel",
+                    "$scroll_box_touch_image_control": "common.empty_panel",
                     "$jump_to_bottom_on_update": true,
                     "$always_handle_scrolling": true,
                     "$scrolling_content": "chat.messages_stack_panel"
@@ -425,7 +365,7 @@
     "chat_grid_item": {
         "type": "image",
         "size": [
-            324,
+            312,
             "100%c"
         ],
         "texture": "textures/chyves/color_base",
@@ -583,9 +523,6 @@
                     "controls": [
                         {
                             "texture@chat.text_field_highlighted_image": {}
-                        },
-                        {
-                            "hover_content@$hover_content": {}
                         }
                     ]
                 }
@@ -597,21 +534,6 @@
                     "controls": [
                         {
                             "texture@chat.text_field_highlighted_image": {}
-                        }
-                    ]
-                }
-            },
-            {
-                "locked": {
-                    "type": "panel",
-                    "layer": 3,
-                    "$disabled_color|default": "$color",
-                    "controls": [
-                        {
-                            "texture@chat.text_field_image": {
-                                "color": "$disabled_color",
-                                "alpha": 1.0
-                            }
                         }
                     ]
                 }

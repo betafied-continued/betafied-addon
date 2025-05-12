@@ -23,344 +23,184 @@
     "hunger_renderer": {
         "ignored": true
     },
-    
 	"cursor_renderer": {
 		"ignored": true
 	},
     "crosshair_pixel": {
 		"type": "custom",
 		"renderer": "gradient_renderer",
-		"color1": [
-			1,
-			1,
-			1,
-			1
-		],
-		"color2": [
-			1,
-			1,
-			1,
-			1
-		],
-		"size": [
-			1,
-			1
-		]
+		"color1": [ 1, 1, 1, 1 ],
+		"color2": [ 1, 1, 1, 1 ],
+		"size": [ 1, 1 ]
 	},
-	"crosshair": {
-		"type": "panel",
-		"size": [
-			16,
-			16
-		],
-		"anchor_from": "center",
-		"anchor_to": "center",
-		"controls": [
-			{
-				"center@hud.crosshair_pixel": {
-					"offset": [
-						0,
-						0
-					]
-				}
-			},
-			{
-				"v5@hud.crosshair_pixel": {
-					"offset": [
-						0,
-						-4
-					]
-				}
-			},
-			{
-				"v6@hud.crosshair_pixel": {
-					"offset": [
-						0,
-						-3
-					]
-				}
-			},
-			{
-				"v7@hud.crosshair_pixel": {
-					"offset": [
-						0,
-						-2
-					]
-				}
-			},
-			{
-				"v8@hud.crosshair_pixel": {
-					"offset": [
-						0,
-						-1
-					]
-				}
-			},
-			{
-				"v9@hud.crosshair_pixel": {
-					"offset": [
-						0,
-						1
-					]
-				}
-			},
-			{
-				"v10@hud.crosshair_pixel": {
-					"offset": [
-						0,
-						2
-					]
-				}
-			},
-			{
-				"v11@hud.crosshair_pixel": {
-					"offset": [
-						0,
-						3
-					]
-				}
-			},
-			{
-				"v12@hud.crosshair_pixel": {
-					"offset": [
-						0,
-						4
-					]
-				}
-			},
-			{
-				"h5@hud.crosshair_pixel": {
-					"offset": [
-						-4,
-						0
-					]
-				}
-			},
-			{
-				"h6@hud.crosshair_pixel": {
-					"offset": [
-						-3,
-						0
-					]
-				}
-			},
-			{
-				"h7@hud.crosshair_pixel": {
-					"offset": [
-						-2,
-						0
-					]
-				}
-			},
-			{
-				"h8@hud.crosshair_pixel": {
-					"offset": [
-						-1,
-						0
-					]
-				}
-			},
-			{
-				"h9@hud.crosshair_pixel": {
-					"offset": [
-						1,
-						0
-					]
-				}
-			},
-			{
-				"h10@hud.crosshair_pixel": {
-					"offset": [
-						2,
-						0
-					]
-				}
-			},
-			{
-				"h11@hud.crosshair_pixel": {
-					"offset": [
-						3,
-						0
-					]
-				}
-			},
-			{
-				"h12@hud.crosshair_pixel": {
-					"offset": [
-						4,
-						0
-					]
-				}
-			}
-		]
-	},
-  // ## Import chat panel bottom element.
-  "root_panel": {
-    "modifications": [
-      { "array_name": "controls",
-        "operation": "insert_front",
-        "value": [
-          { "chat_panel_chyves@hud.chat_panel_chyves": {}},
-            {
-						"crosshair_chyves@hud.crosshair": {}
-					}
-      ]}
-  ]},
-  
-	"chat_panel": {
-        "ignored": true,
-        "size": [
-            0,
-            0
-        ]
-    },
-	"chat_panel_chyves": {
-        "type": "stack_panel",
-        "size": [
-            324,
-            "100%"
-        ],
-        "offset": [
-            2,
-            0
-        ],
-        "orientation": "vertical",
-        "anchor_from": "bottom_left",
-        "anchor_to": "bottom_left",
-        "controls": [
-            {
-                "filler": {
-                    "type": "panel",
-                    "size": [
-                        1,
-                        "fill"
-                    ]
-                }
-            },
-            {
-                "chat_stack_panel@hud.chat_stack_panel": {}
-            },
-            {
-                "buffer": {
-                    "type": "panel",
-                    "size": [
-                        0,
-                        39
-                    ]
-                }
-            }
-        ]
-    },
-    "chat_stack_panel": {
+    "crosshair": {
         "type": "panel",
-        "layer": 150,
-        "size": [
-            "100%",
-            "100%c"
-        ],
-        "max_size": [
-            "100%",
-            180
-        ],
-        "anchor_from": "bottom_left",
-        "anchor_to": "bottom_left",
+        "size": [ 16, 16 ],
         "controls": [
+            {  "horizontal@hud.crosshair_pixel": {  "size": [ 9, 1 ]  }},
+            {  "vertical@hud.crosshair_pixel": {  "size": [ 1, 9 ]  }},
+            {  "dot@hud.crosshair_pixel": {  "size": [ 1, 1 ]  }}
+    ]},
+    "root_panel": {
+        "modifications": [
+            {   "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    { "chat_panel_bottom@hud.chat_panel_bottom": {}},
+                    { "crosshair_rewrite@hud.crosshair": {}},
+                    { "player_list@hud.player_list": {}}
+            ]}
+    ]},
+    // Add playerlist.
+    // Note - This weird tab padding has forced my hand.
+    //        lmao
+    "player_list": {
+        "type": "button",
+        "size": [ "100%", "100%" ],
+        "default_control": "default",
+        "hover_control": "hover",
+        "pressed_control": "pressed",
+        "button_mappings": [
             {
-                "messages_stack_panel": {
-                    "type": "stack_panel",
-                    "size": [
-                        "100%",
-                        "100%c"
-                    ],
-                    "anchor_from": "bottom_left",
-                    "anchor_to": "bottom_left",
-                    "factory": {
-                        "name": "chat_item_factory",
-                        "max_children_size": 10,
-                        "control_ids": {
-                            "chat_item": "chat_grid_item@hud.chat_grid_item"
-                        }
-                    }
-                }
+                "from_button_id": "button.scoreboard",
+                "to_button_id": "button.scoreboard",
+                "mapping_type": "global"
             }
-        ]
-    },
-    "anim_chat_bg_wait": {
-        "anim_type": "wait",
-        "duration": "$chat_item_lifetime",
-        "next": "@hud.anim_chat_bg_alpha"
-    },
-    "anim_chat_bg_alpha": {
-        "anim_type": "alpha",
-        "easing": "in_quart",
-        "destroy_at_end": "chat_grid_item",
-        "duration": 1,
-        "from": 0.5,
-        "to": 0
-    },
-    "anim_chat_txt_wait": {
-        "anim_type": "wait",
-        "duration": "$chat_item_lifetime",
-        "next": "@hud.anim_chat_txt_alpha"
-    },
-    "anim_chat_txt_alpha": {
-        "anim_type": "alpha",
-        "easing": "in_quart",
-        "duration": 1,
-        "from": 1,
-        "to": 0
-    },
-    "chat_grid_item": {
-        "type": "image",
-        "size": [
-            324,
-            "100%c"
         ],
-        "anchor_from": "bottom_left",
-        "anchor_to": "bottom_left",
-        "texture": "textures/chyves/color_base",
-        "color": [0.0, 0.0, 0.0],
-        "anims": [
-            "@hud.anim_chat_bg_wait"
-        ],
-        "alpha": 0.5,
         "controls": [
+            // Display whenever the said keymap are being pressed.
             {
-                "text_wrapper": {
-                    "type": "button",
-                    "size": [
-                        312,
-                        "100%c"
-                    ],
-                    "anchor_from": "bottom_left",
-                    "anchor_to": "bottom_left",
+                "pressed": {
+                    "type": "panel",
+                    "size": [ "100%", "100%" ],
                     "controls": [
                         {
-                            "text": {
-                                "type": "label",
-                                "text": "#text",
-                                "anchor_from": "bottom_left",
-                                "anchor_to": "bottom_left",
-                                "shadow": true,
-                                "localize": false,
-                                "size": [
-                                    312,
-                                    "default"
-                                ],
-                                "enable_profanity_filter": true,
-                                "anims": [
-                                    "@hud.anim_chat_txt_wait"
-                                ],
-                                "bindings": [
+                            "pressed@common.scrolling_panel": {
+                                "size": [ 124, "100%" ],
+                                "offset": [ 0, 20 ],
+                                "anchor_from": "top_middle",
+                                "anchor_to": "top_middle",
+                                "$scrolling_content": "hud.player_list_grid",
+                                "$show_background": false,
+                                "$always_handle_scrolling": true
+                            }                
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    // it's a player list grid.
+    "player_list_grid": {
+        "type": "grid",
+        "size": [ "100%c", "100%c" ],
+        "grid_item_template": "hud.player_list_grid_core",
+        "grid_dimension_binding": "#players_grid_dimension",
+        "collection_name": "players_collection",
+        "anchor_to": "top_middle",
+        "anchor_from": "top_middle",
+        "bindings": [
+            { "binding_name": "#players_grid_dimension" }
+    ]},
+    "player_list_grid_core": {
+        "type": "panel",
+        "size": [ 120, 9 ],
+        "controls": [
+            {
+                "background": {
+                    "type": "panel",
+                    "size": [ "100%", 10 ],
+                    "anchor_from": "top_middle",
+                    "anchor_to": "top_middle",
+                    "controls": [
+                        {
+                            "outline": {
+                                "type": "image",
+                                "texture": "textures/ui/background_with_border",
+                                "alpha": 0.5
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "player_profile_core": {
+                    "type": "stack_panel",
+                    "size": [ "100%", "100%" ],
+                    "orientation": "horizontal",
+                    "controls": [
+                        {
+                            "player_profile_panel": {
+                                "type": "panel",
+                                "size": [ 8, 8 ],
+                                "layer": 1,
+                                "controls": [
                                     {
-                                        "binding_name": "#text",
-                                        "binding_type": "collection",
-                                        "binding_collection_name": "chat_text_grid"
+                                        "player_profile": {
+                                            "type": "image",
+                                            "texture": "#texture",
+                                            "texture_file_system": "#texture_source",
+                                            "size": [ 8, 8 ],
+                                            "offset": [ 1, 1 ],
+                                            "bindings": [
+                                                {
+                                                    "binding_name": "#texture",
+                                                    "binding_type": "collection",
+                                                    "binding_collection_name": "players_collection"
+                                                },
+                                                {
+                                                    "binding_name": "#texture_source",
+                                                    "binding_name_override": "#texture_file_system",
+                                                    "binding_type": "collection",
+                                                    "binding_collection_name": "players_collection"
+                                                },
+                                                {
+                                                    "binding_name": "#gamerpic_visible",
+                                                    "binding_type": "collection",
+                                                    "binding_collection_name": "players_collection",
+                                                    "binding_name_override": "#visible"
+                                                }
+                                            ]
+                                        }
                                     },
                                     {
-                                        "binding_type": "view",
-                                        "source_property_name": "#text",
-                                        "target_property_name": "#chat_text"
+                                        "player_profile_offline": {
+                                            "type": "image",
+                                            "texture": "textures/ui/lan_icon",
+                                            "size": [ 8, 8 ],
+                                            "offset": [ 1, 1 ],
+                                            "bindings": [
+                                                {
+                                                    "binding_name": "(not #gamerpic_visible)",
+                                                    "binding_type": "collection",
+                                                    "binding_collection_name": "players_collection",
+                                                    "binding_name_override": "#visible"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "padding_nametag": {
+                                "type": "panel",
+                                "size": [ 2, 2 ]
+                            }
+                        },
+                        {
+                            "player_name": {
+                                "type": "label",
+                                "text": "#gamertag",
+                                "size": [ "fill", "default" ],
+                                "text_alignment": "left",
+                                "shadow": true,
+                                "layer": 1,
+                                "bindings": [
+                                    {
+                                        "binding_name": "#gamertag",
+                                        "binding_type": "collection",
+                                        "binding_collection_name": "players_collection"
                                     }
                                 ]
                             }
@@ -370,6 +210,117 @@
             }
         ]
     },
+    // make sure touch does not have java message thing
+    // it makes chat more easy to read.
+    "chat_panel": {
+        "bindings": [
+            {   "binding_name": "#hud_visible_centered_touch",
+                "binding_type": "global",
+                "binding_name_override": "#visible"
+            }
+    ]},
+    "chat_panel_bottom": {
+        "type": "panel",
+        "anchor_from": "bottom_left",
+        "anchor_to": "bottom_left",
+        "size": [ 312, "100%c" ],
+        "max_size": [ 312, 200 ],
+        "offset": [ 2, -43 ],
+        "bindings": [
+        {   "binding_name": "#hud_visible_centered_touch",
+            "binding_type": "global"
+        },
+        {   "binding_type": "view",
+            "source_property_name": "(not #hud_visible_centered_touch)",
+            "target_property_name": "#visible"
+    }],
+    "controls": [
+        { "stack_panel": {
+              "type": "stack_panel",
+              "anchor_from": "bottom_left",
+              "anchor_to": "bottom_left",
+              "size": [ "100%", "100%c" ],
+              "factory": {
+                "name": "chat_item_factory",
+                "max_children_size": 15,
+                "control_ids": {
+                "chat_item": "chat_item@hud.chat_grid_item_bottom"
+          }}
+      }}
+  ]},
+  // ## Minimized the CGI bottom element.
+  "chat_grid_item_bottom": {
+    "type": "image",
+    "texture": "textures/ui/Black",
+    "alpha": 0.5,
+    "size": [ 312, "100%c" ],
+    "anims": [
+      "@hud.anim_chat_bg_wait_bottom"
+    ],
+    "bindings": [
+      { "binding_name": "(not #on_new_death_screen)",
+        "binding_name_override": "#visible"
+    }],
+    "controls": [
+      {
+        "text_wrapper": {
+            "type": "button",
+            "size": [
+                312,
+                "100%c"
+            ],
+            "anchor_from": "bottom_left",
+            "anchor_to": "bottom_left",
+            "layer": 5,
+            "controls": [
+                {
+                    "text": {
+                        "type": "label",
+                        "text": "#text",
+                        "anchor_from": "bottom_left",
+                        "anchor_to": "bottom_left",
+                        "shadow": true,
+                        "localize": false,
+                        "size": [
+                            312,
+                            "default"
+                        ],
+                        "enable_profanity_filter": true,
+                        "anims": [
+                            "@hud.anim_chat_txt_wait"
+                        ],
+                        "bindings": [
+                            {
+                                "binding_name": "#text",
+                                "binding_type": "collection",
+                                "binding_collection_name": "chat_text_grid"
+                            },
+                            {
+                                "binding_type": "view",
+                                "source_property_name": "#text",
+                                "target_property_name": "#chat_text"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+  ]},
+  // ## Bottom Anim Text.
+  "anim_chat_bg_alpha_bottom": {
+    "anim_type": "alpha",
+    "easing": "in_quart",
+    "destroy_at_end": "chat_text_thing",
+    "duration": 1,
+    "from": 0.5,
+    "to": 0
+  },
+  "anim_chat_bg_wait_bottom": {
+    "anim_type": "wait",
+    "duration": "$chat_item_lifetime",
+    "next": "@hud.anim_chat_bg_alpha_bottom"
+  },
   // ## Hotbar Tweaks for Touch only.
   //    This made "inventory" button invisible and leave only icon.
   //    Aswell make sure that the hotbar is always centered the same other platform has.
