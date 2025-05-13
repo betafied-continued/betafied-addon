@@ -1,0 +1,77 @@
+{
+    "format_version": "1.8.0",
+    "render_controllers": {
+        "controller.render.player.chyves_custom_cape": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.cape",
+            "materials": [
+                {
+                    "*": "Material.cape"
+                }
+            ],
+            "textures": [
+                "Texture.chyves_cape"
+            ],
+            "is_hurt_color": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+            }
+        },
+        "controller.render.player.samo_custom_cape": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.cape",
+            "materials": [
+                {
+                    "*": "Material.cape"
+                }
+            ],
+            "textures": [
+                "Texture.samo_cape"
+            ],
+            "is_hurt_color": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+            }
+        },
+        "controller.render.player.squaredfox_custom_cape": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.cape",
+            "materials": [
+                {
+                    "*": "Material.cape"
+                }
+            ],
+            "textures": [
+                "Texture.squaredfox_cape"
+            ],
+            "is_hurt_color": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+            }
+        },
+        "controller.render.player.gameboy_custom_cape": {
+            "rebuild_animation_matrices": true,
+            "geometry": "Geometry.cape",
+            "materials": [
+                {
+                    "*": "Material.cape"
+                }
+            ],
+            "textures": [
+                "Texture.gameboy_cape"
+            ],
+            "is_hurt_color": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+            }
+        }
+    }
+}
