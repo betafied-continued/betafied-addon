@@ -3,11 +3,11 @@
 	"author": "betafied",
 	"name": "betafied-addon",
 	"packs": {
-		"behaviorPack": "./packs/behavior",
-		"resourcePack": "./packs/resource"
+		"behaviorPack": "./src/behavior",
+		"resourcePack": "./src/resource"
 	},
 	"regolith": {
-		"dataPath": "./packs/data",
+		"dataPath": "./src/data",
 		"filterDefinitions": {
 			"pack_anything": {
 				"url": "github.com/Nusiq/regolith-filters",
