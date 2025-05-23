@@ -1,10 +1,10 @@
 {
 	"$schema": "https://raw.githubusercontent.com/Bedrock-OSS/regolith-schemas/main/config/v1.4.json",
-	"author": "Betafied Contributors",
-	"name": "Betafied",
+	"author": "betafied",
+	"name": "betafied-addon",
 	"packs": {
-		"behaviorPack": "./packs/BP",
-		"resourcePack": "./packs/RP"
+		"behaviorPack": "./packs/behavior",
+		"resourcePack": "./packs/resource"
 	},
 	"regolith": {
 		"dataPath": "./packs/data",
@@ -36,8 +36,8 @@
 						"settings": {
 							"output": "`f'Betafied-{git_describe}.mcaddon'`",
 							"pathmap": {
-								"BP": "behavior_packs/Betafied_BP",
-								"RP": "resource_packs/Betafied_RP"
+								"behavior": "behavior_packs/betafied_behavior",
+								"resource": "resource_packs/betafied_resource"
 							}
 						}
 					}
@@ -55,9 +55,9 @@
 						"settings": {
 							"output": "release.mcworld",
 							"pathmap": {
-								"BP": "behavior_packs/0",
+								"behavior": "behavior_packs/0",
 								"PROJECT:worlds/release-world": ".",
-								"RP": "resource_packs/0"
+								"resource": "resource_packs/0"
 							}
 						}
 					}
