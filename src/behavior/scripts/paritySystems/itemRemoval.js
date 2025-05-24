@@ -2,7 +2,7 @@
  * Beta 1.7.3 Item Restriction System for Minecraft Bedrock
  * 
  * This script enforces the item limitations of Beta 1.7.3 by removing any items
- * that were not available in that version from players' inventories.
+ * that were not available in that version from players" inventories.
  * 
  * Compatible with Minecraft Bedrock Script API @minecraft/server v2.0.0-beta
  * Module target: ES2023
@@ -21,7 +21,7 @@ const CONFIG = Object.freeze({
   MESSAGE_COOLDOWN_TICKS: 60, // 3 seconds
   
   // Message to show when removing items
-  CLEAR_MESSAGE: "Whoops! That's not allowed!",
+  CLEAR_MESSAGE: "Whoops! That\'s not allowed!",
   
   // Debug mode for additional logging
   DEBUG: false
@@ -174,7 +174,7 @@ class ItemRestrictionSystem {
   }
   
   /**
-   * Check and clear invalid items from a player's inventory
+   * Check and clear invalid items from a player"s inventory
    * @param {Player} player - The player to check
    */
   checkPlayerInventory(player) {
@@ -182,7 +182,7 @@ class ItemRestrictionSystem {
       const inventoryComponent = player.getComponent("minecraft:inventory");
       if (!inventoryComponent?.container) {
         if (CONFIG.DEBUG) {
-          console.warn(`[ITEMS] No inventory component for player '${player.name}'`);
+          console.warn(`[ITEMS] No inventory component for player "${player.name}"`);
         }
         return;
       }
@@ -216,7 +216,7 @@ class ItemRestrictionSystem {
         this.notifyPlayer(player);
       }
     } catch (error) {
-      console.warn(`[ITEMS] Error checking inventory for '${player.name}': ${error.message}`);
+      console.warn(`[ITEMS] Error checking inventory for "${player.name}": ${error.message}`);
     }
   }
   

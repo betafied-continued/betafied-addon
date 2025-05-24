@@ -1,35 +1,35 @@
 {
-  "format_version": "1.20.10",
-  "minecraft:recipe_shaped": {
-    "description": {
-    "identifier": "WoodButton_recipeId"
-    },
-
-    
-    "tags": [ "crafting_table" ],
-    "pattern": [
-      "#B"
-    ],
-    "key": {
-      "#": {
-        "item": "minecraft:oak_planks",
-        "data": 0
-      },
-      "B": {
-        "item": "minecraft:barrier",
-        "data": 0
-      }
-    },
-    "unlock": [
-      {
-        "item": "minecraft:barrier",
-        "data": 0
-      }
-    ],
-    "result": {
-      "item": "minecraft:wooden_button",
-      "data": 0
-    },
-    "priority": -1
-  }
+    "format_version": "1.20.10",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "WoodButton_recipeId"
+        },
+        "tags": [
+            "crafting_table"
+        ],
+        "pattern": [
+            "#B"
+        ],
+        "key": {
+            "#": {
+                "item": "minecraft:oak_planks",
+                "data": 0
+            },
+            "B": {
+                "item": "minecraft:barrier",
+                "data": 0
+            }
+        },
+        "unlock": [
+            {
+                "item": "minecraft:barrier",
+                "data": 0
+            }
+        ],
+        "result": {
+            "item": "minecraft:wooden_button",
+            "data": 0
+        },
+        "priority": -1
+    }
 }

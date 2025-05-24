@@ -104,8 +104,8 @@ class FoodSystem {
   /**
    * Processes the food item consumption and health restoration
    * @param {Player} player - The player consuming the food
-   * @param {Container} inventory - The player's inventory
-   * @param {EntityHealthComponent} healthComponent - The player's health component
+   * @param {Container} inventory - The player"s inventory
+   * @param {EntityHealthComponent} healthComponent - The player"s health component
    * @param {ItemStack} item - The food item being consumed
    * @param {number} slot - The inventory slot index
    */
@@ -196,7 +196,7 @@ class FoodSystem {
 
   /**
    * Safely attempts to add an item to the inventory
-   * @param {Container} inventory - The player's inventory
+   * @param {Container} inventory - The player"s inventory
    * @param {ItemStack} itemStack - The item to add
    * @returns {boolean} Whether the item was successfully added
    */

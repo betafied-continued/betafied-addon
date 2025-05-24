@@ -8,7 +8,7 @@
  * Module target: ES2023
  */
 
-import { world, system, ItemStack, EquipmentSlot } from '@minecraft/server';
+import { world, system, ItemStack, EquipmentSlot } from "@minecraft/server";
 
 /**
  * Configuration settings for the armor system
@@ -51,32 +51,32 @@ const CONFIG = Object.freeze({
  */
 const ARMOR_PROTECTION = Object.freeze({
   // Helmets (all provide 3 armor points)
-  'minecraft:leather_helmet': 3,
-  'minecraft:golden_helmet': 3,
-  'minecraft:chainmail_helmet': 3,
-  'minecraft:iron_helmet': 3,
-  'minecraft:diamond_helmet': 3,
+  "minecraft:leather_helmet": 3,
+  "minecraft:golden_helmet": 3,
+  "minecraft:chainmail_helmet": 3,
+  "minecraft:iron_helmet": 3,
+  "minecraft:diamond_helmet": 3,
   
   // Chestplates (all provide 8 armor points)
-  'minecraft:leather_chestplate': 8,
-  'minecraft:golden_chestplate': 8,
-  'minecraft:chainmail_chestplate': 8,
-  'minecraft:iron_chestplate': 8,
-  'minecraft:diamond_chestplate': 8,
+  "minecraft:leather_chestplate": 8,
+  "minecraft:golden_chestplate": 8,
+  "minecraft:chainmail_chestplate": 8,
+  "minecraft:iron_chestplate": 8,
+  "minecraft:diamond_chestplate": 8,
   
   // Leggings (all provide 6 armor points)
-  'minecraft:leather_leggings': 6,
-  'minecraft:golden_leggings': 6,
-  'minecraft:chainmail_leggings': 6,
-  'minecraft:iron_leggings': 6,
-  'minecraft:diamond_leggings': 6,
+  "minecraft:leather_leggings": 6,
+  "minecraft:golden_leggings": 6,
+  "minecraft:chainmail_leggings": 6,
+  "minecraft:iron_leggings": 6,
+  "minecraft:diamond_leggings": 6,
   
   // Boots (all provide 3 armor points)
-  'minecraft:leather_boots': 3,
-  'minecraft:golden_boots': 3,
-  'minecraft:chainmail_boots': 3,
-  'minecraft:iron_boots': 3,
-  'minecraft:diamond_boots': 3
+  "minecraft:leather_boots": 3,
+  "minecraft:golden_boots": 3,
+  "minecraft:chainmail_boots": 3,
+  "minecraft:iron_boots": 3,
+  "minecraft:diamond_boots": 3
 });
 
 /**
@@ -84,12 +84,12 @@ const ARMOR_PROTECTION = Object.freeze({
  * These damage types bypass armor protection
  */
 const NON_PHYSICAL_DAMAGE_TYPES = Object.freeze([
-  'fall', 'fire', 'burning', 'drowning', 'suffocation',
-  'starvation', 'void', 'magic', 'wither', 'lightning',
-  'anvil', 'cactus', 'contact', 'dragon-breath', 'dripstone',
-  'fly-into-wall', 'hot-floor', 'lava', 'melting', 'override',
-  'ram-attack', 'sonic-explosion', 'soul-sand', 'stalactite',
-  'starve', 'suffocation', 'suicide', 'temperature', 'thorn', 'tumble'
+  "fall", "fire", "burning", "drowning", "suffocation",
+  "starvation", "void", "magic", "wither", "lightning",
+  "anvil", "cactus", "contact", "dragon-breath", "dripstone",
+  "fly-into-wall", "hot-floor", "lava", "melting", "override",
+  "ram-attack", "sonic-explosion", "soul-sand", "stalactite",
+  "starve", "suffocation", "suicide", "temperature", "thorn", "tumble"
 ]);
 
 /**
@@ -120,7 +120,7 @@ class ArmorSystem {
   
   /**
    * Calculate armor statistics for an entity
-   * @param {EntityEquippableComponent} equippable - The entity's equippable component
+   * @param {EntityEquippableComponent} equippable - The entity"s equippable component
    * @returns {Object} Armor statistics including protection, durability, and damage
    */
   calculateArmorStats(equippable) {
@@ -144,7 +144,7 @@ class ArmorSystem {
         protection += ARMOR_PROTECTION[armorItem.typeId];
         
         // Track durability if available
-        const durability = armorItem.getComponent('minecraft:durability');
+        const durability = armorItem.getComponent("minecraft:durability");
         if (durability) {
           maxDurability += durability.maxDurability;
           currentDamage += durability.damage;
@@ -159,7 +159,7 @@ class ArmorSystem {
   
   /**
    * Apply durability damage to all armor pieces
-   * @param {EntityEquippableComponent} equippable - The entity's equippable component
+   * @param {EntityEquippableComponent} equippable - The entity"s equippable component
    * @param {number} damage - The amount of damage being applied
    */
   applyDurabilityDamage(equippable, damage) {
@@ -178,7 +178,7 @@ class ArmorSystem {
         const armorItem = equippable.getEquipment(slot);
         if (!armorItem || !ARMOR_PROTECTION[armorItem.typeId]) continue;
         
-        const durability = armorItem.getComponent('minecraft:durability');
+        const durability = armorItem.getComponent("minecraft:durability");
         if (!durability) continue;
         
         // Create a new item instance to modify the durability
@@ -186,7 +186,7 @@ class ArmorSystem {
         Object.entries(armorItem.getLore()).forEach(lore => newItem.setLore(lore));
         
         // Apply durability damage
-        const newDurability = newItem.getComponent('minecraft:durability');
+        const newDurability = newItem.getComponent("minecraft:durability");
         if (!newDurability) continue;
         
         newDurability.damage = durability.damage + durabilityDamage;
@@ -211,7 +211,7 @@ class ArmorSystem {
     const { hurtEntity, damage, damageSource } = event;
     
     // Only process player damage
-    if (hurtEntity.typeId !== 'minecraft:player') return;
+    if (hurtEntity.typeId !== "minecraft:player") return;
     
     const player = hurtEntity;
     const currentTime = Date.now();
@@ -226,8 +226,8 @@ class ArmorSystem {
     // Skip non-physical damage types that bypass armor
     if (damageSource?.cause && NON_PHYSICAL_DAMAGE_TYPES.includes(damageSource.cause)) return;
     
-    // Get player's armor
-    const equippable = player.getComponent('minecraft:equippable');
+    // Get player"s armor
+    const equippable = player.getComponent("minecraft:equippable");
     if (!equippable) return;
     
     // Calculate armor protection
@@ -267,13 +267,13 @@ class ArmorSystem {
     // This gives time for vanilla damage to be applied first
     system.runTimeout(() => {
       try {
-        const health = player.getComponent('minecraft:health');
+        const health = player.getComponent("minecraft:health");
         if (!health) return;
         
         const currentHealth = health.currentValue;
         const newHealthValue = Math.min(health.effectiveMax, currentHealth + damageAbsorbed);
         
-        // Only update if there's a meaningful change
+        // Only update if there"s a meaningful change
         if (Math.abs(newHealthValue - currentHealth) > 0.01) {
           health.setCurrentValue(newHealthValue);
           
@@ -296,10 +296,10 @@ class ArmorSystem {
   updateArmorBar() {
     for (const player of world.getPlayers()) {
       try {
-        const equippable = player.getComponent('minecraft:equippable');
+        const equippable = player.getComponent("minecraft:equippable");
         
         // Default to empty armor bar
-        let armorDisplay = '_a00';
+        let armorDisplay = "_a00";
         
         if (equippable) {
           const { protection, maxDurability, currentDamage } = this.calculateArmorStats(equippable);
@@ -313,7 +313,7 @@ class ArmorSystem {
             const armorPoints = Math.min(20, Math.max(0, Math.round(effectiveProtectionVisual)));
             
             // Format display value with leading zero if needed
-            armorDisplay = `_a${armorPoints.toString().padStart(2, '0')}`;
+            armorDisplay = `_a${armorPoints.toString().padStart(2, "0")}`;
           }
         }
         

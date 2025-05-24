@@ -612,7 +612,7 @@
             {
                 "binding_type": "view",
                 "source_control_name": "$text_edit_text_control",
-                "source_property_name": "(#item_name = '')",
+                "source_property_name": "(#item_name = \"\")",
                 "target_property_name": "#visible",
                 "resolve_sibling_scope": true
             }

@@ -1,3 +1,4 @@
+# TODO: Rewrite this in JS
 gamerule recipesunlock false
 gamerule doinsomnia false
 

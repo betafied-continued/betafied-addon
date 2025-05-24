@@ -20,10 +20,10 @@
                 "item": "redstone"
             }
         },
-		"unlock": [
-	      {
-            "item": "redstone"
-          }
+        "unlock": [
+            {
+                "item": "redstone"
+            }
         ],
         "result": {
             "item": "noteblock",

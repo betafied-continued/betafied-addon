@@ -121,16 +121,16 @@
                     "controller.render.player.map": "variable.map_face_icon"
                 },
                 {
-                    "controller.render.player.chyves_custom_cape": "(query.get_name == 'notchyves') && !query.has_cape && query.armor_texture_slot(1) != 5 && (!variable.is_first_person || variable.is_paperdoll) && !variable.map_face_icon && !query.is_spectator"
+                    "controller.render.player.chyves_custom_cape": "(query.get_name == \"notchyves\") && !query.has_cape && query.armor_texture_slot(1) != 5 && (!variable.is_first_person || variable.is_paperdoll) && !variable.map_face_icon && !query.is_spectator"
                 },
                 {
-                    "controller.render.player.samo_custom_cape": "(query.get_name == 'Samo9754') && !query.has_cape && query.armor_texture_slot(1) != 5 && (!variable.is_first_person || variable.is_paperdoll) && !variable.map_face_icon && !query.is_spectator"
+                    "controller.render.player.samo_custom_cape": "(query.get_name == \"Samo9754\") && !query.has_cape && query.armor_texture_slot(1) != 5 && (!variable.is_first_person || variable.is_paperdoll) && !variable.map_face_icon && !query.is_spectator"
                 },
                 {
-                    "controller.render.player.squaredfox_custom_cape": "(query.get_name == 'squaredfox2') && !query.has_cape && query.armor_texture_slot(1) != 5 && (!variable.is_first_person || variable.is_paperdoll) && !variable.map_face_icon && !query.is_spectator"
+                    "controller.render.player.squaredfox_custom_cape": "(query.get_name == \"squaredfox2\") && !query.has_cape && query.armor_texture_slot(1) != 5 && (!variable.is_first_person || variable.is_paperdoll) && !variable.map_face_icon && !query.is_spectator"
                 },
                 {
-                    "controller.render.player.gameboy_custom_cape": "(query.get_name == 'Gameboy12345354') && !query.has_cape && query.armor_texture_slot(1) != 5 && (!variable.is_first_person || variable.is_paperdoll) && !variable.map_face_icon && !query.is_spectator"
+                    "controller.render.player.gameboy_custom_cape": "(query.get_name == \"Gameboy12345354\") && !query.has_cape && query.armor_texture_slot(1) != 5 && (!variable.is_first_person || variable.is_paperdoll) && !variable.map_face_icon && !query.is_spectator"
                 }
             ],
             "enable_attachables": true
