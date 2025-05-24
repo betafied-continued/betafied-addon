@@ -21,7 +21,7 @@ world.afterEvents.playerBreakBlock.subscribe((event) => {
         recentDeadBushLocation = block.location; // Store the exact location
         // Optional: Log for debugging
         console.warn(`Broke deadbush at ${block.x}, ${block.y}, ${block.z}`);
-        
+
         // Reset the flag and location after a short delay
         setTimeout(() => {
             suppressStickDrop = false;
