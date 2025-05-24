@@ -1,0 +1,110 @@
+{
+    "format_version": "1.21.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "minecraft:player",
+            "spawn_category": "creature",
+            "is_spawnable": false,
+            "is_summonable": false
+        },
+        "component_groups": {
+            "betarock:set_hunger": {
+                "minecraft:player.hunger": {
+                    "min": 5,
+                    "value": 5,
+                    "max": 5
+                }
+            }
+        },
+        "components": {
+            "minecraft:type_family": {
+                "family": [
+                    "player"
+                ]
+            },
+            "minecraft:is_hidden_when_invisible": {},
+            "minecraft:loot": {
+                "table": "loot_tables/empty.json"
+            },
+            "minecraft:collision_box": {
+                "width": 0.6,
+                "height": 1.8
+            },
+            "minecraft:can_climb": {},
+            "minecraft:movement": {
+                "value": 0.1
+            },
+            "minecraft:hurt_on_condition": {
+                "damage_conditions": [
+                    {
+                        "filters": {
+                            "test": "in_lava",
+                            "subject": "self",
+                            "operator": "==",
+                            "value": true
+                        },
+                        "cause": "lava",
+                        "damage_per_tick": 4
+                    }
+                ]
+            },
+            "minecraft:attack": {
+                "damage": 1
+            },
+            "minecraft:exhaustion_values": {
+                "heal": 0,
+                "jump": 0,
+                "sprint_jump": 0,
+                "mine": 0,
+                "attack": 0,
+                "damage": 0,
+                "walk": 0.0,
+                "sprint": 0,
+                "swim": 0
+            },
+            "minecraft:player.hunger": {
+                "min": 5,
+                "value": 5,
+                "max": 5
+            },
+            "minecraft:player.saturation": {
+                "min": 5,
+                "value": 5,
+                "max": 5
+            },
+            "minecraft:player.exhaustion": {
+                "min": 5,
+                "value": 5,
+                "max": 5
+            },
+            "minecraft:breathable": {
+                "total_supply": 15,
+                "suffocate_time": -1,
+                "inhale_time": 0.01,
+                "generates_bubbles": false
+            },
+            "minecraft:nameable": {
+                "always_show": true,
+                "allow_name_tag_renaming": false
+            },
+            "minecraft:physics": {
+                "push_towards_closest_space": true
+            },
+            "minecraft:pushable": {
+                "is_pushable": true,
+                "is_pushable_by_piston": true
+            },
+            "minecraft:conditional_bandwidth_optimization": {},
+            "minecraft:block_climber": {}
+        },
+        "events": {
+            "minecraft:entity_spawned": {
+                "add": {
+                    "component_groups": [
+                        "betarock:set_hunger"
+                    ]
+                }
+            }
+        }
+    }
+}

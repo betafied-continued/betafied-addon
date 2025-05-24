@@ -1,21 +1,21 @@
 {
-  "name": "Castaway",
-  "version": "1.0.0",
-  "scripts": {
-    "dev": "cmca watch",
-    "export": "cmca run export"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "@minecraft/server": "^2.0.0-beta.1.21.70-stable",
-    "@minecraft/server-admin": "^1.0.0-beta.1.21.61-stable",
-    "@minecraft/server-net": "^1.0.0-beta.1.21.61-stable",
-    "@minecraft/server-ui": "^2.0.0-beta.1.21.70-stable",
-    "cmca-build": "^0.2.1",
-    "esbuild": "^0.25.1"
-  },
-  "type": "module"
+    "name": "betafied-addon",
+    "version": "0.1.11-beta",
+    "scripts": {
+        "dev": "cmca watch",
+        "export": "cmca run export"
+    },
+    "keywords": [],
+    "author": "betafied",
+    "license": "AGPL-3.0-only",
+    "description": "Betafied is a project that aims to recreate the beta Minecraft experience, specifically the Beta 1.7.3 version, in the Bedrock Edition of the game. This pack includes various features and changes to bring back the nostalgic feel of the original game.",
+    "dependencies": {
+        "@minecraft/server": "^2.0.0-beta.1.21.70-stable",
+        "@minecraft/server-admin": "^1.0.0-beta.1.21.61-stable",
+        "@minecraft/server-net": "^1.0.0-beta.1.21.61-stable",
+        "@minecraft/server-ui": "^2.0.0-beta.1.21.70-stable",
+        "cmca-build": "^0.2.1",
+        "esbuild": "^0.25.1"
+    },
+    "type": "module"
 }

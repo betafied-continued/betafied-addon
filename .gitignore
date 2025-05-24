@@ -1,5 +1,5 @@
 build/
-.regolith/
-release.mcworld
 worlds/
+.regolith/
 node_modules/
+release.mcworld

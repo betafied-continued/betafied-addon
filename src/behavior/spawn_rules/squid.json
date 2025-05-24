@@ -1,0 +1,93 @@
+{
+    "format_version": "1.8.0",
+    "minecraft:spawn_rules": {
+        "description": {
+            "identifier": "minecraft:squid",
+            "population_control": "animal"
+        },
+        "conditions": [
+            {
+                "minecraft:spawns_underwater": {},
+                "minecraft:weight": {
+                    "default": 50
+                },
+                "minecraft:herd": {
+                    "min_size": 3,
+                    "max_size": 6
+                },
+                "minecraft:biome_filter": {
+                    "any_of": [
+                        {
+                            "test": "has_biome_tag",
+                            "value": "ocean"
+                        },
+                        {
+                            "test": "has_biome_tag",
+                            "value": "deep_ocean"
+                        },
+                        {
+                            "test": "has_biome_tag",
+                            "value": "cold_ocean"
+                        },
+                        {
+                            "test": "has_biome_tag",
+                            "value": "deep_cold_ocean"
+                        },
+                        {
+                            "test": "has_biome_tag",
+                            "value": "lukewarm_ocean"
+                        },
+                        {
+                            "test": "has_biome_tag",
+                            "value": "deep_lukewarm_ocean"
+                        },
+                        {
+                            "test": "has_biome_tag",
+                            "value": "warm_ocean"
+                        },
+                        {
+                            "test": "has_biome_tag",
+                            "value": "deep_warm_ocean"
+                        },
+                        {
+                            "test": "has_biome_tag",
+                            "value": "frozen_ocean"
+                        },
+                        {
+                            "test": "has_biome_tag",
+                            "value": "deep_frozen_ocean"
+                        },
+                        {
+                            "test": "has_biome_tag",
+                            "value": "river"
+                        },
+                        {
+                            "test": "has_biome_tag",
+                            "value": "frozen_river"
+                        },
+                        {
+                            "test": "has_biome_tag",
+                            "value": "swamp"
+                        },
+                        {
+                            "test": "has_biome_tag",
+                            "value": "mangrove_swamp"
+                        },
+                        {
+                            "test": "has_biome_tag",
+                            "value": "beach"
+                        },
+                        {
+                            "test": "has_biome_tag",
+                            "value": "stone_beach"
+                        },
+                        {
+                            "test": "has_biome_tag",
+                            "value": "cold_beach"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="banner.png" alt="Betafied Banner" width="100%">
+  <img src="assets/banner.png" alt="Betafied Banner" width="100%">
 </p>
 
 ### A Porkchop-Powered Love Letter to Minecraft Beta 1.7.3 — Now on Bedrock Edition!
@@ -8,7 +8,7 @@
 
 ---
 
-**Betafied** is an **open-source**, **community-driven** project dedicated to recreating the iconic **Minecraft Beta 1.7.3** experience — but for **Bedrock Edition**. The goal is to restore the nostalgic charm of 2011 with classic textures, world generation, mechanics, and more.
+**Betafied** is an **open-source** and **community-driven** project dedicated to recreating the iconic **Minecraft Beta 1.7.3** experience — but for **Bedrock Edition**. The goal is to restore the nostalgic charm of 2011 with classic textures, world generation, mechanics, and more.
 
 > 🔓 Released under the [GNU AGPLv3 License](https://www.gnu.org/licenses/agpl-3.0.en.html#license-text) — tweak it, fork it, build something new — it's yours too.
 

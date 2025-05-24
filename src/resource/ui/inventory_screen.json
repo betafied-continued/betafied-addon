@@ -1,0 +1,200 @@
+{
+    // ## Remove toolbar.
+    "toolbar_panel": {
+        "ignored": true
+    },
+    // ## Remove recipe toggle
+    "recipe_inventory_screen_content/content_stack_panel/recipe_book": {
+        "ignored": true
+    },
+    // ## Remove that center background.
+    "recipe_inventory_screen_content/content_stack_panel/center_fold": {
+        "ignored": true
+    },
+    // ## Remove Shield slot.
+    // WARN: Controller's "Y" button or Ctrl + L-click may still
+    // insert the stuff into shield slot.
+    // There's no fix :(
+    "player_armor_panel/offhand_grid": {
+        "ignored": true
+    },
+    "close_button_default": {
+        "type": "label",
+        "text": "X"
+    },
+    "close_button_pressed": {
+        "type": "label",
+        "text": "§eX"
+    },
+    "close_button@common.button": {
+        "$pressed_button_name": "button.menu_exit",
+        "size": [
+            27,
+            27
+        ],
+        "focus_enabled": false,
+        "controls": [
+            {
+                "default@close_button_default": {}
+            },
+            {
+                "hover@close_button_pressed": {}
+            },
+            {
+                "pressed@close_button_pressed": {}
+            }
+        ]
+    },
+    "close_button_element": {
+        "type": "image",
+        "texture": "textures/ui/hud_tip_text_background",
+        "size": [
+            27,
+            27
+        ],
+        "anchor_from": "top_right",
+        "anchor_to": "top_right",
+        "offset": [
+            -8,
+            8
+        ],
+        "alpha": 0.7,
+        "controls": [
+            {
+                "close_button@close_button": {
+                    "layer": 2
+                }
+            }
+        ]
+    },
+    "crafting_panel_2x2": {
+        "type": "panel",
+        "size": [
+            88,
+            83
+        ],
+        "anchor_from": "top_middle",
+        "anchor_to": "top_left",
+        "offset": [
+            -6,
+            9
+        ],
+        "controls": [
+            {
+                "crafting_arrow@crafting_arrow": {
+                    "offset": [
+                        46,
+                        29
+                    ],
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_panel",
+                            "resolve_sibling_scope": true,
+                            "source_property_name": "(not #needs_crafting_table)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "crafting_table@crafting.item_renderer": {
+                    "offset": [
+                        10,
+                        -5
+                    ],
+                    "property_bag": {
+                        "#item_id_aux": 3801088
+                    },
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "crafting_panel",
+                            "resolve_sibling_scope": true,
+                            "source_property_name": "(#needs_crafting_table)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "crafting_grid_2x2@crafting.crafting_grid_2x2_with_label": {
+                    "offset": [
+                        8,
+                        7
+                    ]
+                }
+            },
+            {
+                "survival_crafting_output_grid@crafting.output_grid_2x2": {
+                    "offset": [
+                        64,
+                        26
+                    ]
+                }
+            }
+        ],
+        "bindings": [
+            {
+                "binding_name": "#needs_crafting_table",
+                "binding_condition": "visible"
+            }
+        ]
+    },
+    // ## Adds some padding because apparently they're not dynamically centered.
+    //    Thanks mojang, very cool!
+    "recipe_inventory_screen_content/content_stack_panel": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "recipe_book@crafting.recipe_book": {
+                            "size": [
+                                "fill",
+                                "100%"
+                            ],
+                            "bindings": [
+                                {
+                                    "binding_type": "global",
+                                    "binding_name": "(#is_creative_layout)",
+                                    "binding_name_override": "#visible"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "survival_padding_no_recipe": {
+                            "type": "panel",
+                            "size": [
+                                75,
+                                "100%"
+                            ],
+                            "bindings": [
+                                {
+                                    "binding_type": "global",
+                                    "binding_name": "(not #is_survival_layout)",
+                                    "binding_name_override": "#visible"
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ]
+    },
+    "recipe_inventory_screen_content": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "close_button_element@crafting.close_button_element": {}
+                    }
+                ]
+            }
+        ]
+    }
+}

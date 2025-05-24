@@ -1,0 +1,51 @@
+{
+    "format_version": "1.8.0",
+    "minecraft:spawn_rules": {
+        "description": {
+            "identifier": "minecraft:sheep",
+            "population_control": "animal"
+        },
+        "conditions": [
+            {
+                "minecraft:spawns_on_surface": {},
+                "minecraft:spawns_on_block_filter": "minecraft:grass_block",
+                "minecraft:brightness_filter": {
+                    "min": 4, // Beta allowed lower light
+                    "max": 15,
+                    "adjust_for_weather": false // No weather-based spawning
+                },
+                "minecraft:weight": {
+                    "default": 20 // Increased from 12 (Beta sheep were very common)
+                },
+                "minecraft:herd": {
+                    "min_size": 3, // Larger groups (Beta often had 4+)
+                    "max_size": 6
+                },
+                "minecraft:biome_filter": {
+                    "any_of": [ // Spawn in all grassy biomes (like Beta)
+                        {
+                            "test": "has_biome_tag",
+                            "value": "animal"
+                        },
+                        {
+                            "test": "has_biome_tag",
+                            "value": "grass"
+                        },
+                        {
+                            "test": "has_biome_tag",
+                            "value": "forest"
+                        },
+                        {
+                            "test": "has_biome_tag",
+                            "value": "meadow"
+                        },
+                        {
+                            "test": "has_biome_tag",
+                            "value": "cherry_grove"
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,928 @@
+{
+    "hud_player_renderer": { // Disables various renderers.
+        "ignored": true
+    },
+    "mob_effects_renderer": {
+        "ignored": true
+    },
+    "vignette_renderer": {
+        "ignored": true
+    },
+    "horse_heart_renderer": {
+        "ignored": true
+    },
+    "horse_jump_renderer": {
+        "ignored": true
+    },
+    "dash_renderer": {
+        "ignored": true
+    },
+    "locator_bar": {
+        "ignored": true
+    },
+    "hunger_renderer": {
+        "ignored": true
+    },
+    "cursor_renderer": {
+        "ignored": true
+    },
+    "crosshair_pixel": {
+        "type": "custom",
+        "renderer": "gradient_renderer",
+        "color1": [
+            1,
+            1,
+            1,
+            1
+        ],
+        "color2": [
+            1,
+            1,
+            1,
+            1
+        ],
+        "size": [
+            1,
+            1
+        ]
+    },
+    "crosshair": {
+        "type": "panel",
+        "size": [
+            16,
+            16
+        ],
+        "controls": [
+            {
+                "horizontal@hud.crosshair_pixel": {
+                    "size": [
+                        9,
+                        1
+                    ]
+                }
+            },
+            {
+                "vertical@hud.crosshair_pixel": {
+                    "size": [
+                        1,
+                        9
+                    ]
+                }
+            },
+            {
+                "dot@hud.crosshair_pixel": {
+                    "size": [
+                        1,
+                        1
+                    ]
+                }
+            }
+        ]
+    },
+    "root_panel": {
+        "modifications": [
+            {
+                "array_name": "controls",
+                "operation": "insert_front",
+                "value": [
+                    {
+                        "chat_panel_bottom@hud.chat_panel_bottom": {}
+                    },
+                    {
+                        "crosshair_rewrite@hud.crosshair": {}
+                    },
+                    {
+                        "player_list@hud.player_list": {}
+                    }
+                ]
+            }
+        ]
+    },
+    // Add playerlist.
+    // Note - This weird tab padding has forced my hand.
+    //        lmao
+    "player_list": {
+        "type": "button",
+        "size": [
+            "100%",
+            "100%"
+        ],
+        "default_control": "default",
+        "hover_control": "hover",
+        "pressed_control": "pressed",
+        "button_mappings": [
+            {
+                "from_button_id": "button.scoreboard",
+                "to_button_id": "button.scoreboard",
+                "mapping_type": "global"
+            }
+        ],
+        "controls": [
+            // Display whenever the said keymap are being pressed.
+            {
+                "pressed": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        "100%"
+                    ],
+                    "controls": [
+                        {
+                            "pressed@common.scrolling_panel": {
+                                "size": [
+                                    124,
+                                    "100%"
+                                ],
+                                "offset": [
+                                    0,
+                                    20
+                                ],
+                                "anchor_from": "top_middle",
+                                "anchor_to": "top_middle",
+                                "$scrolling_content": "hud.player_list_grid",
+                                "$show_background": false,
+                                "$always_handle_scrolling": true
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    // it's a player list grid.
+    "player_list_grid": {
+        "type": "grid",
+        "size": [
+            "100%c",
+            "100%c"
+        ],
+        "grid_item_template": "hud.player_list_grid_core",
+        "grid_dimension_binding": "#players_grid_dimension",
+        "collection_name": "players_collection",
+        "anchor_to": "top_middle",
+        "anchor_from": "top_middle",
+        "bindings": [
+            {
+                "binding_name": "#players_grid_dimension"
+            }
+        ]
+    },
+    "player_list_grid_core": {
+        "type": "panel",
+        "size": [
+            120,
+            9
+        ],
+        "controls": [
+            {
+                "background": {
+                    "type": "panel",
+                    "size": [
+                        "100%",
+                        10
+                    ],
+                    "anchor_from": "top_middle",
+                    "anchor_to": "top_middle",
+                    "controls": [
+                        {
+                            "outline": {
+                                "type": "image",
+                                "texture": "textures/ui/background_with_border",
+                                "alpha": 0.5
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "player_profile_core": {
+                    "type": "stack_panel",
+                    "size": [
+                        "100%",
+                        "100%"
+                    ],
+                    "orientation": "horizontal",
+                    "controls": [
+                        {
+                            "player_profile_panel": {
+                                "type": "panel",
+                                "size": [
+                                    8,
+                                    8
+                                ],
+                                "layer": 1,
+                                "controls": [
+                                    {
+                                        "player_profile": {
+                                            "type": "image",
+                                            "texture": "#texture",
+                                            "texture_file_system": "#texture_source",
+                                            "size": [
+                                                8,
+                                                8
+                                            ],
+                                            "offset": [
+                                                1,
+                                                1
+                                            ],
+                                            "bindings": [
+                                                {
+                                                    "binding_name": "#texture",
+                                                    "binding_type": "collection",
+                                                    "binding_collection_name": "players_collection"
+                                                },
+                                                {
+                                                    "binding_name": "#texture_source",
+                                                    "binding_name_override": "#texture_file_system",
+                                                    "binding_type": "collection",
+                                                    "binding_collection_name": "players_collection"
+                                                },
+                                                {
+                                                    "binding_name": "#gamerpic_visible",
+                                                    "binding_type": "collection",
+                                                    "binding_collection_name": "players_collection",
+                                                    "binding_name_override": "#visible"
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "player_profile_offline": {
+                                            "type": "image",
+                                            "texture": "textures/ui/lan_icon",
+                                            "size": [
+                                                8,
+                                                8
+                                            ],
+                                            "offset": [
+                                                1,
+                                                1
+                                            ],
+                                            "bindings": [
+                                                {
+                                                    "binding_name": "(not #gamerpic_visible)",
+                                                    "binding_type": "collection",
+                                                    "binding_collection_name": "players_collection",
+                                                    "binding_name_override": "#visible"
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "padding_nametag": {
+                                "type": "panel",
+                                "size": [
+                                    2,
+                                    2
+                                ]
+                            }
+                        },
+                        {
+                            "player_name": {
+                                "type": "label",
+                                "text": "#gamertag",
+                                "size": [
+                                    "fill",
+                                    "default"
+                                ],
+                                "text_alignment": "left",
+                                "shadow": true,
+                                "layer": 1,
+                                "bindings": [
+                                    {
+                                        "binding_name": "#gamertag",
+                                        "binding_type": "collection",
+                                        "binding_collection_name": "players_collection"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    // make sure touch does not have java message thing
+    // it makes chat more easy to read.
+    "chat_panel": {
+        "bindings": [
+            {
+                "binding_name": "#hud_visible_centered_touch",
+                "binding_type": "global",
+                "binding_name_override": "#visible"
+            }
+        ]
+    },
+    "chat_panel_bottom": {
+        "type": "panel",
+        "anchor_from": "bottom_left",
+        "anchor_to": "bottom_left",
+        "size": [
+            312,
+            "100%c"
+        ],
+        "max_size": [
+            312,
+            200
+        ],
+        "offset": [
+            2,
+            -43
+        ],
+        "bindings": [
+            {
+                "binding_name": "#hud_visible_centered_touch",
+                "binding_type": "global"
+            },
+            {
+                "binding_type": "view",
+                "source_property_name": "(not #hud_visible_centered_touch)",
+                "target_property_name": "#visible"
+            }
+        ],
+        "controls": [
+            {
+                "stack_panel": {
+                    "type": "stack_panel",
+                    "anchor_from": "bottom_left",
+                    "anchor_to": "bottom_left",
+                    "size": [
+                        "100%",
+                        "100%c"
+                    ],
+                    "factory": {
+                        "name": "chat_item_factory",
+                        "max_children_size": 15,
+                        "control_ids": {
+                            "chat_item": "chat_item@hud.chat_grid_item_bottom"
+                        }
+                    }
+                }
+            }
+        ]
+    },
+    // ## Minimized the CGI bottom element.
+    "chat_grid_item_bottom": {
+        "type": "image",
+        "texture": "textures/ui/Black",
+        "alpha": 0.5,
+        "size": [
+            312,
+            "100%c"
+        ],
+        "anims": [
+            "@hud.anim_chat_bg_wait_bottom"
+        ],
+        "bindings": [
+            {
+                "binding_name": "(not #on_new_death_screen)",
+                "binding_name_override": "#visible"
+            }
+        ],
+        "controls": [
+            {
+                "text_wrapper": {
+                    "type": "button",
+                    "size": [
+                        312,
+                        "100%c"
+                    ],
+                    "anchor_from": "bottom_left",
+                    "anchor_to": "bottom_left",
+                    "layer": 5,
+                    "controls": [
+                        {
+                            "text": {
+                                "type": "label",
+                                "text": "#text",
+                                "anchor_from": "bottom_left",
+                                "anchor_to": "bottom_left",
+                                "shadow": true,
+                                "localize": false,
+                                "size": [
+                                    312,
+                                    "default"
+                                ],
+                                "enable_profanity_filter": true,
+                                "anims": [
+                                    "@hud.anim_chat_txt_wait"
+                                ],
+                                "bindings": [
+                                    {
+                                        "binding_name": "#text",
+                                        "binding_type": "collection",
+                                        "binding_collection_name": "chat_text_grid"
+                                    },
+                                    {
+                                        "binding_type": "view",
+                                        "source_property_name": "#text",
+                                        "target_property_name": "#chat_text"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    // ## Bottom Anim Text.
+    "anim_chat_bg_alpha_bottom": {
+        "anim_type": "alpha",
+        "easing": "in_quart",
+        "destroy_at_end": "chat_text_thing",
+        "duration": 1,
+        "from": 0.5,
+        "to": 0
+    },
+    "anim_chat_bg_wait_bottom": {
+        "anim_type": "wait",
+        "duration": "$chat_item_lifetime",
+        "next": "@hud.anim_chat_bg_alpha_bottom"
+    },
+    // ## Hotbar Tweaks for Touch only.
+    //    This made "inventory" button invisible and leave only icon.
+    //    Aswell make sure that the hotbar is always centered the same other platform has.
+    //    This probably will make touch hotbar more like PC hotbar.
+    "hotbar_panel": {
+        "controls": [
+            {
+                "left_pudding": {
+                    "type": "panel",
+                    "size": [
+                        20,
+                        22
+                    ],
+                    "bindings": [
+                        {
+                            "binding_name": "#hotbar_elipses_right_visible",
+                            "binding_name_override": "#visible",
+                            "binding_type": "global"
+                        }
+                    ]
+                }
+            },
+            {
+                "hotbar_elipses_panel_left@hud.hotbar_elipses_panel_left_content": {}
+            },
+            {
+                "hotbar_start_cap@hud.hotbar_start_cap": {}
+            },
+            {
+                "hotbar_grid@hud.hotbar_grid": {}
+            },
+            {
+                "hotbar_end_cap@hud.hotbar_end_cap": {}
+            },
+            {
+                "hotbar_elipses_panel_right@hud.hotbar_elipses_panel_right_content": {}
+            },
+            {
+                "right_pudding": {
+                    "type": "panel",
+                    "size": [
+                        20,
+                        22
+                    ],
+                    "bindings": [
+                        {
+                            "binding_name": "#hotbar_elipses_left_visible",
+                            "binding_name_override": "#visible",
+                            "binding_type": "global"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "hotbar_elipses_panel_left_content": {
+        "$hotbar_elipses_button_size": [
+            20,
+            22
+        ],
+        "controls": [
+            {
+                "button@hud.hotbar_elipses_button": {}
+            }
+        ]
+    },
+    "hotbar_elipses_panel_right_content": {
+        "$hotbar_elipses_button_size": [
+            20,
+            22
+        ],
+        "controls": [
+            {
+                "button@hud.hotbar_elipses_button": {}
+            }
+        ]
+    },
+    "hotbar_elipses_button": {
+        "prevent_touch_input": true
+    },
+    "borderless_button@common.button": {
+        "prevent_touch_input": true,
+        "controls": [
+            {
+                "elipses@elipses_image_rewrite": {}
+            }
+        ]
+    },
+    "elipses_image_rewrite": {
+        "type": "image",
+        "texture": "textures/ui/elipses",
+        "size": [
+            16,
+            16
+        ],
+        "layer": 4
+    },
+    // ## Custom Armor Icon.
+    "hud_title_text/title_frame": {
+        "ignored": "(\"%.2s\" * $title_text = \"_a\")"
+    },
+    // ## Custom Icon Core.
+    //    Handles the custom stuff.
+    "custom_icon_core": {
+        "type": "panel",
+        "size": [
+            8,
+            9
+        ],
+        "$update_string": "_a",
+        "$icon_value|default": 20,
+        "$icon_value_half": "($icon_value - 1)",
+        "controls": [
+            {
+                "data_control_core": {
+                    "type": "panel",
+                    "bindings": [
+                        {
+                            "binding_name": "#hud_title_text_string"
+                        },
+                        {
+                            "binding_name": "#hud_title_text_string",
+                            "binding_name_override": "#string_data",
+                            "binding_condition": "visibility_changed"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(not (#hud_title_text_string = #string_data) and (not ((#hud_title_text_string - $update_string) = #hud_title_text_string)))",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "icon_full": {
+                    "type": "image",
+                    "texture": "textures/ui/armor_full",
+                    "layer": 3,
+                    "size": [
+                        9,
+                        9
+                    ],
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "data_control_core",
+                            "resolve_sibling_scope": true,
+                            "source_property_name": "(#string_data - (\"%.2s\" * #string_data) * 1)",
+                            "target_property_name": "#icon_value"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "((#icon_value = $icon_value) or (#icon_value > $icon_value))",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "icon_half": {
+                    "type": "image",
+                    "texture": "textures/ui/armor_half",
+                    "layer": 2,
+                    "size": [
+                        9,
+                        9
+                    ],
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "data_control_core",
+                            "resolve_sibling_scope": true,
+                            "source_property_name": "(#string_data - (\"%.2s\" * #string_data) * 1)",
+                            "target_property_name": "#icon_value"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(#icon_value = $icon_value_half)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "icon_bg": {
+                    "type": "image",
+                    "texture": "textures/ui/armor_empty",
+                    "layer": 1,
+                    "size": [
+                        9,
+                        9
+                    ],
+                    "bindings": [
+                        {
+                            "binding_type": "view",
+                            "source_control_name": "data_control_core",
+                            "resolve_sibling_scope": true,
+                            "source_property_name": "(#string_data - (\"%.2s\" * #string_data) * 1)",
+                            "target_property_name": "#icon_value"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(not (#icon_value = 0))",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    // ## Custom Armor icon display.
+    //    Icon Priority are been reversed
+    "armor_icon": {
+        "type": "stack_panel",
+        "orientation": "horizontal",
+        "size": [
+            "100%c",
+            9
+        ],
+        "bindings": [
+            {
+                "binding_name": "#is_armor_visible",
+                "binding_name_override": "#visible"
+            }
+        ],
+        "controls": [
+            {
+                "1@hud.custom_icon_core": {
+                    "$icon_value": 20
+                }
+            },
+            {
+                "2@hud.custom_icon_core": {
+                    "$icon_value": 18
+                }
+            },
+            {
+                "3@hud.custom_icon_core": {
+                    "$icon_value": 16
+                }
+            },
+            {
+                "4@hud.custom_icon_core": {
+                    "$icon_value": 14
+                }
+            },
+            {
+                "5@hud.custom_icon_core": {
+                    "$icon_value": 12
+                }
+            },
+            {
+                "6@hud.custom_icon_core": {
+                    "$icon_value": 10
+                }
+            },
+            {
+                "7@hud.custom_icon_core": {
+                    "$icon_value": 8
+                }
+            },
+            {
+                "8@hud.custom_icon_core": {
+                    "$icon_value": 6
+                }
+            },
+            {
+                "9@hud.custom_icon_core": {
+                    "$icon_value": 4
+                }
+            },
+            {
+                "10@hud.custom_icon_core": {
+                    "$icon_value": 2
+                }
+            }
+        ]
+    },
+    //----------------------------------------------//
+    //
+    //----------------------------------------------//
+    "hotbar_slot_image": { // Rectifies hotbar opacity
+        "$hotbar_slot_image_size|default": [
+            20,
+            22
+        ],
+        "type": "image",
+        "offset": [
+            0,
+            0
+        ],
+        "size": "$hotbar_slot_image_size",
+        "layer": 1,
+        "alpha": 1
+    },
+    "item_durability@common.durability_bar": {
+        "$durability_bar_required|default": true,
+        "$item_collection_name": "$hotbar_collection_name",
+        "offset": [
+            0,
+            5.5
+        ]
+    },
+    //----------------------------------------------//
+    //
+    //----------------------------------------------//
+    "exp_progress_bar_and_hotbar": { // NO MORE XP BARS!!!!
+        "type": "panel",
+        "size": [
+            182,
+            31
+        ],
+        "anchor_from": "bottom_middle",
+        "anchor_to": "bottom_middle",
+        "controls": [
+            {
+                "hotbar@hotbar_chooser": {
+                    "offset": [
+                        4,
+                        15.5
+                    ],
+                    "bindings": [
+                        {
+                            "binding_name": "(not #is_spectator_mode)", // For some reason this is not working, but whatever . . .
+                            "binding_name_override": "#visible"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    //----------------------------------------------//
+    //
+    //----------------------------------------------//
+    "centered_gui_elements_at_bottom_middle": { // This is all of the bottom central HUD stuff. Redefines it without the bars we don't want.
+        "type": "panel",
+        "anchor_from": "bottom_middle",
+        "anchor_to": "bottom_middle",
+        "size": [
+            180,
+            50
+        ],
+        "offset": [
+            0,
+            2
+        ],
+        "controls": [
+            {
+                "heart_rend@heart_renderer": {
+                    "offset": [
+                        -1,
+                        -33
+                    ],
+                    "anchor_from": "bottom_left",
+                    "anchor_to": "bottom_left"
+                }
+            },
+            {
+                "armor_rend@armor_icon": {
+                    "offset": [
+                        101,
+                        -25
+                    ],
+                    "anchor_from": "bottom_left",
+                    "anchor_to": "bottom_left"
+                }
+            },
+            {
+                "bubbles_rend_0@bubbles_renderer": {
+                    "offset": [
+                        180.5,
+                        -33
+                    ],
+                    "anchor_from": "bottom_left",
+                    "anchor_to": "bottom_left",
+                    "bindings": [
+                        {
+                            "binding_name": "#is_armor_visible"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(not #is_armor_visible)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "bubbles_rend_1@bubbles_renderer": {
+                    "offset": [
+                        180.5,
+                        -43
+                    ],
+                    "anchor_from": "bottom_left",
+                    "anchor_to": "bottom_left",
+                    "bindings": [
+                        {
+                            "binding_name": "#is_armor_visible",
+                            "binding_name_override": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "exp_rend@exp_progress_bar_and_hotbar": {}
+            }
+        ]
+    },
+    "centered_gui_elements_at_bottom_middle_touch": { // Touch.
+        "type": "panel",
+        "anchor_from": "bottom_middle",
+        "anchor_to": "bottom_middle",
+        "size": [
+            180,
+            50
+        ],
+        "offset": [
+            0,
+            2
+        ],
+        "controls": [
+            {
+                "heart_rend@heart_renderer": {
+                    "offset": [
+                        -1,
+                        -33
+                    ],
+                    "anchor_from": "bottom_left",
+                    "anchor_to": "bottom_left"
+                }
+            },
+            {
+                "armor_rend@armor_icon": {
+                    "offset": [
+                        101,
+                        -25
+                    ],
+                    "anchor_from": "bottom_left",
+                    "anchor_to": "bottom_left"
+                }
+            },
+            {
+                "bubbles_rend_0@bubbles_renderer": {
+                    "offset": [
+                        180.5,
+                        -33
+                    ],
+                    "anchor_from": "bottom_left",
+                    "anchor_to": "bottom_left",
+                    "bindings": [
+                        {
+                            "binding_name": "#is_armor_visible"
+                        },
+                        {
+                            "binding_type": "view",
+                            "source_property_name": "(not #is_armor_visible)",
+                            "target_property_name": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "bubbles_rend_1@bubbles_renderer": {
+                    "offset": [
+                        180.5,
+                        -43
+                    ],
+                    "anchor_from": "bottom_left",
+                    "anchor_to": "bottom_left",
+                    "bindings": [
+                        {
+                            "binding_name": "#is_armor_visible",
+                            "binding_name_override": "#visible"
+                        }
+                    ]
+                }
+            },
+            {
+                "exp_rend@exp_progress_bar_and_hotbar": {}
+            }
+        ]
+    }
+}
