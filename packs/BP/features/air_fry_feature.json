@@ -1,0 +1,19 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:ore_feature": {
+    "description": {
+      "identifier": "minecraft:air_fry_feature"
+    },
+    "count": 130,
+    "replace_rules": [
+      {
+        "places_block": "minecraft:air",
+        "may_replace": [
+          {
+            "name": "minecraft:nether_brick"
+          }
+        ]
+      }
+    ]
+  }
+}

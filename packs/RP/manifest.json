@@ -1,0 +1,40 @@
+{
+    "format_version": 2,
+    "header": {
+        "description": "Welcome to 2011!",
+        "name": "betafied (resource)",
+        "uuid": "e24e7a57-2a36-4e95-a3b6-2e445125b4ab",
+        "version": [
+            0,
+            2,
+            0
+        ],
+        "min_engine_version": [
+            1,
+            21,
+            70
+        ]
+    },
+    "modules": [
+        {
+            "description": "Welcome to 2011!",
+            "type": "resources",
+            "uuid": "39583796-cf91-44cd-a687-721a025fdd90",
+            "version": [
+                0,
+                1,
+                8
+            ]
+        }
+    ],
+    "dependencies": [
+        {
+            "uuid": "7b622e16-7cf4-4bfe-9462-5d1ef55ade84",
+            "version": [
+                0,
+                2,
+                0
+            ]
+        }
+    ]
+}

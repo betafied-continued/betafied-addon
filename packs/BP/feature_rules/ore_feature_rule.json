@@ -1,0 +1,44 @@
+{
+  "format_version": "1.13.0",
+  "minecraft:feature_rules": {
+    "description": {
+      "identifier": "minecraft:ore_feature_rule",
+      "places_feature": "minecraft:ore_feature"
+    },
+    "conditions": {
+      "placement_pass": "underground_pass",
+      "minecraft:biome_filter": [
+        {
+          "any_of": [
+            {
+              "test": "has_biome_tag",
+              "operator": "==",
+              "value": "hell"
+            },
+            {
+              "test": "has_biome_tag",
+              "operator": "==",
+              "value": "nether"
+            }
+          ]
+        }
+      ]
+    },
+    "distribution": {
+      "iterations": 100,
+      "coordinate_eval_order": "zyx",
+      "x": {
+        "distribution": "uniform",
+        "extent": [ 5, 8 ]
+      },
+      "y": {
+        "distribution": "uniform",
+        "extent": [ 5, 111 ]
+      },
+      "z": {
+        "distribution": "uniform",
+        "extent": [ 5, 8 ]
+      }
+    }
+  }
+}

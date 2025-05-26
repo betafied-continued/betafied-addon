@@ -1,0 +1,29 @@
+//bridge-file-version: #3
+{
+    "format_version": "1.16.100",
+    "minecraft:fog_settings": {
+        "description": {
+            "identifier": "mgg:fog_basalt_deltas"
+        },
+        "distance": {
+            "air": {
+                "fog_start": 0,
+                "fog_end": 0,
+                "fog_color": "#655F70",
+                "render_distance_type": "render"
+            },
+            "water": {
+                "fog_start": 0,
+                "fog_end": 15,
+                "fog_color": "#413E42",
+                "render_distance_type": "fixed"
+            },
+            "weather": {
+                "fog_start": 0,
+                "fog_end": 0,
+                "fog_color": "#685f70",
+                "render_distance_type": "render"
+            }
+        }
+    }
+}
