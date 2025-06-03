@@ -1,36 +1,34 @@
 {
-    "format_version": "1.8.0",
-    "minecraft:spawn_rules": {
-        "description": {
-            "identifier": "minecraft:zombie",
-            "population_control": "monster"
+  "format_version": "1.8.0",
+  "minecraft:spawn_rules": {
+    "description": {
+      "identifier": "minecraft:zombie",
+      "population_control": "monster"
+    },
+    "conditions": [
+      {
+        "minecraft:spawns_on_surface": {},
+        "minecraft:spawns_underground": {},
+        "minecraft:brightness_filter": {
+          "min": 0,  // Changed from 0 to 7 (Beta-style)
+          "max": 7,
+          "adjust_for_weather": false  // Disabled (Beta had no weather-based spawning)
         },
-        "conditions": [
-            {
-                "minecraft:spawns_on_surface": {},
-                "minecraft:spawns_underground": {},
-                "minecraft:brightness_filter": {
-                    "min": 0, // Changed from 0 to 7 (Beta-style)
-                    "max": 7,
-                    "adjust_for_weather": false // Disabled (Beta had no weather-based spawning)
-                },
-                "minecraft:difficulty_filter": {
-                    "min": "easy",
-                    "max": "hard"
-                },
-                "minecraft:weight": {
-                    "default": 100
-                },
-                "minecraft:herd": {
-                    "min_size": 2,
-                    "max_size": 4
-                },
-                "minecraft:biome_filter": {
-                    "test": "has_biome_tag",
-                    "operator": "==",
-                    "value": "monster"
-                }
-            }
-        ]
-    }
+        "minecraft:difficulty_filter": {
+          "min": "easy",
+          "max": "hard"
+        },
+        "minecraft:weight": {
+          "default": 100
+        },
+        "minecraft:herd": {
+          "min_size": 2,
+          "max_size": 4
+        },
+        "minecraft:biome_filter": {
+          "test": "has_biome_tag", "operator": "==", "value": "monster"
+        }
+      }
+    ]
+  }
 }

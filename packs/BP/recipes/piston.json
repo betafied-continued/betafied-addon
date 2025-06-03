@@ -27,9 +27,9 @@
             }
         },
         "unlock": [
-            {
-                "item": "minecraft:redstone"
-            }
+          {
+            "item": "minecraft:redstone"
+          }
         ],
         "result": {
             "item": "piston",

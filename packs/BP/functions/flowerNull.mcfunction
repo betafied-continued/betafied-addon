@@ -1,4 +1,3 @@
-# TODO: Rewrite this in gametest/js for performance!
 # Initialize scoreboard objective for flower cycle (runs once if not already set)
 scoreboard objectives add FlowerCycle dummy
 
