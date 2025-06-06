@@ -2,8 +2,8 @@
   "format_version": "1.13.0",
   "minecraft:feature_rules": {
     "description": {
-      "identifier": "minecraft:ore_feature_rule",
-      "places_feature": "minecraft:ore_feature"
+      "identifier": "minecraft:soul_feature_rule",
+      "places_feature": "minecraft:soul_feature"
     },
     "conditions": {
       "placement_pass": "underground_pass",
@@ -25,19 +25,19 @@
       ]
     },
     "distribution": {
-      "iterations": 110,
+      "iterations": 70,
       "coordinate_eval_order": "zyx",
       "x": {
         "distribution": "uniform",
-        "extent": [ 5, 8 ]
+        "extent": [ 5, 10 ]
       },
       "y": {
         "distribution": "uniform",
-        "extent": [ 5, 111 ]
+        "extent": [ 5, 50 ]
       },
       "z": {
         "distribution": "uniform",
-        "extent": [ 5, 8 ]
+        "extent": [ 5, 10 ]
       }
     }
   }

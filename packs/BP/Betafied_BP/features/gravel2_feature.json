@@ -4,7 +4,7 @@
     "description": {
       "identifier": "minecraft:gravel2_feature"
     },
-    "count": 15,
+    "count": 20,
     "replace_rules": [
       {
         "places_block": "minecraft:gravel",

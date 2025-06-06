@@ -7,4 +7,6 @@ import 'paritySystems/oreDrops.js'
 import 'paritySystems/itemRemoval.js'
 import 'paritySystems/chat2console.js'
 import 'paritySystems/old2newBow.js'
-// import 'paritySystems/itemRemoval.js' Deprecated after recipe changes
+import 'paritySystems/newGen.js'
+import 'paritySystems/PortalDeathFix.js'
+// itemRemoval.js Deprecated after recipe changes

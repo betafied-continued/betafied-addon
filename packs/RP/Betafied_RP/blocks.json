@@ -118,14 +118,7 @@
     "ancient_debris": {
         "isotropic": false,
         "sound": "ancient_debris",
-        "textures": {
-            "down": "ancient_debris_top",
-            "east": "ancient_debris_side",
-            "north": "ancient_debris_side",
-            "south": "ancient_debris_side",
-            "up": "ancient_debris_top",
-            "west": "ancient_debris_side"
-        }
+        "textures": "netherrack"
     },
     "andesite_stairs": {
         "isotropic": false,
@@ -537,11 +530,7 @@
     "blackstone": {
         "isotropic": false,
         "sound": "stone",
-        "textures": {
-            "down": "blackstone_top",
-            "side": "blackstone",
-            "up": "blackstone_top"
-        }
+        "textures": "netherrack"
     },
     "blackstone_double_slab": {
         "isotropic": false,
@@ -3094,7 +3083,7 @@
     "magma": {
         "isotropic": false,
         "sound": "stone",
-        "textures": "magma"
+        "textures": "soul_sand"
     },
     "mangrove_button": {
         "isotropic": false,
@@ -3329,7 +3318,7 @@
     "nether_gold_ore": {
         "isotropic": false,
         "sound": "nether_gold_ore",
-        "textures": "nether_gold_ore"
+        "textures": "netherrack"
     },
     "nether_sprouts": {
         "isotropic": false,
@@ -3965,7 +3954,7 @@
     "quartz_ore": {
         "isotropic": false,
         "sound": "nether_gold_ore",
-        "textures": "quartz_ore"
+        "textures": "netherrack"
     },
     "quartz_stairs": {
         "textures": {

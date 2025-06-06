@@ -4,7 +4,7 @@
     "description": {
       "identifier": "minecraft:soul_feature"
     },
-    "count": 150,
+    "count": 100,
     "replace_rules": [
       {
         "places_block": "minecraft:soul_sand",

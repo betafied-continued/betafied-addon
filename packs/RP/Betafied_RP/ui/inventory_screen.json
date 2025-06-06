@@ -312,6 +312,7 @@
   "recipe_inventory_screen_content_betafied": {
     "type": "panel",
     "controls": [
+      { "close_button_element@crafting.close_button_element": {}},
       {
         "content_stack_panel": {
           "type": "stack_panel",
@@ -606,13 +607,5 @@
   },
   "inventory_screen@crafting.inventory_screen_base": {
     "$screen_content": "crafting.recipe_inventory_screen_content_betafied"
-  },
-  "recipe_inventory_screen_contents": {
-    "modifications": [
-      { "array_name": "controls",
-        "operation": "insert_front",
-        "value": [
-          { "close_button_element@crafting.close_button_element": {}}
-      ]}
-  ]}
+  }
 }

@@ -11,7 +11,8 @@
             "may_replace":[
                "minecraft:nether_brick_fence",
                "minecraft:nether_brick_stairs",
-               "minecraft:chest"
+               "minecraft:chest",
+               "minecraft:nether_brick"
            ]
          }
       ]
