@@ -174,6 +174,13 @@ class ItemRestrictionSystem {
       "minecraft:light_block_6", "minecraft:light_block_5", "minecraft:light_block_4",
       "minecraft:light_block_3", "minecraft:light_block_2", "minecraft:light_block_1",
       "minecraft:light_block_0", "minecraft:light_block", "minecraft:bedrock",
+
+      // Spawn eggs
+      "minecraft:chicken_spawn_egg", "minecraft:cow_spawn_egg", "minecraft:creeper_spawn_egg",
+      "minecraft:ghast_spawn_egg", "minecraft:pig_spawn_egg", "minecraft:sheep_spawn_egg",
+      "minecraft:skeleton_spawn_egg", "minecraft:slime_spawn_egg", "minecraft:spider_spawn_egg",
+      "minecraft:squid_spawn_egg", "minecraft:wolf_spawn_egg", "minecraft:zombie_spawn_egg",
+      "minecraft:zombie_pigman_spawn_egg",
       
       // Music Discs
       "minecraft:music_disc_13", "minecraft:music_disc_cat"
