@@ -93,7 +93,8 @@ class ItemRestrictionSystem {
       // Food
       "minecraft:apple", "minecraft:mushroom_stew", "minecraft:bread",
       "minecraft:porkchop", "minecraft:cooked_porkchop", "minecraft:golden_apple",
-      "minecraft:fish", "minecraft:cooked_fish", "minecraft:cookie", "minecraft:cake", 
+      "minecraft:fish", "minecraft:cooked_fish", "minecraft:cod", "minecraft:cooked_cod",
+      "minecraft:cookie", "minecraft:cake", 
       
       // Resources & Materials
       "minecraft:coal", "minecraft:diamond", "minecraft:iron_ingot", "minecraft:gold_ingot",
@@ -101,20 +102,29 @@ class ItemRestrictionSystem {
       "minecraft:gunpowder", "minecraft:wheat_seeds", "minecraft:wheat", "minecraft:flint",
       "minecraft:leather", "minecraft:brick", "minecraft:clay_ball", "minecraft:sugar_cane",
       "minecraft:paper", "minecraft:book", "minecraft:slime_ball", "minecraft:egg",
-      "minecraft:glowstone_dust", "minecraft:dye", "minecraft:bone", "minecraft:sugar",
-      "minecraft:lapis_lazuli", "minecraft:redstone",
+      "minecraft:glowstone_dust", "minecraft:bone", "minecraft:sugar",
+      "minecraft:lapis_lazuli", "minecraft:redstone", "minecraft:dye",
+      "minecraft:ink_sac", "minecraft:red_dye", "minecraft:green_dye",
+      "minecraft:cocoa_beans", "minecraft:purple_dye", "minecraft:cyan_dye",
+      "minecraft:light_gray_dye", "minecraft:gray_dye", "minecraft:pink_dye",
+      "minecraft:lime_dye", "minecraft:yellow_dye", "minecraft:light_blue_dye",
+      "minecraft:magenta_dye","minecraft:orange_dye", "minecraft:bone_meal",
       
       // Blocks - Natural
-      "minecraft:stone", "minecraft:dirt", "minecraft:oak_log", "minecraft:birch_log",
-      "minecraft:spruce_log", "minecraft:oak_leaves", "minecraft:sand", "minecraft:gravel",
+      "minecraft:stone", "minecraft:grass_block", "minecraft:dirt",
+      "minecraft:oak_log", "minecraft:birch_log", "minecraft:spruce_log",
+      "minecraft:oak_leaves", "minecraft:spruce_leaves", "minecraft:birch_leaves",
+      "minecraft:oak_sapling", "minecraft:spruce_sapling", "minecraft:birch_sapling", 
+      "minecraft:sand", "minecraft:gravel",
       "minecraft:gold_ore", "minecraft:iron_ore", "minecraft:coal_ore", "minecraft:diamond_ore",
-      "minecraft:redstone_ore", "minecraft:oak_sapling", "minecraft:glass", "minecraft:sandstone",
-      "minecraft:cactus", "minecraft:clay", "minecraft:reeds", "minecraft:snow", "minecraft:ice",
-      "minecraft:snow_block", "minecraft:pumpkin", "minecraft:netherrack", "minecraft:soul_sand",
-      "minecraft:glowstone",
+      "minecraft:redstone_ore", "minecraft:lapis_ore",
+      "minecraft:glass", "minecraft:sandstone",
+      "minecraft:cactus", "minecraft:clay", "minecraft:reeds", "minecraft:pumpkin",
+      "minecraft:snow", "minecraft:ice", "minecraft:snow_layer",
+      "minecraft:netherrack", "minecraft:soul_sand", "minecraft:glowstone",
       
       // Blocks - Crafted
-      "minecraft:oak_planks", "minecraft:cobblestone", "minecraft:bricks",
+      "minecraft:oak_planks", "minecraft:cobblestone", "minecraft:bricks", "minecraft:brick_block",
       "minecraft:bookshelf", "minecraft:mossy_cobblestone", "minecraft:obsidian",
       "minecraft:gold_block", "minecraft:iron_block", "minecraft:diamond_block",
       "minecraft:tnt", "minecraft:lapis_block", "minecraft:sponge",
@@ -122,7 +132,7 @@ class ItemRestrictionSystem {
       // Functional Blocks
       "minecraft:furnace", "minecraft:crafting_table", "bh:crafting_table", 
       "minecraft:chest", "minecraft:jukebox", "minecraft:dispenser", "minecraft:spawner",
-      "minecraft:locked_chest",
+      "minecraft:locked_chest", //what
       
       // Decorative & Misc
       "minecraft:torch", "minecraft:ladder", "minecraft:sign", "minecraft:wooden_door",
@@ -134,14 +144,16 @@ class ItemRestrictionSystem {
       "minecraft:red_wool", "minecraft:black_wool", "minecraft:oak_fence",
       "minecraft:trapdoor", "minecraft:stone_button", "minecraft:wooden_pressure_plate",
       "minecraft:stone_pressure_plate", "minecraft:lever", "minecraft:stone_slab",
-      "minecraft:oak_stairs", "minecraft:cobblestone_stairs",
+      "minecraft:oak_stairs", "minecraft:oak_slab", "minecraft:stone_stairs",
+      "minecraft:cobblestone_slab", "minecraft:web", "minecraft:smooth_stone_slab",
+      "minecraft:sandstone_slab", "minecraft:oak_sign",
       
       // Redstone
-      "minecraft:redstone_torch", "minecraft:rail", "minecraft:repeater",
-      "minecraft:piston", "minecraft:sticky_piston",
+      "minecraft:redstone_torch", "minecraft:rail", "minecraft:golden_rail", "minecraft:detector_rail", "minecraft:repeater",
+      "minecraft:piston", "minecraft:sticky_piston", "minecraft:noteblock",
       
       // Plants & Flora
-      "minecraft:poppy", "minecraft:dandelion", "minecraft:dead_bush",
+      "minecraft:poppy", "minecraft:dandelion", "minecraft:deadbush",
       "minecraft:tall_grass", "minecraft:fern", "minecraft:brown_mushroom", 
       "minecraft:red_mushroom",
       
@@ -149,11 +161,19 @@ class ItemRestrictionSystem {
       "minecraft:oak_boat", "minecraft:minecart", "minecraft:chest_minecart",
       "minecraft:furnace_minecart", "minecraft:saddle", "minecraft:bucket",
       "minecraft:water_bucket", "minecraft:lava_bucket", "minecraft:milk_bucket",
-      "minecraft:snowball", "minecraft:map", "minecraft:compass", "minecraft:clock",
+      "minecraft:snowball", "minecraft:filled_map", "minecraft:empty_map", "minecraft:compass", "minecraft:clock",
       "minecraft:bed", "minecraft:painting", "minecraft:barrier",
       
       // Special Blocks
       "minecraft:carved_pumpkin", "minecraft:lit_pumpkin", "minecraft:jack_o_lantern",
+      "minecraft:command_block", "minecraft:repeating_command_block", "minecraft:chain_command_block",
+      "minecraft:jigsaw", "minecraft:structure_void", "minecraft:structure_block",
+      "minecraft:light_block_15", "minecraft:light_block_14", "minecraft:light_block_13",
+      "minecraft:light_block_12", "minecraft:light_block_11", "minecraft:light_block_10",
+      "minecraft:light_block_9", "minecraft:light_block_8", "minecraft:light_block_7",
+      "minecraft:light_block_6", "minecraft:light_block_5", "minecraft:light_block_4",
+      "minecraft:light_block_3", "minecraft:light_block_2", "minecraft:light_block_1",
+      "minecraft:light_block_0", "minecraft:light_block", "minecraft:bedrock",
       
       // Music Discs
       "minecraft:music_disc_13", "minecraft:music_disc_cat"
