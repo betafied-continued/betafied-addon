@@ -48,7 +48,7 @@ jobs:
         id: create_release
         with:
           tag_name: "v${{ env.VERSION }}-${{ env.SHORT_SHA }}"
-          release_name: "Betafied ${{ env.VERSION }} Release - ${{ env.SHORT_SHA }}"
+          release_name: "Betafied ${{ env.VERSION }} Release"
           body_path: "changelog.md"
           draft: false
           prerelease: ${{ github.event.inputs.prerelease == 'true' || github.event.inputs.prerelease == 'True' || github.event.inputs.prerelease == 'TRUE' }}
