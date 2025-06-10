@@ -1,0 +1,26 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+      "description": {
+          "identifier": "bh:logs_to_oak_default"
+      },
+      "tags": [
+          "crafting_table"
+      ],
+      "ingredients": [
+          {
+              "tag": "minecraft:logs"
+          }
+      ],
+      "unlock": [
+          {
+              "tag": "minecraft:logs"
+          }
+      ],
+      "result": {
+          "item": "minecraft:oak_planks",
+          "count": 4
+      },
+      "priority": -100
+  }
+}

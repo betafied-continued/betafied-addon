@@ -1,0 +1,32 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "bh:fishing_rod"
+    },
+
+    
+    "tags": [ "beta_crafting" ],
+    "pattern": [
+      "  #",
+      " #X",
+      "# X"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:stick"
+      },
+      "X": {
+        "item": "minecraft:string"
+      }
+    },
+	"unlock": [
+      {
+        "item": "minecraft:string"
+      }
+    ],
+    "result": {
+      "item": "minecraft:fishing_rod"
+    }
+  }
+}

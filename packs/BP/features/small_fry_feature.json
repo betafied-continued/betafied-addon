@@ -1,0 +1,28 @@
+{
+   "format_version":"1.13.0",
+   "minecraft:ore_feature":{
+      "description":{
+         "identifier":"minecraft:small_fry_feature"
+      },
+      "count":160,
+      "replace_rules":[
+         {
+            "places_block":"minecraft:air",
+            "may_replace":[
+               "minecraft:quartz_slab", 
+               "minecraft:nether_wart",
+               "minecraft:gold_block",
+               "minecraft:chain",
+               "minecraft:basalt",
+               "minecraft:polished_basalt",
+               "minecraft:blackstone_slab",
+               "minecraft:mob_spawner",
+               "minecraft:crying_obsidian",
+               "minecraft:blackstone_wall",
+               "minecraft:smooth_quartz",
+               "minecraft:quartz_block",
+               "minecraft:smooth_quartz_slab"              ]
+         }
+      ]
+   }
+}

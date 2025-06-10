@@ -1,0 +1,35 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shapeless": {
+    "description": {
+    "identifier": "bh:book"
+    },
+
+    
+    "tags": [ "beta_crafting" ],
+    "ingredients": [
+      {
+        "item": "minecraft:paper",
+        "data": 0
+      },
+      {
+        "item": "minecraft:paper",
+        "data": 0
+      },
+      {
+        "item": "minecraft:paper",
+        "data": 0
+      }
+    ],
+	"unlock": [
+      {
+        "item": "minecraft:paper",
+        "data": 0
+      }
+    ],
+    "result": {
+      "item": "minecraft:book",
+      "count": 1
+    }
+  }
+}

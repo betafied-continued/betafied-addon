@@ -1,0 +1,28 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "bh:cobblestone_slab"
+        },
+        "tags": [
+            "beta_crafting"
+        ],
+        "pattern": [
+            "###"
+        ],
+        "key": {
+            "#": {
+                "item": "minecraft:cobblestone"
+            }
+        },
+        "unlock": [
+            {
+                "tag": "minecraft:stone_crafting_materials"
+            }
+        ],
+        "result": {
+            "item": "minecraft:cobblestone_slab",
+            "count": 3
+        }
+    }
+}

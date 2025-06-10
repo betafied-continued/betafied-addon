@@ -1,0 +1,33 @@
+{
+  "format_version": "1.21.0",
+  "minecraft:block": {
+    "description": {
+      "identifier": "minecraft:moving_block",
+      "is_experimental": false,
+      "category": "misc",
+      "register_to_creative_menu": true
+    },
+    "components": {
+      "minecraft:display_name": {
+        "value": "Moving Block"
+      },
+      "minecraft:material_instances": {
+        "*": {
+          "texture": "grass",  // fallback texture if nothing else renders
+          "render_method": "alpha_test"
+        }
+      },
+      "minecraft:creative_category": {
+        "parent": "itemGroup.name.hidden"
+      },
+      "minecraft:entity_block": {},
+      "movingBlock": {
+        "name": "minecraft:lava"
+      },
+      "movingBlockExtra": {
+        "name": "minecraft:grass"
+      }
+    },
+    "permutations": []
+  }
+}

@@ -1,0 +1,28 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "bh:wooden_slab"
+        },
+        "tags": [
+            "beta_crafting"
+        ],
+        "pattern": [
+            "###"
+        ],
+        "key": {
+            "#": {
+                "item": "minecraft:planks"
+            }
+        },
+        "unlock": [
+            {
+                "tag": "minecraft:stone_crafting_materials"
+            }
+        ],
+        "result": {
+            "item": "minecraft:oak_slab",
+            "count": 3
+        }
+    }
+}

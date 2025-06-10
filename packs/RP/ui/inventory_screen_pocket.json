@@ -1,0 +1,29 @@
+{
+    // ## Remove Recipe content for performance since it's no use.
+    "left_panel/recipe_book_tab_content": {
+        "ignored": true
+    },
+    // ## Remove all recipe tabs.
+    "left_tab_navigation_panel_pocket/content/search_tab_panel": {
+        "ignored": true
+    },
+    "left_tab_navigation_panel_pocket/content/construction_tab_panel": {
+        "ignored": true
+    },
+    "left_tab_navigation_panel_pocket/content/equipment_tab_panel": {
+        "ignored": true
+    },
+    "left_tab_navigation_panel_pocket/content/items_tab_panel": {
+        "ignored": true
+    },
+    "left_tab_navigation_panel_pocket/content/nature_tab_panel": {
+        "ignored": true
+    },
+    // ## Remove Shield slot.
+    // WARN: Controller's "Y" button or Ctrl + L-click may still
+    // insert the stuff into shield slot.
+    // there's probably a fix for it but not now lol.
+    "pocket_armor_tab_content/equipment_and_renderer/equipment/offhand_grid": {
+        "ignored": true
+    }
+}

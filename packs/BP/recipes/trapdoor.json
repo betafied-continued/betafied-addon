@@ -1,0 +1,29 @@
+{
+  "format_version": "1.20.10",
+  "minecraft:recipe_shaped": {
+    "description": {
+    "identifier": "bh:trapdoor"
+    },
+    "tags": [ 
+      "beta_crafting" 
+    ],
+    "pattern": [
+      "###",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:oak_planks"
+      }
+    },
+	"unlock": [
+        {
+          "item": "minecraft:warped_planks"
+        }
+    ],
+    "result": {
+      "item": "minecraft:trapdoor",
+      "count": 2
+    }
+  }
+}

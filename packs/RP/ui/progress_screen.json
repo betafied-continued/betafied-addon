@@ -1,0 +1,88 @@
+{
+    "world_loading_progress_screen@progress_screen": {
+        "$screen_content": "progress.progress_screen_content_classic",
+        "$screen_bg_content": "common.dirt_background"
+    },
+    "button_panel_classic": {
+        "type": "panel",
+        "size": [
+            "100%",
+            "100%"
+        ],
+        "anchor_from": "bottom_middle",
+        "anchor_to": "bottom_middle",
+        "offset": [
+            0,
+            -10
+        ],
+        "layer": 2,
+        "controls": [
+            {
+                "cancel_button@progress.cancel_button": {}
+            }
+        ]
+    },
+    "progress_screen_content_classic": {
+        "type": "panel",
+        "size": [
+            "100%",
+            "100%"
+        ],
+        "controls": [
+            {
+                "progress_title_text@progress.progress_title_text_classic": {}
+            },
+            {
+                "progress_bar_text@progress.progress_bar_text_classic": {}
+            },
+            {
+                "progress_bar@progress.progress_bar": {}
+            }
+        ]
+    },
+    "progress_bar": {
+        "offset": [
+            0,
+            12
+        ],
+        "size": [
+            110,
+            2
+        ]
+    },
+    "progress_screen_text_classic": {
+        "type": "label",
+        "layer": 2,
+        "shadow": true
+    },
+    "progress_title_text_classic@progress.progress_screen_text_classic": {
+        "size": [
+            "default",
+            20
+        ],
+        "max_size": [
+            "100% - 8px",
+            20
+        ],
+        "offset": [
+            0,
+            -15
+        ],
+        "text": "Loading level"
+    },
+    "progress_bar_text_classic@progress.progress_screen_text_classic": {
+        "size": [
+            "default",
+            20
+        ],
+        "max_size": [
+            "100% - 8px",
+            20
+        ],
+        "offset": [
+            0,
+            9
+        ],
+        "text": "Building terrain"
+    }
+}

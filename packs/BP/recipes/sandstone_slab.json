@@ -1,0 +1,28 @@
+{
+    "format_version": "1.20.10",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier": "bh:sandstone_slab"
+        },
+        "tags": [
+            "beta_crafting"
+        ],
+        "pattern": [
+            "###"
+        ],
+        "key": {
+            "#": {
+                "item": "minecraft:sandstone"
+            }
+        },
+        "unlock": [
+            {
+                "tag": "minecraft:stone_crafting_materials"
+            }
+        ],
+        "result": {
+            "item": "minecraft:sandstone_slab", 
+            "count": 3
+        }
+    }
+}

@@ -1,0 +1,186 @@
+{
+    "format_version": "1.8.0",
+    "geometry.pig.v1.8": {
+        "texturewidth": 64,
+        "textureheight": 32,
+        "visible_bounds_width": 2,
+        "visible_bounds_height": 2,
+        "visible_bounds_offset": [
+            0,
+            1,
+            0
+        ],
+        "bones": [
+            {
+                "name": "body",
+                "pivot": [
+                    0,
+                    13,
+                    2
+                ],
+                "cubes": [
+                    {
+                        "origin": [
+                            -5,
+                            7,
+                            -5
+                        ],
+                        "size": [
+                            10,
+                            16,
+                            8
+                        ],
+                        "uv": [
+                            28,
+                            8
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "head",
+                "parent": "body",
+                "pivot": [
+                    0,
+                    12,
+                    -6
+                ],
+                "cubes": [
+                    {
+                        "origin": [
+                            -4,
+                            8,
+                            -14
+                        ],
+                        "size": [
+                            8,
+                            8,
+                            8
+                        ],
+                        "uv": [
+                            0,
+                            0
+                        ]
+                    }
+                ],
+                "locators": {
+                    "lead": [
+                        0,
+                        11,
+                        -6
+                    ]
+                }
+            },
+            {
+                "name": "leg0",
+                "parent": "body",
+                "pivot": [
+                    -3,
+                    6,
+                    7
+                ],
+                "cubes": [
+                    {
+                        "origin": [
+                            -5,
+                            0,
+                            5
+                        ],
+                        "size": [
+                            4,
+                            6,
+                            4
+                        ],
+                        "uv": [
+                            0,
+                            16
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "leg1",
+                "parent": "body",
+                "pivot": [
+                    3,
+                    6,
+                    7
+                ],
+                "mirror": true,
+                "cubes": [
+                    {
+                        "origin": [
+                            1,
+                            0,
+                            5
+                        ],
+                        "size": [
+                            4,
+                            6,
+                            4
+                        ],
+                        "uv": [
+                            0,
+                            16
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "leg2",
+                "parent": "body",
+                "pivot": [
+                    -3,
+                    6,
+                    -5
+                ],
+                "cubes": [
+                    {
+                        "origin": [
+                            -5,
+                            0,
+                            -7
+                        ],
+                        "size": [
+                            4,
+                            6,
+                            4
+                        ],
+                        "uv": [
+                            0,
+                            16
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "leg3",
+                "parent": "body",
+                "pivot": [
+                    3,
+                    6,
+                    -5
+                ],
+                "mirror": true,
+                "cubes": [
+                    {
+                        "origin": [
+                            1,
+                            0,
+                            -7
+                        ],
+                        "size": [
+                            4,
+                            6,
+                            4
+                        ],
+                        "uv": [
+                            0,
+                            16
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

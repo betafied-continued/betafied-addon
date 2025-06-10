@@ -1,0 +1,46 @@
+//This JSON was modified by ZouChenyunfei (@ZouChenyunfei). Please do not use this document without permission.
+{
+    "format_version": "1.12.0",
+    "minecraft:geometry": [
+        {
+            "description": {
+                "identifier": "geometry.fishing_hook",
+                "texture_width": 8,
+                "texture_height": 8
+            },
+            "bones": [
+                {
+                    "name": "body",
+                    "pivot": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "cubes": [
+                        {
+                            "origin": [
+                                -5.5,
+                                -8.0,
+                                0.0
+                            ],
+                            "size": [
+                                11.0,
+                                11.0,
+                                0.0
+                            ],
+                            "uv": [
+                                0,
+                                0
+                            ],
+                            "rotation": [
+                                0.0,
+                                180.0,
+                                0.0
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
