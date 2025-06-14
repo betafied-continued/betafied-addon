@@ -22,12 +22,12 @@ jobs:
 
       - name: "Extract behaviour pack version"
         run: |
-          BP_VER=$(jq -r ".header.version | join(\".\")" "packs/BP/Betafied_BP/manifest.json")
+          BP_VER=$(jq -r ".header.version | join(\".\")" "packs/BP/manifest.json")
           echo "BP_VER=$BP_VER" >> "$GITHUB_ENV"
 
       - name: "Extract resource pack version"
         run: |
-          RP_VER=$(jq -r ".header.version | join(\".\")" "packs/RP/Betafied_RP/manifest.json")
+          RP_VER=$(jq -r ".header.version | join(\".\")" "packs/RP/manifest.json")
           echo "RP_VER=$RP_VER" >> "$GITHUB_ENV"
 
       - name: "Find newest version"
@@ -39,8 +39,8 @@ jobs:
       - name: "Zip up packs"
         run: |
           FNAME="betafied_${VERSION}_${SHORT_SHA}.mcaddon"
-          (cd packs/BP && zip -r "${GITHUB_WORKSPACE}/${FNAME}" Betafied_BP)
-          (cd packs/RP && zip -r "${GITHUB_WORKSPACE}/${FNAME}" Betafied_RP)
+          (cd packs && zip -r "${GITHUB_WORKSPACE}/${FNAME}" BP)
+          (cd packs && zip -r "${GITHUB_WORKSPACE}/${FNAME}" RP)
           echo "PACKAGE=${FNAME}" >> "$GITHUB_ENV"
 
       - name: "Release"
