@@ -1,0 +1,65 @@
+name: "Release"
+
+on:
+  workflow_dispatch:
+    inputs:
+      prerelease:
+        description: "Is this a pre-release? (true or false)"
+        required: false
+        default: "false"
+
+jobs:
+  release:
+    name: "Publish Betafied Release"
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout repository"
+        uses: actions/checkout@v3
+
+      - name: "Get commit hash"
+        run: echo "SHORT_SHA=${GITHUB_SHA::7}" >> "$GITHUB_ENV"
+
+      - name: "Extract behaviour pack version"
+        run: |
+          BP_VER=$(jq -r ".header.version | join(\".\")" "packs/BP/Betafied_BP/manifest.json")
+          echo "BP_VER=$BP_VER" >> "$GITHUB_ENV"
+
+      - name: "Extract resource pack version"
+        run: |
+          RP_VER=$(jq -r ".header.version | join(\".\")" "packs/RP/Betafied_RP/manifest.json")
+          echo "RP_VER=$RP_VER" >> "$GITHUB_ENV"
+
+      - name: "Find newest version"
+        run: |
+          VERSIONS=$(printf "%s\n%s\n" "$BP_VER" "$RP_VER" | sort -V)
+          MAX_VER=$(echo "$VERSIONS" | tail -n1)
+          echo "VERSION=$MAX_VER" >> "$GITHUB_ENV"
+
+      - name: "Zip up packs"
+        run: |
+          FNAME="betafied_${VERSION}_${SHORT_SHA}.mcaddon"
+          (cd packs/BP && zip -r "${GITHUB_WORKSPACE}/${FNAME}" Betafied_BP)
+          (cd packs/RP && zip -r "${GITHUB_WORKSPACE}/${FNAME}" Betafied_RP)
+          echo "PACKAGE=${FNAME}" >> "$GITHUB_ENV"
+
+      - name: "Release"
+        uses: actions/create-release@v1
+        id: create_release
+        with:
+          tag_name: "v${{ env.VERSION }}-${{ env.SHORT_SHA }}"
+          release_name: "Betafied ${{ env.VERSION }} Release"
+          draft: false
+          prerelease: ${{ github.event.inputs.prerelease == 'true' || github.event.inputs.prerelease == 'True' || github.event.inputs.prerelease == 'TRUE' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: "Upload the addon"
+        uses: actions/upload-release-asset@v1
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ${{ env.PACKAGE }}
+          asset_name: ${{ env.PACKAGE }}
+          asset_content_type: "application/octet-stream"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
