@@ -70,7 +70,7 @@ class ItemRestrictionSystem {
   buildAllowedItemsSet() {
     return new Set([
       // Tools
-      "minecraft:iron_shovel", "minecraft:iron_pickaxe", "minecraft:iron_axe",
+      "minecraft:iron_sword", "minecraft:iron_shovel", "minecraft:iron_pickaxe", "minecraft:iron_axe",
       "minecraft:flint_and_steel", "minecraft:wooden_sword", "minecraft:wooden_shovel",
       "minecraft:wooden_pickaxe", "minecraft:wooden_axe", "minecraft:stone_sword",
       "minecraft:stone_shovel", "minecraft:stone_pickaxe", "minecraft:stone_axe",
