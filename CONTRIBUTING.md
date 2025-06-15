@@ -1,3 +1,8 @@
+```
+Disclaimer:
+This probably needs a revision
+```
+
 # Contributing to Betafied
 
 Heyo! We're thrilled you're interested in contributing to **Betafied**, our community-driven project dedicated to bringing the magic of Minecraft Beta 1.7.3 (aka the Golden Age) to Bedrock Edition.
