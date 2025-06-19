@@ -2,26 +2,25 @@
   "format_version": "1.12",
   "minecraft:recipe_shaped": {
     "description": {
-      "identifier": "bh:iron_nugget"
+    "identifier": "minecraft:iron_nugget"
     },
-    "tags": [
-      "beta_crafting"
-    ],
+
+    
+    "tags": [ "crafting_table" ],
     "pattern": [
-      "#B"
+      "#A"
     ],
     "key": {
       "#": {
-        "item": "minecraft:iron_ingot"
+        "item": "minecraft:iron_nugget"
       },
-      "B": {
-        "item": "minecraft:barrier"
+            "A": {
+        "item": "minecraft:bedrock"
       }
     },
     "result": {
-      "item": "minecraft:iron_nugget",
+      "item": "minecraft:tnt",
       "count": 9
-    },
-    "priority": -1
+    }
   }
 }

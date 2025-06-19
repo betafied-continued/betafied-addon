@@ -1,0 +1,14 @@
+{
+  "format_version": "1.21.70",
+  "minecraft:client_biome": {
+    "description": {
+      "identifier": "defualt"
+    },
+      "minecraft:sky_color": {
+        "sky_color": "#74BFF8"
+      },
+      "minecraft:fog_appearance": {
+        "fog_identifier": "bt:old_water_fog"
+      }
+  }
+}

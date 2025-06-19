@@ -768,15 +768,13 @@
         "textures": "wool_colored_brown"
     },
     "bubble_column": {
-        "isotropic": false,
-        "textures": {
-            "down": "bubble_column_down_top",
-            "east": "pumpkin_side",
-            "north": "bubble_column_outer",
-            "south": "bubble_column_mid",
-            "up": "bubble_column_up_top",
-            "west": "pumpkin_side"
-        }
+  "isotropic": false,
+        "blockshape": "invisible",
+          "textures": "air"
+    },
+        "vine": {
+        "textures": "air",
+        "sound": "vines"
     },
     "bubble_coral": {
         "carried_textures": "bubble_coral",
@@ -5005,11 +5003,6 @@
             "side": "verdant_froglight_side",
             "up": "verdant_froglight_top"
         }
-    },
-    "vine": {
-        "carried_textures": "vine_carried",
-        "blockshape": "invisible",
-        "sound": "vines"
     },
     "wall_banner": {
         "isotropic": false,

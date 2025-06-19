@@ -1,76 +1,29 @@
-/**
- * Beta 1.7.3 Item Restriction System for Minecraft Bedrock
- * 
- * This script enforces the item limitations of Beta 1.7.3 by removing any items
- * that were not available in that version from players' inventories.
- * 
- * Compatible with Minecraft Bedrock Script API @minecraft/server v2.0.0-beta
- * Module target: ES2023
- */
-
 import { world, system } from "@minecraft/server";
 
-/**
- * System configuration settings
- */
 const CONFIG = Object.freeze({
-  // How frequently to check player inventories (in ticks)
-  CHECK_INTERVAL_TICKS: 20, // 1 second
-  
-  // Cooldown for notification messages (in ticks)
-  MESSAGE_COOLDOWN_TICKS: 60, // 3 seconds
-  
-  // Message to show when removing items
+  CHECK_INTERVAL_TICKS: 20,
+  MESSAGE_COOLDOWN_TICKS: 60,
   CLEAR_MESSAGE: "Whoops! That's not allowed!",
-  
-  // Debug mode for additional logging
-  DEBUG: false
 });
 
-/**
- * ItemRestrictionSystem class to handle item validation and removal
- */
 class ItemRestrictionSystem {
   constructor() {
-    // Set of allowed item IDs from Beta 1.7.3
     this.allowedItems = this.buildAllowedItemsSet();
-    
-    // Map to track message cooldowns by player ID
     this.playerMessageCooldowns = new Map();
-    
-    // Initialize the system
     this.initialize();
   }
-  
-  /**
-   * Initialize the system and register event handlers
-   */
+
   initialize() {
-    try {
-      // Start the periodic inventory check
-      system.runInterval(this.checkAllPlayers.bind(this), CONFIG.CHECK_INTERVAL_TICKS);
-      
-      // Register player leave event for cleanup
-      world.afterEvents.playerLeave.subscribe(this.handlePlayerLeave.bind(this));
-      
-      console.log("[ITEMS] Beta 1.7.3 item restriction system initialized");
-      
-      if (CONFIG.DEBUG) {
-        console.log(`[ITEMS] Monitoring ${this.allowedItems.size} allowed items`);
-      }
-    } catch (error) {
-      console.error(`[ITEMS] Initialization error: ${error.message}`);
-    }
+    system.runInterval(() => this.checkAllPlayers(), CONFIG.CHECK_INTERVAL_TICKS);
+    world.afterEvents.playerLeave.subscribe((event) => {
+      this.playerMessageCooldowns.delete(event.playerId);
+    });
+    console.log("[ITEMS] Restriction system running (manual /tag exemption)");
   }
-  
-  /**
-   * Build the set of allowed item IDs
-   * @returns {Set<string>} Set of allowed item IDs
-   */
+
   buildAllowedItemsSet() {
     return new Set([
-      // Tools
-      "minecraft:iron_sword", "minecraft:iron_shovel", "minecraft:iron_pickaxe", "minecraft:iron_axe",
+      "minecraft:iron_shovel", "minecraft:iron_pickaxe", "minecraft:iron_axe",
       "minecraft:flint_and_steel", "minecraft:wooden_sword", "minecraft:wooden_shovel",
       "minecraft:wooden_pickaxe", "minecraft:wooden_axe", "minecraft:stone_sword",
       "minecraft:stone_shovel", "minecraft:stone_pickaxe", "minecraft:stone_axe",
@@ -78,7 +31,7 @@ class ItemRestrictionSystem {
       "minecraft:diamond_axe", "minecraft:golden_sword", "minecraft:golden_shovel",
       "minecraft:golden_pickaxe", "minecraft:golden_axe", "minecraft:wooden_hoe",
       "minecraft:stone_hoe", "minecraft:iron_hoe", "minecraft:diamond_hoe",
-      "minecraft:golden_hoe", "minecraft:fishing_rod", "minecraft:shears",
+      "minecraft:golden_hoe", "minecraft:fishing_rod", "minecraft:shears", "minecraft:iron_sword", "minecraft:charcoal",
       
       // Weapons & Combat
       "minecraft:bow", "minecraft:arrow", "minecraft:leather_helmet",
@@ -165,117 +118,51 @@ class ItemRestrictionSystem {
       "minecraft:bed", "minecraft:painting", "minecraft:barrier",
       
       // Special Blocks
-      "minecraft:carved_pumpkin", "minecraft:lit_pumpkin", "minecraft:jack_o_lantern",
-      "minecraft:command_block", "minecraft:repeating_command_block", "minecraft:chain_command_block",
-      "minecraft:jigsaw", "minecraft:structure_void", "minecraft:structure_block",
-      "minecraft:light_block_15", "minecraft:light_block_14", "minecraft:light_block_13",
-      "minecraft:light_block_12", "minecraft:light_block_11", "minecraft:light_block_10",
-      "minecraft:light_block_9", "minecraft:light_block_8", "minecraft:light_block_7",
-      "minecraft:light_block_6", "minecraft:light_block_5", "minecraft:light_block_4",
-      "minecraft:light_block_3", "minecraft:light_block_2", "minecraft:light_block_1",
-      "minecraft:light_block_0", "minecraft:light_block", "minecraft:bedrock",
+      "minecraft:carved_pumpkin", "minecraft:lit_pumpkin", "minecraft:jack_o_lantern", "minecraft:bedrock",
       
       // Music Discs
       "minecraft:music_disc_13", "minecraft:music_disc_cat"
     ]);
   }
-  
-  /**
-   * Check all online players for invalid items
-   */
+
   checkAllPlayers() {
-    try {
-      for (const player of world.getPlayers()) {
+    for (const player of world.getPlayers()) {
+      if (!player.hasTag("builder_exempt")) {
         this.checkPlayerInventory(player);
       }
-    } catch (error) {
-      console.error(`[ITEMS] Error checking players: ${error.message}`);
     }
   }
-  
-  /**
-   * Check and clear invalid items from a player's inventory
-   * @param {Player} player - The player to check
-   */
+
   checkPlayerInventory(player) {
     try {
-      const inventoryComponent = player.getComponent("minecraft:inventory");
-      if (!inventoryComponent?.container) {
-        if (CONFIG.DEBUG) {
-          console.warn(`[ITEMS] No inventory component for player '${player.name}'`);
-        }
-        return;
-      }
+      const inventory = player.getComponent("minecraft:inventory")?.container;
+      if (!inventory) return;
 
-      const container = inventoryComponent.container;
-      let removedItems = false;
-      let removedItemList = [];
-
-      // Check all inventory slots
-      for (let slot = 0; slot < container.size; slot++) {
-        const item = container.getItem(slot);
-        if (!item) continue;
-        
-        // Check if item is allowed
-        if (!this.allowedItems.has(item.typeId)) {
-          if (CONFIG.DEBUG) {
-            removedItemList.push(`${item.typeId} (x${item.amount})`);
-          }
-          
-          container.setItem(slot, undefined);
-          removedItems = true;
+      let removed = false;
+      for (let i = 0; i < inventory.size; i++) {
+        const item = inventory.getItem(i);
+        if (item && !this.allowedItems.has(item.typeId)) {
+          inventory.setItem(i, undefined);
+          removed = true;
         }
       }
 
-      // Notify the player if items were removed
-      if (removedItems) {
-        if (CONFIG.DEBUG) {
-          console.log(`[ITEMS] Removed from ${player.name}: ${removedItemList.join(", ")}`);
-        }
-        
-        this.notifyPlayer(player);
-      }
-    } catch (error) {
-      console.warn(`[ITEMS] Error checking inventory for '${player.name}': ${error.message}`);
+      if (removed) this.notifyPlayer(player);
+    } catch (e) {
+      console.warn(`[ITEMS] Inventory error for ${player.name}: ${e.message}`);
     }
   }
-  
-  /**
-   * Send notification to player about removed items (with cooldown)
-   * @param {Player} player - The player to notify
-   */
+
   notifyPlayer(player) {
-    const currentTick = system.currentTick;
-    const lastMessageTick = this.playerMessageCooldowns.get(player.id) ?? 0;
+    const now = system.currentTick;
+    const last = this.playerMessageCooldowns.get(player.id) ?? 0;
 
-    // Check if cooldown has expired
-    if (currentTick - lastMessageTick >= CONFIG.MESSAGE_COOLDOWN_TICKS) {
+    if (now - last >= CONFIG.MESSAGE_COOLDOWN_TICKS) {
       player.sendMessage(CONFIG.CLEAR_MESSAGE);
-      this.playerMessageCooldowns.set(player.id, currentTick);
-    }
-  }
-  
-  /**
-   * Handle player leave event
-   * @param {PlayerLeaveAfterEvent} event - The player leave event
-   */
-  handlePlayerLeave(event) {
-    try {
-      // Clean up player data when they leave
-      const { playerId } = event;
-      this.playerMessageCooldowns.delete(playerId);
-      
-      if (CONFIG.DEBUG) {
-        console.log(`[ITEMS] Cleaned up data for player ID: ${playerId}`);
-      }
-    } catch (error) {
-      console.warn(`[ITEMS] Error handling player leave: ${error.message}`);
+      this.playerMessageCooldowns.set(player.id, now);
     }
   }
 }
 
-// Initialize the item restriction system
 const itemRestriction = new ItemRestrictionSystem();
-
-// Export the system for potential reuse in other scripts
 export default itemRestriction;

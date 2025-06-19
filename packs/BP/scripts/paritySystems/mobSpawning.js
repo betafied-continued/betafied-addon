@@ -18,6 +18,7 @@ const ALLOWED_MOBS = new Set([
     "minecraft:ghast",
     "minecraft:fireball",
     "minecraft:pig",
+    "minecraft:tnt",
     "minecraft:player",
     "minecraft:sheep",
     "minecraft:skeleton",

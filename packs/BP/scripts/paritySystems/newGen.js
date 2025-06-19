@@ -9,7 +9,6 @@ const idleSlabsPerTick = 2;
 const tickInterval = 7;
 const idleDelay = 10 * 20; // 10 seconds
 const dynamicTracking = true;
-let idleDoublingEnabled = false; // GLOBAL toggle for idle doubling
 
 // === STATE TRACKING ===
 const playerStates = new Map();
@@ -19,7 +18,6 @@ const blocksToReplace = [
   "minecraft:ancient_debris",
   "minecraft:nether_gold_ore"
 ];
-const chatDebug = new Set();
 
 // === UTILITIES ===
 function getSpiralOffsets(radius) {
@@ -43,42 +41,6 @@ function generateSlabYRanges(centerY) {
   return slabs;
 }
 
-// === CHAT COMMANDS ===
-world.beforeEvents.chatSend.subscribe(e => {
-  const msg = e.message.toLowerCase();
-  const sender = e.sender;
-
-  if (msg === "!console") {
-    e.cancel = true;
-    if (!sender.isOp()) {
-      sender.sendMessage("§c[Error] You do not have permission to use this command.");
-      return;
-    }
-
-    const isEnabled = chatDebug.has(sender.id);
-    if (isEnabled) {
-      chatDebug.delete(sender.id);
-    } else {
-      chatDebug.add(sender.id);
-    }
-
-    const status = isEnabled ? "§cDISABLED" : "§aENABLED";
-    sender.sendMessage(`§8[Debug] Console output §l${status}`);
-  }
-
-  if (msg === "!afkradius") {
-    e.cancel = true;
-    if (!sender.isOp()) {
-      sender.sendMessage("§c[Error] You do not have permission to use this command.");
-      return;
-    }
-
-    idleDoublingEnabled = !idleDoublingEnabled;
-    const status = idleDoublingEnabled ? "§aENABLED" : "§cDISABLED";
-    sender.sendMessage(`§8[Global] AFK radius §l${status}`);
-  }
-});
-
 // === MAIN LOOP ===
 system.runInterval(() => {
   const nether = world.getDimension("nether");
@@ -86,6 +48,9 @@ system.runInterval(() => {
   for (const player of nether.getPlayers()) {
     const id = player.id;
     const loc = player.location;
+    const hasDebug = player.hasTag("scan_debug");
+    const idleDoublingEnabled = player.hasTag("afkradius_enabled");
+
     const state = playerStates.get(id) ?? {
       prevX: loc.x,
       prevZ: loc.z,
@@ -107,7 +72,7 @@ system.runInterval(() => {
         state.radius = baseRadius;
         state.expansions = 0;
         state.idleThreshold = idleDelay;
-        player.sendMessage("§e[Scan] Movement detected — radius reset.");
+        if (hasDebug) player.sendMessage("§e[Scan] Movement detected — radius reset.");
       }
       state.idleTicks = 0;
       state.countdownShown = -1;
@@ -123,7 +88,7 @@ system.runInterval(() => {
         idleDoublingEnabled &&
         ticksLeft > 0 &&
         secondsLeft !== state.countdownShown &&
-        chatDebug.has(id)
+        hasDebug
       ) {
         player.sendMessage(`§7[Idle] Expanding radius in §e${secondsLeft}s`);
         state.countdownShown = secondsLeft;
@@ -150,7 +115,7 @@ system.runInterval(() => {
         state.idleTicks = 0;
         state.countdownShown = -1;
 
-        if (chatDebug.has(id))
+        if (hasDebug)
           player.sendMessage(`§6[Idle] Radius expanded to §b${state.radius}§6 | Next in §b${Math.floor(state.idleThreshold / 20)}s`);
       }
     }
@@ -183,17 +148,15 @@ system.runInterval(() => {
       }
     }
 
-    if (replaced && chatDebug.has(id)) {
+    if (replaced && hasDebug) {
       player.sendMessage(`§7[Scan] Replaced §a${replaced} §7blocks this tick (${state.replacedTotal} total)`);
     }
 
     if (state.slabIndex >= state.slabYs.length) {
-      if (!state.cylinderComplete) {
-        state.cylinderComplete = true;
-        if (chatDebug.has(id)) {
-          player.sendMessage("§8[Scan] Cylinder complete — standing by...");
-        }
+      if (!state.cylinderComplete && hasDebug) {
+        player.sendMessage("§8[Scan] Cylinder complete — standing by...");
       }
+      state.cylinderComplete = true;
     } else {
       state.cylinderComplete = false;
     }

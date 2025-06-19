@@ -3926,13 +3926,13 @@
             },
             "bubble.pop": {
                 "pitch": [
-                    0.90,
-                    1.050
+                    0,
+                    0
                 ],
                 "sound": "bubble.pop",
                 "volume": [
-                    0.40,
-                    0.60
+                    0,
+                    0
                 ]
             },
             "bubble.up": {

@@ -27,6 +27,19 @@
             "min_distance": null,
             "sounds": []
         },
+                "random.swim": {
+            "__use_legacy_max_distance": "true",
+            "category": "player",
+            "max_distance": null,
+            "min_distance": null,
+            "sounds": [
+                {
+                    "load_on_low_memory": true,
+                    "name": "sounds/random/swim1",
+                    "volume": 0.60
+                }
+            ]
+        },
         "ambient.nether_wastes.loop": {
             "category": "ambient",
             "max_distance": null,
@@ -259,6 +272,18 @@
                     "name": "sounds/random/click",
                     "pitch": 0.50,
                     "volume": 0.30
+                }
+            ]
+        },
+            "bubble.hud_bubble": {
+            "category": "block",
+            "max_distance": null,
+            "min_distance": null,
+            "sounds": [
+                {
+                    "name": "sounds/bubbles/hud_bubble",
+                    "pitch": 0,
+                    "volume": 0
                 }
             ]
         },
@@ -4806,19 +4831,6 @@
                     "name": "sounds/random/click",
                     "volume": 0.30,
                     "pitch": 0.5
-                }
-            ]
-        },
-        "random.swim": {
-            "__use_legacy_max_distance": "true",
-            "category": "player",
-            "max_distance": null,
-            "min_distance": null,
-            "sounds": [
-                {
-                    "load_on_low_memory": true,
-                    "name": "sounds/random/splash",
-                    "volume": 0.60
                 }
             ]
         },
