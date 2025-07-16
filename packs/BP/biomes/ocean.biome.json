@@ -1,0 +1,54 @@
+{
+  "format_version": "1.20.60",
+  "minecraft:biome": {
+    "description": {
+      "identifier": "ocean"
+    },
+    "components": {
+      "minecraft:replace_biomes": {
+        "replacements": [
+          {
+            "dimension": "overworld",
+            "targets": [
+              "ocean",
+              "deep_ocean",
+              "cold_ocean",
+              "frozen_ocean",
+              "warm_ocean",
+              "lukewarm_ocean",
+              "river",
+              "frozen_river"
+            ],
+            "amount": 1.0,
+            "noise_frequency_scale": 25
+          }
+        ]
+      },
+      "minecraft:climate": {
+        "downfall": 0.5,
+        "snow_accumulation": [0.0, 0.125],
+        "temperature": 0.5
+      },
+      "minecraft:overworld_height": {
+        "noise_type": "ocean"
+      },
+      "minecraft:surface_parameters": {
+        "sea_floor_depth": 7,
+        "sea_floor_material": "gravel",
+        "foundation_material": "stone",
+        "mid_material": "dirt",
+        "top_material": "grass_block",
+        "sea_material": "water"
+      },
+      "minecraft:tags": {
+        "tags": [
+          "monster",
+          "deep",
+          "ocean",
+          "overworld",
+          "spawns_warm_variant_farm_animals"
+        ]
+      }
+    }
+  }
+}

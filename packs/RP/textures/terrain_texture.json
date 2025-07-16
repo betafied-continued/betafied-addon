@@ -1,7 +1,7 @@
 {
     "resource_pack_name": "vanilla",
     "texture_name": "atlas.terrain",
-    "padding": 8,
+    "padding": 2,
     "num_mip_levels": 0,
     "texture_data": {
         "oak_leaves": {

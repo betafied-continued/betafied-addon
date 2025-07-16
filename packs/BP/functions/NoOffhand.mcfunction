@@ -1,0 +1,1 @@
+replaceitem entity @a slot.weapon.offhand 1 disc_fragment_5 1 1 {"minecraft:keep_on_death": {}}

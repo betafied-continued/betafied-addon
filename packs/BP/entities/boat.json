@@ -13,19 +13,41 @@
         "width": 1.4,
         "height": 0.455
       },
+      "minecraft:health": {
+        "value": 1,
+        "max": 1
+      },
       "minecraft:hurt_on_condition": {
-                "damage_conditions": [
-                    {
-                        "filters": {
-                            "test": "in_lava",
-                            "subject": "self",
-                            "operator": "==",
-                            "value": true
-                        },
-                        "cause": "lava",
-                        "damage_per_tick": 4
-                    }
-                ]
+        "damage_conditions": [
+          {
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
+            "cause": "lava",
+            "damage_per_tick": 4
+          },
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "damager",
+              "value": "player"
+            },
+            "cause": "entity_attack",
+            "damage_per_tick": 9999
+          },
+          {
+            "filters": {
+              "test": "is_family",
+              "subject": "damager",
+              "value": "arrow"
+            },
+            "cause": "projectile",
+            "damage_per_tick": 9999
+          }
+        ]
       },
       "minecraft:loot": {
         "table": "loot_tables/entities/boat.json"
@@ -39,22 +61,18 @@
         "seat_count": 1,
         "interact_text": "action.interact.ride.boat",
         "pull_in_entities": true,
-
         "seats": [
           {
             "position": [ -0.25, -0.2, 0.0 ],
             "min_rider_count": 0,
             "max_rider_count": 1,
-
             "rotate_rider_by": -90,
             "lock_rider_rotation": 90
           }
         ]
       },
-      "minecraft:is_stackable": {
-      },
-      "minecraft:physics": {
-      },
+      "minecraft:is_stackable": {},
+      "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": true,
         "is_pushable_by_piston": true

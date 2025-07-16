@@ -4,8 +4,8 @@
         "description": {
             "identifier": "minecraft:player",
             "spawn_category": "creature",
-            "is_spawnable": false,
-            "is_summonable": false
+            "is_spawnable": true,
+            "is_summonable": true
         },
         "component_groups": {
             "betarock:set_hunger": {

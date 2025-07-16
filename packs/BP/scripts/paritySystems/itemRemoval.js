@@ -115,10 +115,13 @@ class ItemRestrictionSystem {
       "minecraft:furnace_minecart", "minecraft:saddle", "minecraft:bucket",
       "minecraft:water_bucket", "minecraft:lava_bucket", "minecraft:milk_bucket",
       "minecraft:snowball", "minecraft:filled_map", "minecraft:empty_map", "minecraft:compass", "minecraft:clock",
-      "minecraft:bed", "minecraft:painting", "minecraft:barrier",
+      "minecraft:bed", "minecraft:painting", "minecraft:barrier", "minecraft:blue_dye",
       
       // Special Blocks
-      "minecraft:carved_pumpkin", "minecraft:lit_pumpkin", "minecraft:jack_o_lantern", "minecraft:bedrock",
+      "minecraft:carved_pumpkin", "minecraft:lit_pumpkin", "minecraft:jack_o_lantern", "minecraft:bedrock", 
+      
+      // Mod Support
+      "hrb:herobrine_settings", "hrb:script_openSettings",
       
       // Music Discs
       "minecraft:music_disc_13", "minecraft:music_disc_cat"

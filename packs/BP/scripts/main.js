@@ -13,3 +13,5 @@ import 'paritySystems/noBubbles.js' // removes soulsand bubbles
 import 'paritySystems/limit.js' // limits the player to y128
 import 'paritySystems/noVines.js' // removes vines
 import 'paritySystems/PortalDeathFix.js' // gives immortality for 10 seconds when entering a portal
+import 'paritySystems/fogFix.js' // Spawns beta fog in overworld, removes in nether
+import 'paritySystems/boatBreak.js' // Boat breaking spped is quicker, boats break on collusion, fancy water particles

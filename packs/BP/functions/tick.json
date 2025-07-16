@@ -1,8 +1,9 @@
 {
 	"values": [
 		"set",
+		"sword",
 		"piglindeath",
 		"flowerNull",
-		"fog"
+		"NoOffhand"
 	]
 }

@@ -314,6 +314,7 @@ tile.polished_deepslate_double_slab.name=Polished Grimstone Double Slab
 tile.deepslate_tile_double_slab.name=Grimstone Tile Double Slab
 tile.deepslate_brick_double_slab.name=Grimstone Brick Double Slab
 tile.deepslate_lapis_ore.name=Grimstone Lapis Lazuli Ore
+item.dye.blue_new.name=Lapis Lazuli
 tile.deepslate_iron_ore.name=Grimstone Iron Ore
 tile.deepslate_gold_ore.name=Grimstone Gold Ore
 tile.deepslate_redstone_ore.name=Grimstone Redstone Ore

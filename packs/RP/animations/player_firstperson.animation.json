@@ -6,14 +6,14 @@
             "bones": {
                 "rightarm": {
                     "position": [
-                        "math.clamp(-15.5 * math.sin(variable.first_person_rotation_factor * variable.attack_time * 112.0), -7.0, 999.0) * math.sin(variable.first_person_rotation_factor * variable.attack_time * 112.0)",
-                        "math.sin(variable.first_person_rotation_factor * (1.0 - variable.attack_time) * (1.0 - variable.attack_time) * 200.0) * 7.5 - variable.first_person_rotation_factor * variable.attack_time * 15.0 + variable.short_arm_offset_right",
-                        "math.sin(variable.first_person_rotation_factor * variable.attack_time * 120.0) * 1.75"
+                        "math.sin(math.pow(variable.attack_time, 0.5) * 180.0) * -2.6",
+                        "math.sin(math.pow(variable.attack_time, 0.5) * 360.0) * 6.1",
+                        "math.sin(math.pow(variable.attack_time, 1.1) * 180.0) * 3.1"
                     ],
                     "rotation": [
-                        "math.sin(variable.first_person_rotation_factor * (1.0 - variable.attack_time) * (1.0 - variable.attack_time) * 280.0) * -60.0",
-                        "math.sin(variable.first_person_rotation_factor * (1.0 - variable.attack_time) * (1.0 - variable.attack_time) * 280.0) * 40.0",
-                        "math.sin(variable.first_person_rotation_factor * (1.0 - variable.attack_time) * (1.0 - variable.attack_time) * 280.0) * 20.0"
+                        "math.sin(math.pow(variable.attack_time, 0.45) * 180.0) * -56.0",
+                        "math.sin(math.pow(variable.attack_time, 0.5) * 180.0) * 45.0",
+                        "math.sin(math.pow(variable.attack_time, 0.3) * 180.0) * 22.5"
                     ]
                 }
             }
@@ -124,14 +124,14 @@
             "bones": {
                 "rightarm": {
                     "position": [
-                        13.5,
-                        -7.0,
-                        11.0
+                        13.15,
+                        "(variable.short_arm_offset_right * 1.8) - 7.45",
+                        10.5
                     ],
                     "rotation": [
-                        "95.0 + variable.is_using_vr * 7.5",
-                        "-45.0 + variable.is_using_vr * 7.5",
-                        "115.0 + variable.is_using_vr * -2.5"
+                        95.5,
+                        -40,
+                        116
                     ]
                 },
                 "rightitem": {

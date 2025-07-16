@@ -30,6 +30,7 @@ const ALLOWED_MOBS = new Set([
     "minecraft:zombie_pigman",
     "minecraft:snowball",
     "minecraft:egg",
+    "hrb:herobrine", // Modded Entity not in Betafied
     "minecraft:fishing_hook" // Zombified Piglin in Bedrock
 ]);
 

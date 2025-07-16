@@ -282,12 +282,12 @@
         "isotropic": false,
         "sound": "wood",
         "textures": {
-            "down": "barrel_side",
-            "east": "barrel_side",
-            "north": "barrel_top",
-            "south": "barrel_bottom",
-            "up": "barrel_side",
-            "west": "barrel_side"
+            "down": "chest_inventory_top",
+            "east": "chest_inventory_side",
+            "north": "chest_inventory_side",
+            "south": "chest_inventory_front",
+            "up": "chest_inventory_top",
+            "west": "chest_inventory_side"
         }
     },
     "barrier": {
@@ -1058,18 +1058,7 @@
         "sound": "cherry_wood",
         "textures": "cherry_log_side"
     },
-    "chest": {
-        "isotropic": false,
-        "sound": "wood",
-        "textures": {
-            "down": "chest_inventory_top",
-            "east": "chest_inventory_side",
-            "north": "chest_inventory_side",
-            "south": "chest_inventory_front",
-            "up": "chest_inventory_top",
-            "west": "chest_inventory_side"
-        }
-    },
+
     "chiseled_bookshelf": {
         "isotropic": false,
         "sound": "chiseled_bookshelf",

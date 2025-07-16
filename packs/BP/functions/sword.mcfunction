@@ -1,0 +1,1 @@
+replaceitem entity @e[type=zombie_pigman] slot.weapon.mainhand 1 golden_sword

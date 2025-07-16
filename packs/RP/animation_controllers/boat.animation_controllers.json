@@ -1,0 +1,29 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.boat.defualt": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "move": "query.is_moving"
+                        }
+                    ]
+                },
+                "move": {
+                    "particle_effects": [
+                        {
+                            "effect": "basic_bubble_particle_manual"
+                        }
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!query.is_moving"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

@@ -11,8 +11,7 @@
     "priority": 5,
     "ingredients": [
       {
-        "item": "minecraft:dye",
-        "data": 4
+        "item": "minecraft:blue_dye"
       },
       {
         "item": "minecraft:dye",
@@ -25,8 +24,7 @@
     ],
 	"unlock": [
       {
-        "item": "minecraft:dye",
-        "data": 4
+        "item": "minecraft:blue_dye"
 	  },
 	  {
 		"item": "minecraft:dye",

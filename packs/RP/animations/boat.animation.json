@@ -1,0 +1,14 @@
+{
+    "format_version": "1.8.0",
+    "animations": {
+        "animation.boat.move": {
+            "loop": true,
+            "animation_length": 0.1,
+            "particle_effects": {
+                "0.0": {
+                    "effect": "basic_bubble_particle_manual"
+                }
+            }
+        }
+    }
+}
